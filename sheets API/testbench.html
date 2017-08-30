@@ -1,0 +1,609 @@
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <style>
+            * {
+                text-shadow: none;
+                font-family: sans-serif;
+            }
+
+
+            @media (max-width: 800px) {
+                h1 {
+                    color: fuchsia;
+                }
+            }
+
+            .fullPersonWapper{
+                width: 160px;
+                display: inline-block;
+                margin: 0.2em 0px 0.2em;
+            }
+
+
+            .thumbWapper{
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 0.5em;
+                width: auto;
+                background-color: transparent;
+            }
+
+            .infoWrapper.p{
+                margin: 0.4em 0px 0.5em;
+                line-height: 1.5em;
+            }
+
+            .conPic {
+                height: 100px;
+                width: 100px;
+            }
+
+            .importantNumWrapper {
+                width: 120px;
+                margin: 0.5em 0px 0.5em;
+                display: inline-block;
+                text-align: center;
+            }
+
+
+            .conTable {
+                font-size: 12.7px;
+                color: rgb(0, 0, 0);
+
+                width: 100%;
+                max-width: 800px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2><br><span class="mw-headline" id="Lead_Consultants">Lead Consultants</span></h2>
+        <hr>
+        <div class="conTable" id="LCs">
+        </div>
+
+
+        <h2><br><span class="mw-headline" id="Senior_Consultants">Senior Consultants</span></h2>
+        <hr>
+        <div class="conTable" id="SrCons">
+        </div>
+
+
+        <h2><br><span class="mw-headline" id="Consultants">Consultants</span></h2>
+        <hr>
+        <div class="conTable" id="Cons">
+        </div>
+
+
+        <h2><br><span class="mw-headline" id="Associate_Consultants">Associate Consultants</span></h2>
+        <hr>
+        <div class="conTable" id="Associates">
+        </div>
+        <script>
+            /*
+            var GoogleAuth;
+
+            var SPREADSHEET_ID = '1WTdFTvpP55MHXOmBtLbkgAjNClqg_mHtXlOm7Wv48MM'; // testbench file
+            //var SPREADSHEET_ID = '11pog_TZki-0ifnGW-Y6rFpTAKUA73TTz8sLvpp-mhdI'; // real file
+
+            //var QUERY_ID = 'AIzaSyA4o0dsjbaW1XJjmb_g04PJgE0SThB_ALs'; // ccb personal acct
+            //var API_KEY = 'AIzaSyBaPdJvx6KpzN_jJ7YTaMAVW4y0RLtMzpY'; // LC dev acct
+
+            var mainURL = 'https://sheets.googleapis.com/v4/spreadsheets/' + SPREADSHEET_ID +
+                '/values:batchGet?ranges=Sheet1!A:AN&ranges=Sheet2!B:B&ranges=Sheet2!C:C' +
+                '&key=' + API_KEY;
+
+            function updateSigninStatus(isSignedIn) {
+                setSigninStatus();
+            }
+
+            function httpGetAsync(theUrl, callback) {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() { 
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                        callback(xmlHttp.responseText);
+                }
+                xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+                xmlHttp.send(null);
+            }
+
+
+            function createTables(conObjArr){
+
+                var peopleArr = [];
+                var HTMLarr = [];
+
+                var lcArr = [];
+                var srArr = [];
+                var conArr = [];
+                var assocArr = [];
+
+
+                var tableArr = [];
+                var table_LC;
+                var table_SrCon;
+                var table_Con;
+                var table_Assoc;
+
+                HTMLarr = document.getElementsByClassName('conInfoCell');
+                tableArr = document.getElementsByClassName('conTable');
+
+
+                // Finding the tables
+                table_LC = tableArr[0];
+                table_SrCon = tableArr[1];
+                table_Con = tableArr[2];
+                table_Assoc = tableArr[3];
+
+                var HTML_prePic = '' +
+                    '<div class="thumbWrapper">\n' +
+                        '\t<img id="'; //src="https://kb.northwestern.edu/images/group293/74042/';
+                var HTML_inPic = '" src="'
+
+                var HTML_postPic = '' +
+                        '.jpg" src="https://firebasestorage.googleapis.com/v0/b/condb-b5234.appspot.com/o/Krusty.png?alt=media&token=49332abb-3f85-4d26-b24c-39c493002f83" class="conPic" alt="employee photo">\n' +
+                    '\t</div>\n';
+
+                var HTML_preName = '' +
+                    '<div class="infoWrapper">\n' +
+                        '\t<p>\n' +
+                        '\t\t<strong>';
+                var HTML_preNetID = '</strong><br>\n\t\t';
+                var HTML_prePhone = '<br>\n\t\t';
+                var HTML_preEmail = '<br>\n\t\t<a href="mailto:';
+                var HTML_prePosition = '">email</a><br>\n\t\t';
+                var HTML_preStatus = '<br>\n\t\t';
+                var HTML_postAll = '<br>\n\n\t</p>\n</div>';
+
+
+                function setCons() {
+
+                    var lcNum = 0;
+                    var srNum = 0;
+                    var conNum = 0;
+                    var assocNum = 0;
+
+                    for (var i = 1; i < conObjArr.length; i++){
+                        switch  (conObjArr[i].Position) {
+                            case 'Lead Consultant':
+                                lcArr[lcNum] = conObjArr[i];
+                                lcNum++;
+                                break;
+                            case 'Senior Consultant':
+                                srArr[srNum] = conObjArr[i];
+                                srNum++;
+                                break;
+                            case 'Consultant':
+                                conArr[conNum] = conObjArr[i];
+                                conNum++;
+                                break;
+                            case 'Associate Consultant':
+                                assocArr[assocNum] = conObjArr[i];
+                                assocNum++;
+                                break;
+                            case 'Emeritus LC':
+                                srArr[srNum] = conObjArr[i];
+                                srNum++;
+                                break;
+                        }
+                    }
+
+                    makeTable(lcArr, table_LC);
+                    makeTable(srArr, table_SrCon);
+                    makeTable(conArr, table_Con);
+                    makeTable(assocArr, table_Assoc);
+
+                }
+
+
+                function makeTable(tableArr, tableRef) {
+
+                    var tableHTML = '\n<div class="fullPersonWapper">';
+
+                    for (var i = 0; i < tableArr.length; i++){
+
+                        if(i){
+                            tableHTML += '\n\n</div>\n\n\n\n<div class="fullPersonWapper">'; 
+                        }
+
+                        //getPic(tableArr[i].NetID + '.jpg');
+
+                        tableHTML += '\n\n' +
+                            HTML_prePic + tableArr[i].NetID + HTML_postPic +
+                            HTML_preName + tableArr[i].nickname + " " + tableArr[i].lastName +
+                            HTML_preNetID + tableArr[i].NetID +
+                            HTML_prePhone + tableArr[i].Phone +
+                            HTML_preEmail + tableArr[i].Email +
+                            HTML_prePosition + tableArr[i].Position +
+                            HTML_preStatus + tableArr[i].Status +
+                            HTML_postAll;
+                    }
+
+                    tableRef.innerHTML = tableHTML;  
+                }
+
+//                function getPic(fileName) {
+//                    storageRef.child(fileName).getDownloadURL().then(function(url) {
+//                        //picURL = url;
+//                        document.getElementById(fileName).src = url;
+//                    });
+//                }
+
+                setCons();
+
+            }
+
+            function dataFromSheet(apiResponse){
+
+                var fullResponseObject = JSON.parse(apiResponse);
+                var mainSheet = fullResponseObject.valueRanges[0];
+                var lcNamesTemp = fullResponseObject.valueRanges[1].values;
+                var lcInitsTemp = fullResponseObject.valueRanges[2].values;
+
+                var lcNames = new Array();
+                var lcInits = new Array();
+
+                for(var i = 1; i < lcInitsTemp.length; i++) { // Start at 1 because row 0 is just headers
+                     lcNames.push(lcNamesTemp[i][0]);
+                     lcInits.push(lcInitsTemp[i][0]);
+                 }
+
+                var numRows = mainSheet.values.length;
+                var numCols = mainSheet.values[0].length;
+
+                // For Con Directory
+                var lastNameCol;
+                var firstNameCol;
+                var nicknameCol;
+                var phoneCol;
+                var lcCol;
+                var netidCol;
+                var phoneCol;
+                var emailCol;
+                var positionCol;
+                var statusCol;
+
+                // For review form
+                var gradYearCol;
+                var startDateCol;
+                var employeeIDCol;
+
+                for (var i = 0; i < numCols; i++){
+                    switch (mainSheet.values[0][i]) {
+                        case 'HR Last Name':
+                            lastNameCol = i;
+                            break;
+                        case 'HR First Name':
+                            firstNameCol = i;
+                            break;
+                        case 'Nickname':
+                            nicknameCol = i;
+                            break;
+                        case 'LC': // This column changes names a lot, so it accepts both "LC" and "New LC"
+                            lcCol = i;
+                            break;
+                        case 'New LC': // This column changes names a lot, so it accepts both "LC" and "New LC"
+                            lcCol = i;
+                            break;
+                        case 'NetID':
+                            netidCol = i;
+                            break;
+                        case 'Phone Number':
+                            phoneCol = i;
+                            break;
+                        case 'Email':
+                            emailCol = i;
+                            break;
+                        case 'Position':
+                            positionCol = i;
+                            break;
+                        case 'Grad Year':
+                            gradYearCol = i;
+                            break;
+                        case 'Start Date':
+                            startDateCol = i;
+                            break;
+                        case 'EmplID':
+                            employeeIDCol = i;
+                            break;
+                        default:
+                            if(mainSheet.values[0][i].substring(0, 6) == 'Status'){ // This column changes names quarterly
+                                statusCol = i;
+                            }
+                            break;
+                    }
+                }
+
+                var dataToImport = [];
+                var thisConsInits;
+                var thisConsLC;
+                var thisConsPhone;
+                var thisConsStatus;
+
+                for(var i = 1; i < numRows; i++) { // Start at 1 because row 0 is just headers
+
+
+                    // Convert from LC initials to LC names
+                    thisConsInits = lcInits.indexOf(mainSheet.values[i][lcCol]);
+                    if(thisConsInits != -1){
+                        thisConsLC = lcNames[thisConsInits];
+                    }
+                    else {
+                        thisConsLC = "Not Assigned";
+                    }
+
+                    // Format phone number
+                    thisConsPhone = mainSheet.values[i][phoneCol].toString();
+                    //thisConsPhone = thisConsPhone.substring(0,3) + "-" + thisConsPhone.substring(3,6) + "-" + thisConsPhone.substring(6,10);
+
+                    // Format status
+                    thisConsStatus = mainSheet.values[i][statusCol];
+                    if(thisConsStatus == '-'){thisConsStatus = '';}
+
+                    // Create full consultant Object
+                    dataToImport[i-1] = { // Subtract 1 from index so we go back to being zero-indexed
+                        firstName:mainSheet.values[i][firstNameCol],
+                        lastName:mainSheet.values[i][lastNameCol],
+                        nickname:mainSheet.values[i][nicknameCol],
+                        LC:thisConsLC,
+                        NetID:mainSheet.values[i][netidCol],
+                        Phone:thisConsPhone,
+                        Email:mainSheet.values[i][emailCol],
+                        Position:mainSheet.values[i][positionCol],
+                        gradYear:mainSheet.values[i][gradYearCol],
+                        startDate:mainSheet.values[i][startDateCol],
+                        employeeID:mainSheet.values[i][employeeIDCol],
+                        Status:thisConsStatus
+                    };
+                }
+
+                console.log(dataToImport);
+
+                return dataToImport;
+            }
+
+            function getSheetsInfo() {
+                console.log('getSheetsInfo called');
+                httpGetAsync(mainURL,function (apiResponse){ createTables(dataFromSheet(apiResponse)); })
+            }
+*/
+        </script>
+        
+
+        <button id="clicky-button"
+                style="display: none; margin-left: 25px"
+                onclick="getSheetsInfo()">Pull sheets data</button>
+        
+        <button id="clicky-button-2"
+                style="margin-left: 25px"
+                onclick="makeApiCall()">Make Authorized API Call</button>
+        
+        <br><br>
+        <hr>
+<!--
+        <button id="sign-in-or-out-button"
+                style="margin-left: 25px">Sign In/Authorize</button>
+        <button id="revoke-access-button"
+                style="display: none; margin-left: 25px">Revoke access</button>
+
+        <div id="auth-status" style="padding-left: 25px"></div>
+        <hr>
+-->        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!--
+        <script>
+            // OAuth stuff. Not necessary if using an API key.
+            var CLIENT_ID = '809812164048-kctblvurrb6etahe3vlv7bbcplikhqj7.apps.googleusercontent.com';
+            var CLIENT_SECRET = 'Og7lGPg53XlZlaJfRBG6dF2I';
+            var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly'; // + ' ' +
+            //'https://www.googleapis.com/auth/spreadsheets';
+
+            function handleClientLoad() {
+                // Load the API's client and auth2 modules.
+                // Call the initClient function after the modules load.
+                gapi.load('client:auth2', initClient);
+            }
+
+            function initClient() {
+            // Retrieve the discovery document for version 3 of Google Drive API.
+            // In practice, your app can retrieve one or more discovery documents.
+            var discoveryUrl = 'https://www.googleapis.com/discovery/v1/apis/drive/v3/rest';
+
+            // Initialize the gapi.client object, which app uses to make API requests.
+            // Get API key and client ID from API Console.
+            // 'scope' field specifies space-delimited list of access scopes.
+            gapi.client.init({
+                'apiKey': API_KEY,
+                'discoveryDocs': [discoveryUrl],
+                'clientId': CLIENT_ID,
+                'scope': SCOPE
+            }).then(function () {
+                    GoogleAuth = gapi.auth2.getAuthInstance();
+
+                    // Listen for sign-in state changes.
+                    GoogleAuth.isSignedIn.listen(updateSigninStatus);
+
+                    // Handle initial sign-in state. (Determine if user is already signed in.)
+                    var user = GoogleAuth.currentUser.get();
+                    setSigninStatus();
+
+                    // Call handleAuthClick function when user clicks on
+                    //      "Sign In/Authorize" button.
+                    $('#sign-in-or-out-button').click(function() {
+                        handleAuthClick();
+                    }); 
+                    $('#revoke-access-button').click(function() {
+                        revokeAccess();
+                    });
+                });
+            }
+
+            function handleAuthClick() {
+                if (GoogleAuth.isSignedIn.get()) {
+                  // User is authorized and has clicked 'Sign out' button.
+                  GoogleAuth.signOut();
+                } else {
+                  // User is not signed in. Start Google auth flow.
+                  GoogleAuth.signIn();
+                }
+            }
+
+            function revokeAccess() {
+                GoogleAuth.disconnect();
+            }
+
+            function setSigninStatus(isSignedIn) {
+                var user = GoogleAuth.currentUser.get();
+                var isAuthorized = user.hasGrantedScopes(SCOPE);
+                
+                console.log(user);
+
+                if (isAuthorized){
+                  $('#sign-in-or-out-button').html('Sign out');
+                  $('#revoke-access-button').css('display', 'inline-block');
+                  $('#auth-status').html('You are currently signed in and have granted ' +
+                      'access to this app.');
+                } else {
+                  $('#sign-in-or-out-button').html('Sign In/Authorize');
+                  $('#revoke-access-button').css('display', 'none');
+                  $('#auth-status').html('You have not authorized this app or you are ' +
+                      'signed out.');
+                }
+            }
+            
+            function getUserMetadata(){
+/*
+                // Example 1: Use method-specific function
+                var request = gapi.client.drive.about.get({'fields': 'user'});
+
+                // Execute the API request.
+                request.execute(function(response) {
+                  console.log(response);
+                });
+            }
+
+*/
+                // Example 2: Use gapi.client.request(args) function
+                var request = gapi.client.request({
+                  'method': 'GET',
+                  'path': '/drive/v3/about',
+                  'params': {'fields': 'user'}
+                });
+                // Execute the API request.
+                request.execute(function(response) {
+                  console.log(response);
+                });
+            }
+            
+        </script>
+-->        
+        <script>
+            function makeApiCall() {
+              var params = {
+                // The spreadsheet to request.
+                spreadsheetId:  '1WTdFTvpP55MHXOmBtLbkgAjNClqg_mHtXlOm7Wv48MM', // test file
+                //spreadsheetId:  '11pog_TZki-0ifnGW-Y6rFpTAKUA73TTz8sLvpp-mhdI', // real file
+
+                // The ranges to retrieve from the spreadsheet.
+                ranges: ['Main!A:Y', 'LCs!B:C'],
+
+                // True if grid data should be returned.
+                includeGridData: true,
+              };
+
+              var request = gapi.client.sheets.spreadsheets.get(params);
+              request.then(function(response) {
+                // TODO: Change code below to process the `response` object:
+                console.log(response.result);
+              }, function(reason) {
+                console.error('error: ' + reason.result.error.message);
+              });
+            }
+
+            function initClient() {
+                // OAuth stuff
+                var CLIENT_ID = '809812164048-kctblvurrb6etahe3vlv7bbcplikhqj7.apps.googleusercontent.com';
+                //var CLIENT_SECRET = 'Og7lGPg53XlZlaJfRBG6dF2I';
+                var SCOPE = 'https://www.googleapis.com/auth/spreadsheets.readonly';
+                var API_KEY = 'AIzaSyBaPdJvx6KpzN_jJ7YTaMAVW4y0RLtMzpY';
+
+                gapi.client.init({
+                    'apiKey': API_KEY,
+                    'clientId': CLIENT_ID,
+                    'scope': SCOPE,
+                    'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+                }).then(function() {
+                    gapi.auth2.getAuthInstance().isSignedIn.listen(updateSignInStatus);
+                    updateSignInStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                });
+            }
+
+            function handleClientLoad() {
+              gapi.load('client:auth2', initClient);
+            }
+
+            function updateSignInStatus(isSignedIn) {
+              if (isSignedIn) {
+                makeApiCall();
+              }
+            }
+
+            function handleSignInClick(event) {
+              gapi.auth2.getAuthInstance().signIn();
+            }
+
+            function handleSignOutClick(event) {
+              gapi.auth2.getAuthInstance().signOut();
+            }
+        </script>
+        
+        <button id="signin-button" onclick="handleSignInClick()">Sign in</button>
+        <button id="signout-button" onclick="handleSignOutClick()">Sign out</button>
+
+        <script async defer src="https://apis.google.com/js/api.js" 
+                onload="this.onload=function(){};handleClientLoad()" 
+                onreadystatechange="if (this.readyState === 'complete') this.onload()">
+        </script>
+    </body>
+</html>
+
+
+<div class="supportTable" align="center">
+    <div class="headerWrapper">
+        <div align="center">Group Name</div>
+    </div>
+    <div class="fullContactWrapper" style="padding:10px;">
+        <div class="groupWapper">
+            <b>TSS Support Services</b>
+        </div>
+        <hr>
+        <div class="locWrapper">
+            Location:<a href="">1800 Sherman Ave</a>
+        </div>
+        <div class="roomWrapper">
+            Suite 1-300 EV
+        </div>
+        <div class="supportWrapper">
+            <div class="primaryWrapper">
+                Primary Support: DSS Contact
+            </div>
+            <div class="secondaryWrapper">
+                Secondary Support: Another DSS Contact
+            </div>
+        </div>
+        <div class="contactWrapper">
+            <div class="unitWrapper">
+                Unit Contact: Other Contact
+            </div>
+            <div class="phoneWrapper">
+                847-491-4357
+            </div>
+        </div>
+        <div class="moreWrapper">
+            <a href="/Dept/TSS/DSS/Pages/linktofullpage">
+                <b>More Information</b>
+            </a>
+        </div>
+    </div>
+</div>

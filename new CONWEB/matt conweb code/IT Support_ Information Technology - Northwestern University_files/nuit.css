@@ -1,0 +1,537 @@
+/* quick fix */
+
+.swiper-container .hero .hero-image {
+    display: block;
+}
+
+.hero-image-inner {
+    padding-top: 8%;
+}
+
+/* service catalog */
+.catalogBox button {
+    padding: 0.2rem;
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+section.catalogBox {
+    min-height: 250px !important;
+}
+
+#serviceCatalogGroup {
+    margin-left:-20px;
+}
+/* CATALOG BOX*/
+section.catalogBox
+{
+    margin: 10px;
+    padding: 0 15px 15px 15px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    box-shadow: 0 0 3px 3px #ccc;
+    -moz-box-shadow: 0 0 3px 3px #ccc;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 85%, rgba(108, 66, 114, .8) 98%); /* #6c4272 */
+/*    width: 400px;*/
+    width:41%;
+    text-align: left;
+    display: inline-block;
+    /* float: left; */
+    position: relative;
+    left: 4%;
+    vertical-align: top;
+    min-height: 150px;
+}
+section.catalogBox h3
+{
+    font-size: 1.5em;
+    left: 10%;
+}
+section.catalogBox img
+{
+    float: left;
+    vertical-align: top;
+    width:72px;
+    height:72px;
+}
+section.catalogBox p.catalogComments
+{
+    font-size: 1.1em;
+    color: #5c5c5c;
+    display:block;
+    margin-left:92px;
+}
+section.catalogBox a
+{
+    font-size: 1.2em;
+}
+
+/* SERVICES BOX*/
+.servicesBox {
+    margin: 10px;
+    padding: 0 15px 0 15px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    box-shadow: 0 0 3px 3px #ccc;
+    -moz-box-shadow: 0 0 3px 3px #ccc;
+/*    width: 850px;*/
+    width:87%;
+    text-align: left;
+/*    display: inline-block;*/
+    float: left; /*positioned*/
+    position: relative;
+    left: 4%;
+    vertical-align: top;
+    min-height: 150px;
+}
+.leftSide {
+    background: linear-gradient(to top left, rgba(255, 255, 255, 0) 80%, rgba(108, 66, 114, .8) 98%); /* #6c4272 */
+}
+.rightSide {
+    background: linear-gradient(to top right, rgba(255, 255, 255, 0) 80%, rgba(108, 66, 114, .8) 98%); /* #6c4272 */
+}
+.servicesBox h3
+{
+    font-size: 1.5em;
+    left: 10%;
+}
+table.servicesList
+{
+    width: 100%;
+    margin-bottom: 5px;
+    border-spacing: 0 20px;
+}
+    table.servicesList th, table.servicesList td
+    {
+        vertical-align: top;
+    }
+    th.serviceLabel
+    {
+        width: 20%;
+        min-width: 100px;
+    }
+    td.serviceDescription
+    {
+        padding-right: 10px;
+    }
+    button[type='button']
+    {
+        white-space: nowrap;
+    }
+/* Hide the close button */
+.mobileCloseButton {
+    display:none;
+}
+.serviceOrderSub {
+    display:none;
+}
+@media screen and (min-width:481px) and (max-width:768px) {
+    section.catalogBox img
+    {
+        width:56px;
+        height:56px;
+    }
+    section.catalogBox p.catalogComments
+    {
+        margin-left:76px;
+    }
+    section.catalogBox h3, .servicesBox h3
+    {
+        font-size: 1.3em;
+        position: relative;
+        left: 5%;
+    }
+    section.catalogBox {
+        width:40%;
+    }
+}
+@media screen and (min-width:481px) and (max-width:768px) and (orientation:landscape) {
+    section.catalogBox {
+        width:39%;
+    }
+    /* Show the close button */
+    .mobileCloseButton {
+        position: relative;
+        top: 10px;
+        float:right;
+        clear:both;
+        z-index:3;
+        display:block;
+        height:16px;
+        width:16px;
+        font-size:9px;
+    }
+    .mobileCloseButton img {
+        height:16px;
+        width:16px;
+    }
+}
+@media screen and (max-width:480px) {
+    /* Show the close button */
+    .mobileCloseButton {
+        position: relative;
+        top: 10px;
+        float:right;
+        clear:both;
+        z-index:3;
+        display:block;
+        height:16px;
+        width:16px;
+        font-size:9px;
+    }
+    .mobileCloseButton img {
+        height:16px;
+        width:16px;
+    }
+    section.catalogBox img
+    {
+        width:32px;
+        height:32px;
+    }
+    section.catalogBox p.catalogComments
+    {
+        margin-left:52px;
+    }
+    section.catalogBox, .servicesBox {
+        width:83%;
+    }
+    section.catalogBox h3, .servicesBox h3
+    {
+        font-size: 1.1em;
+        position: relative;
+        left: 5%;
+    }
+    section.catalogBox {
+        min-height:90px;
+    }
+}
+@media screen and (max-width:320px) and (orientation:portrait) {
+    section.catalogBox p.catalogComments
+    {
+        font-size: 0.9em;
+    }
+    button[type='button']
+    {
+        white-space: normal;
+        display:block;
+    }
+    th.serviceLabel {
+        min-width:35px;
+        word-wrap:normal;
+    }
+    td.serviceOrder {
+        display:none;
+    }
+    .serviceOrderSub {
+        display:block;
+        margin-top:5px;
+    }
+}
+
+/* This covers for the assumption that there would always be
+    a hero image on the top of pages. */
+    
+nav + #page {
+    /* padding-top: 50px; */
+}
+
+/* get the GM template to not align things to the edge of 1440 screens */
+@media screen and (max-width: 1440px) {
+    .landing-page .content {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+table th a {
+    color: #fff !important;
+}
+
+.newsModified {
+ font-style: italic;
+ font-size: 90%;
+ margin: 0;
+}
+
+/* for calendar/index */
+.page-calendar-events-lc p,
+.page-calendar-events-rc p {
+    display: inline-block;
+}
+
+.page-calendar-events-lc p:before,
+.page-calendar-events-rc p:before {
+    content: ' - ';
+}
+
+/* WYSIWYG Support */
+.code { margin-left: 10px; font-family: monospace; }
+.bgyellow { background: yellow; }
+.red {
+    color: red;
+}
+
+pre, code, .codebox, .code {
+    font-family: "Courier New", Courier, monospace;
+	font-size: 1em;
+	background-color: #E6E6E6;
+    margin: 0em;
+}
+td pre, td code, td .codebox, td .code, th pre, th code, th .codebox, th .code {
+    background-color: transparent;
+}
+
+/* end WYSIWYG support */
+
+/* override default blue color for pagination bullets on sliders */
+
+.swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.7 !important;
+}
+
+/* allows for nested lists inside of box / three column link content */
+.landing-page .three-column-links ul ul {
+    margin-left: 1.7rem;
+}
+
+.feature-three-col article a img {
+    width: 100%;
+}
+
+/* Address naked URLs overflowing the content box */
+div#sidebar a {
+-ms-word-break: break-all;
+     word-break: break-all;
+     word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+}
+
+/* remove gradient */
+.hero .hero-image:before {
+    background: none !important;
+}
+
+/* hide a 3rd feature box that has no content entered */
+article.feature-box:empty {
+    visibility: hidden;
+}
+
+footer {
+    font-size: 12px;
+}
+
+.landing-page #announcement {
+    margin-top: 1rem;
+}
+
+.noticebox.box {
+    background: #f4ee78 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.footer-content.contact ul:nth-of-type(3) {
+    margin: 0 0 1rem 2rem;
+}
+
+.three-column-links:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/* NUIT's special full-width module for news and events */
+
+.nuit-news-event {
+    vertical-align: top;
+}
+
+.nuit-events-social {
+    width: 30%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.nuit-social {
+    margin-top: -6rem;
+}
+
+.nuit-news {
+    width: 70%;
+    display: inline-block;
+    padding-left: 2rem;
+}
+
+.nuit-news img {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 900px) {
+    .nuit-news,
+    .nuit-events-social {
+        display: block;
+        width: 100%;
+    }
+    
+    .nuit-news {
+        padding-left: 0;
+    }
+}
+
+/* should add top margin to landing/bucket page headers */
+.section-top:first-child {
+    margin-top: 2rem;
+}
+
+/* reduce bucket page heading sizes */
+.landing-page .three-column-links h4 {
+    font-size: 24px;
+}
+
+.three-column-links {
+    margin-top: 1rem;
+}
+
+/* per request, allow two columns to equally share content width */
+.landing-page .three-column-links.two-columns article {
+    width: 49%;
+}
+
+/* for news pages */
+.additionalInfoHead {
+    font: 26px/1.2em "Akkurat Pro Regular",Arial,sans-serif;
+    color: #716c6b;
+    margin-bottom: 1rem;
+}
+    
+.footer-content.contact ul li.footer-chat-icon {
+  background: url("../images/chat2.png") no-repeat;
+  position: absolute;
+  top: 2px;
+  left: -2.2rem;
+  height: 24px;
+  width: 18px;
+}
+
+/* Hide Document Icons coming from Global Marketing Template */
+
+a[href$=".pdf"], a[href$=".PDF"], a.pdf,
+a[href$=".docx"], a[href$=".DOCX"], a.docx, a[href$=".doc"], a[href$=".DOC"], a.doc,
+a[href$=".xlsx"], a[href$=".XLSX"], a.xlsx, a[href$=".xls"], a[href$=".XLS"], a.xls {
+  padding-right: 0;
+  background: none !important;
+}
+
+/* Fix issue with grossly global scope margin on images inside article tags. Affects PDF images */
+img[alt='pdf'],
+img[alt='PDF'],
+img[alt='excel icon'],
+img[alt='Key Icon Login Required'] {
+    margin-bottom: 0 !important;
+    margin-left: 0.25rem;
+}
+
+/* canvas login styles -- from 2015 site */
+.threecol {width: 30%; float: left; margin-left: 1%; padding: 1%; min-height: 250px; margin-top: 20px;}
+.threecol h3 {border-bottom: 2px solid #efefef; line-height: 1.5em;}
+#canvaslogin {width: 90%; min-width: 285px !important; margin-left: auto; margin-right: auto; padding: 1%; min-width: 250px; text-align: center; background-color: #fff; border: 1px solid #bbbbbb;}
+.acchidden {position: absolute; left: -1000000px;}
+#canvaslogin a.loginbutton {
+    margin-left: 0px;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+#canvaslogin .emergency {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 2%;
+	max-width: 60%;
+}
+#admin {font-size: .9em;}
+@media screen and (max-width:550px) {
+	#canvaslogin {width: 93%; padding-left: 2%; padding-right: 2%;}
+	.threecol {width: 98%; margin-right: 1%; margin-top: 10px; min-height: auto;}
+
+}
+
+/* per Terry Jolley & group reduce line height to reduce overall bigness of announcements/status */
+.landing-page #announcement {
+    padding: 0.9rem;
+}
+
+.nuit-kb-link {
+    background: #4e2a84;
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 0 -1rem -1rem;
+    border-top: 10px solid #fff;
+    text-align: center;
+}
+
+.nuit-kb-link h3 {
+    font-family: "Campton Book" !important;
+    font-size: 1.4rem !important;
+}
+
+.nuit-kb-link:hover {
+    text-decoration: none !important;
+}
+
+.nuit-kb-link a,
+.nuit-kb-link h3,
+.nuit-kb-link h6 {
+    color: #fff !important;
+    margin-bottom: 0 !important;
+    text-decoration: none;
+}
+
+.nuit-kb-link h6 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+/* Special Top Nav Item */
+#top-bar #right .get-help {
+    padding-left: 2rem;
+}
+
+#top-bar #right .get-help > a {
+    color: #FFC520;
+}
+
+/* Floating Button */
+
+.get-help-button {
+    font-family: "Campton Book","Arial Black",sans-serif !important;
+    background: #9890C1;
+    color: #eee !important;
+    font-weight: bold;
+    line-height: 26px;
+    position: fixed;
+    right: 5px;
+    bottom: 0;
+    z-index: 10;
+    font-size: 1.1rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.landing-page .hero .hero-image.in-page {
+    height: 420px;
+}
+
+.hero .hero-image {
+    padding: 0 !important;
+}
+
+@media screen and (max-width: 480px) {
+    .get-help-button {
+        display: none;
+    }
+}

@@ -1,0 +1,487 @@
+<div class="expander expander1" data-collapse="data-collapse">
+    <h3>On-Call Engineer Procedures: TSC</h3>
+    <div>
+        In the event of a service outage or other urgent issue that requires immediate attention from PIPS, TNS or ISSC, Northwestern IT staff have been instructed to call 1-HELP to get expedited assistance in reaching their on-call engineer. We should follow this procedure: 
+        <ul>
+            <li>
+                Users will reach us by calling 1-HELP, option 7. <strong>This routes directly to Tier 2</strong> with the toast alert "Escalated tech support Evanston IL".
+            </li>
+            <li>
+                <strong>If user does not choose option 7 and call routes to TSC</strong>, Tier 1 should follow the steps below. Note that outside Tier 2 business hours, option 7 routes calls directly to the SOC.
+                <ol>
+                    <li>
+                        Make sure the user provides the following information:
+                        <ul>
+                            <li>Their name and NetID</li>
+                            <li>Which IT department they're in</li>
+                            <li>Their call-back number</li>
+                            <li>Which on-call engineer role they need; if they ask for a specific engineer by name, ask what team that engineer is on</li>
+                            <li>A brief description of the urgent issue or outage</li>
+                        </ul>
+                    </li>
+                    <li>Verify all user information, especially contact information</li>
+                    <li>Escalate the interaction as an incident to the SO-SOC assignment group.</li>
+                    <li>Call the SOC at 7-2222 and ask them to page the requested engineer. If the user didn't know which engineer role they need, ask the SOC to page the PIPS-Infrastructure engineer. Give the SOC the incident number, user's name and call-back number.</li>
+                </ol>
+            </li>
+        </ul>
+        <table border="1" cellpadding="5" cellspacing="1">
+            <tr>
+                <td><strong>On-call Engineer Role</strong></td>
+                <td><strong>Area of responsibility</strong></td>
+            </tr>
+            <tr>
+                <td>CI - PIPS - Infrastructure (was PIM-DAPS-APPS, PIM-DAPS-DB, PIM-PIPS-OS, and PIM-PIPS-STORAGE)
+                </td>
+                <td>
+                    <ul>
+                        <li>Enterprise Application Support</li>
+                        <li>Infrastructure Database (Not MS-DBA role)</li>
+                        <li>Operating System and Hardware Team</li>
+                        <li>Storage and backup services</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>CI - PIPS - HPC (The HPC stands for "High Performance Computing")</td>
+                <td>
+                    <ul>
+                        <li>Anything involving HPC</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>TNS - Data Network</td>
+                <td>
+                    <ul>
+                        <li>Data network, firewall issues or emergency change requests</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>ISSC - Security</td>
+                <td>
+                    <ul>
+                        <li>Security related issues (such as security holds requiring immediate attention)</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<div class="expander expander1" data-collapse="data-collapse">
+    <h3>On-Call Engineer Procedures: SOC</h3>
+    <div>
+        <ul>
+            <li>This following information is intended for SOC personnel to contact specific on-call engineers.</li>
+            <li>Never give personal information (home or cell numbers) to anyone who is <strong>NOT</strong> a Northwestern IT employee.</li>
+            <li>Try the first contact (on the left) first. If that fails, contact the other team member(s) from left to right.</li>
+            <li>Contacts regarding incidents should always be accompanied by an ITSM ticket number that the engineer can reference.</li>
+        </ul>
+        <div class="expander expander2" data-collapse="data-collapse">
+            <h3>PIPS</h3>
+            <div>
+                The On-Call Schedule is located on the IT Cyber PIPS OnCall and Projects Google Calendar found <a href="https://www.google.com/calendar/hosted/alert.northwestern.edu/embed?src=alert.northwestern.edu_4c346o2317h8ojggivei110gls@group.calendar.google.com&ctz=America/Chicago&gsessionid=OK">here</a>.
+                <br>
+                After an on call Engineer is contacted, they may request that the SOC call another Engineer or on call group for support. The initial Engineer continues to be responsible for the call until a formal hand-off is made and the SOC is notified.
+
+                The contact information for the PIPS-Infrastructure engineers is as follows:
+                <div class="contact-table">
+                    <div class="contact-cell">
+                        <div><strong>John Walsh</strong></div>
+                        <div>
+                            <ul>
+                                <li>Processing Management</li>
+                                <li>Operating System</li>
+                                <li>A specific unavailable server</li>
+                                <li>Storage issue</li>
+                                <li>Back up services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Scot Milford</strong></div>
+                        <div>
+                            <ul>
+                                <li>Application Support</li>
+                                <li>
+                                    A specific application such as
+                                    <ul>
+                                        <li>myHR</li>
+                                        <li>SES</li>
+                                        <li>Canvas</li>
+                                    </ul>
+                                </li>
+                                <li>Oracle issue</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="expander expander3" data-collapse="data-collapse">
+                    <h3>Contacting an Engineer <strong>During</strong> Business Hours (8:00a – 5p M-F)</h3>
+                    <div>
+                        <ol>
+                            <li>Create a Service Manager Ticket and assign it to the correct on call group as determined through the process above.</li>
+                            <li>Call the <strong>on call</strong> Engineer
+                                <ul>
+                                    <li>Identify the correct on call Engineer from the Google Calendar. Using the NUIT CyberInfrastructure Phone List, first call the cell number, then if no response, leave voice mail, and attempt the listed office number.</li>
+                                </ul>
+                            </li>
+                            <li>If no response within <strong>10 minutes</strong>:
+                                <ul>
+                                    <li>Call the backup person listed on the Google Calendar. Using the NUIT CyberInfrastructure Phone List, first call the cell number, then if no response, leave vm, and attempt the listed office number.</li>
+                                    <li>You <strong>must speak</strong> with the Engineer and receive positive confirmation that he is taking ownership for the call. They will be responsible for resolving the problem.</li>
+                                </ul>
+                            </li>
+                            <li>If no response within <strong>10 minutes</strong> (20 minutes from time the report was received):
+                                <ul>
+                                    <li>Call Engineers manager – located on Grid above. Using the NUIT CyberInfrastructure Phone List, call their cell number, if no response, leave a voicemail and attempt listed office number.</li>
+                                    <li>If you are unable to locate them, escalate to the Director of PIPS, <strong>Eva Basner-Katz</strong> via her cell number, located on the NUIT CyberInfrastructure Phone List.</li>
+                                </ul>
+                            </li>
+                            <li>After an Engineer/Manager has been reached:
+                                <ul>
+                                    <li>The SOC should contact the person initiating the incident call and let them know that the Engineer has been reached and will be contacting them for problem details. If the caller has not heard from the Engineer within 20 minutes they should contact the SOC for follow up.</li>
+                                    <li>The Engineer will contact the caller with status and set expectations for problem resolution or status update. The Engineer should also instruct the caller to contact the SOC if additional information needs to be relayed.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="expander expander3" data-collapse="data-collapse">
+                    <h3>Contacting an Engineer <strong>After</strong> Business Hours</h3>
+                    <div>
+                        <ol>
+                            <li>Create a Service Manager Ticket and assign it to the correct on call group as determined through the process above.</li>
+                            <li>Call the ON CALL Engineer
+                                <ul>
+                                    <li>Identify the correct on call Engineer from the Google Calendar. Using the NUIT CyberInfrastructure Phone List, first call the cell number, then if no response, leave voice mail, and attempt other listed numbers where applicable.</li>
+                                </ul>
+                            </li>
+                            <li>If no response within <strong>15 minutes</strong>:
+                                <ul>
+                                    <li>Repeat original call sequence</li>
+                                    <li>You MUST SPEAK with the Engineer and receive positive confirmation that he is taking ownership for the call. They will be responsible for resolving the problem.</li>
+                                </ul>
+                            </li>
+                            <li>If no response within <strong>15 minutes</strong> (30 minutes from time the report was received):
+                                <ul>
+                                    <li>Call the backup person listed on the Google Calendar. Using the NUIT CyberInfrastructure Phone List, first call the cell number, then if no response, leave vm, and attempt other listed numbers where applicable.</li>
+                                    <li>You MUST SPEAK with the Engineer and receive positive confirmation that he is taking ownership for the call. They will be responsible for resolving the problem.</li>
+                                </ul>
+                            </li>
+                            <li>If no response within <strong>15 minutes</strong> (45 minutes from time the report was received):
+                                <ul>
+                                    <li>Call Engineers manager – located on Grid Above. Using the NUIT CyberInfrastructure Phone List, call his cell number, then if no response, leave voice mail, and attempt other listed numbers.</li>
+                                    <li>If you are unable to locate him, escalate to the Director of PIPS, <strong>Eva Basner-Katz</strong> via her cell number, located on the NUIT CyberInfrastructure phone list.</li>
+                                </ul>
+                            </li>
+                            <li>After an Engineer/Manager has been reached:
+                                <ul>
+                                    <li>The SOC should contact the person initiating the incident call and let them know that the Engineer has been reached and will be contacting them for problem details. If the caller has not heard from the Engineer within 45 minutes they should contact the SOC for follow up.</li>
+                                    <li>The Engineer will contact the caller with status and set expectations for problem resolution or status update. The Engineer should also instruct the caller to contact the SOC if additional information needs to be relayed.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expander expander2" data-collapse="data-collapse">
+            <h3>ISSC</h3>
+            <div>
+                The ISSC team consists of Roger, Tim, and Mary who handle security issues; and Dave, who is the director. The ISSC security contact for each day is available through NUSA. Turnaround time for non-emergency calls is six business hours, although typically a call is returned with one hour.
+                <br>
+                When making contact outside business hours, try the day's assignee first. If that fails, then contact the other team member(s) followed last by Dave.
+
+                The contact information for the ISS/C staff is as follows:
+                <div class="contact-table">
+                    <div class="contact-cell">
+                        <div><strong>Roger Safian</strong></div>
+                        <div>Office: (847) 467-6437</div>
+                        <div>Cell: (847) 275-9874</div>
+                        <div>Home: (847) 763-8184</div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Tim LeKan</strong></div>
+                        <div>Office: (847) 467-3569</div>
+                        <div>Cell: (847) 682-4738</div>
+                        <div>Home: None</div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Mary Carp</strong></div>
+                        <div>Office: (847) 467-5996</div>
+                        <div>Cell: (847) 644-3959</div>
+                        <div>Home: None</div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Dave Kovarik</strong></div>
+                        <div>Office: (847) 467-5930</div>
+                        <div>Cell: (773) 410-4717</div>
+                        <div>Home: (773) 843-9511</div>
+                    </div>
+                </div>
+
+                <div class="expander expander3" data-collapse="data-collapse">
+                    <h3>Non-Emergency Issues</h3>
+                    <div>
+                        <ol>
+                            <li>Identify the correct security engineer using <a href="https://www.ittns.northwestern.edu" target="_blank">https://www.ittns.northwestern.edu</a>, and clicking on the "Security" section.</li>
+                            <li>Using the phone list above, call the office number. If there is no response, leave voicemail. Speak clearly and leave the user's name, NetID, callback phone number, and a brief description of the problem.</li>
+                            <li>Inform the user that the call will be returned ASAP, but, it may take a while.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="expander expander3" data-collapse="data-collapse">
+                    <h3>Emergency Issues</h3>
+                    <div>
+                        <ol>
+                            <li>
+                                Identify the correct security engineer using <a href="https://www.ittns.northwestern.edu" target="_blank">https://www.ittns.northwestern.edu</a>, and clicking on the "Security" section.
+                            </li>
+                            <li>
+                                Using the phone list above, call the office number. If there is no response, leave voicemail. Speak clearly and leave the user's name, NetID, callback phone number, and a brief description of the problem.
+                            </li>
+                            <li>
+                                Repeat the same process for the cell and the home numbers if you do not get a response.
+                            </li>
+                            <li>
+                                If no response within 15 minutes, repeat original call sequence.
+                            </li>
+                            <li>
+                                If no response within 15 minutes (30 minutes from time the report was received), repeat the original process, using another member of the team.
+                            </li>
+                            <li>
+                                If no response within 15 minutes (45 minutes from time the report was received), repeat the call sequence.
+                            </li>
+                            <li>
+                                If no response within 15 minutes (1 hour from time the report was received), call <strong>Dave Kovarik</strong> at his cell number. If there is no response, leave voicemail, and attempt other listed numbers.
+                            </li>
+                        </ol>
+                        After an engineer/director has been reached the Support Center should escalate the Incident to ISSC-Security.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expander expander2" data-collapse="data-collapse">
+            <h3>Collaboration Services</h3>
+            <div>
+                The contact information for Collaboration Services is as follows:
+                <div class="contact-table">
+                    <div class="contact-cell">
+                        <div><strong>Gene Bugler</strong></div>
+                        <div>Office: (847) 467-0741</div>
+                        <div>Cell: (847) 924-0920</div>
+                        <div>Home: None</div>
+                        <div><a href="mailto:gbugler@northwestern.edu">gbugler@northwestern.edu</a></div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Ryan Mitchell</strong></div>
+                        <div>Office: (847) 491-7801</div>
+                        <div>Cell: (847) 951-3637</div>
+                        <div>Home: (847) 955-0068</div>
+                        <div><a href="mailto:r-mitchell@northwestern.edu">r-mitchell@northwestern.edu</a></div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Frank Wayne</strong></div>
+                        <div>Office: (847) 467-1767</div>
+                        <div>Cell: (773) 865-6849</div>
+                        <div>Home: None</div>
+                        <div><a href="mailto:frank.wayne@northwestern.edu">frank.wayne@northwestern.edu</a></div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Scott Pitts</strong></div>
+                        <div>Office: (847) 467-1473</div>
+                        <div>Cell: (224) 656-3402</div>
+                        <div>Home: (847) 223-5753</div>
+                        <div><a href="mailto:s-pitts@northwestern.edu">s-pitts@northwestern.edu</a></div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Kevin Ossler</strong></div>
+                        <div>Office: (xxx) xxx-xxx</div>
+                        <div>Cell: (xxx) xxx-xxx</div>
+                        <div>Home: (xxx) xxx-xxxx</div>
+                        <div><a href="mailto:"></a></div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Steve Ewald</strong></div>
+                        <div>Office: (xxx) xxx-xxx</div>
+                        <div>Cell: (xxx) xxx-xxx</div>
+                        <div>Home: (xxx) xxx-xxxx</div>
+                        <div><a href="mailto:"></a></div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>David Christensen</strong></div>
+                        <div>Office: (xxx) xxx-xxx</div>
+                        <div>Cell: (xxx) xxx-xxx</div>
+                        <div>Home: (xxx) xxx-xxxx</div>
+                        <div><a href="mailto:"></a></div>
+                    </div>
+                </div>
+
+                <ul>
+                    <li>The On-Call Schedule is located on the Collaboration Services On-Call and Projects <a href="http://www.google.com/calendar/hosted/alert.northwestern.edu/embed?src=alert.northwestern.edu_voflgc92r1051oar7e97f7rqco%40group.calendar.google.com&ctz=America/Chicago">Google Calendar</a></li>
+                    <li>Never give personal information (home, pager or cellular numbers) to any caller who is <strong>not</strong> a Northwestern IT employee.</li>
+                    <li>If there is no response to a cell phone number, always try their office / home phone numbers next.</li>
+                    <li>The escalation is not completed until they <strong>speak</strong> with the Engineer and/or a Manager and receive positive confirmation that they are taking ownership for the call.</li>
+                    <li>Try the first contact first. If that fails, then contact the other team member(s) followed last by Harry.</li>
+                </ul>
+
+                <div class="expander expander3" data-collapse="data-collapse">
+                    <h3>Procedure During Business Hours (8:00am-4:30pm Monday-Friday)</h3>
+                    <div>
+                        <ol>
+                            <li>
+                                Create a ticket and assign it to Collaboration Services.
+                            </li>
+                            <li>
+                                Call the <strong>On-Call</strong> Engineer
+                                <ol>
+                                    <li>Identify the correct on-call Engineer from the <a href="http://www.google.com/calendar/hosted/alert.northwestern.edu/embed?src=alert.northwestern.edu_voflgc92r1051oar7e97f7rqco%40group.calendar.google.com&ctz=America/Chicago">Google Calendar</a>. Using the Collaboration Services Phone List, first call the cell number, then if no response, leave voicemail, and attempt the listed office number.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                If no response within <strong>10 minutes</strong>:
+                                <ol>
+                                    <li>Call the backup person listed on the <a href="http://www.google.com/calendar/hosted/alert.northwestern.edu/embed?src=alert.northwestern.edu_voflgc92r1051oar7e97f7rqco%40group.calendar.google.com&ctz=America/Chicago">Google Calendar</a>. Using the Collaboration Services phone list, first call the cell number, then if no response, leave voicemail, and attempt the listed office number.</li>
+                                    <li>You <strong>must speak</strong> with the Engineer and receive positive confirmation that they are taking ownership for the call. They will be responsible for resolving the problem.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                If no response within <strong>10 minutes</strong> (20 minutes from time the report was received):
+                                <ol>
+                                    <li>Call <strong>Scott Pitts</strong>, Collaboration Services Manager. Using the Collaboration Services Phone List, call his cell number, if no response, leave voicemail, and attempt listed office number.</li>
+                                    <li>If you are unable to locate him, escalate to the Associate Director of ITMS (<strong>Harry Samuels</strong>), via his cell number, located on the Collaboration Services phone list.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                After an Engineer / Manager has been reached:
+                                <ol>
+                                    <li>The SOC / SC should contact the person initiating the incident call and let them know that the Engineer has been reached and will be contacting them for problem details. If the caller has not heard from the Engineer within 20 minutes they should contact the SOC for follow up.</li>
+                                    <li>The Engineer will contact the caller with status and set expectations for problem resolution or status update. The Engineer should also instruct the caller to contact the SOC if additional information needs to be relayed.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="expander expander3" data-collapse="data-collapse">
+                    <h3>Procedure After Business Hours</h3>
+                    <div>
+                        <ol>
+                            <li>
+                                Create a Service Manager Ticket and assign it to Collaboration Services
+                            </li>
+                            <li>
+                                Call the <strong>On-Call</strong> Engineer
+                                <ol>
+                                    <li>Identify the correct on-call Engineer from the Google Calendar. Using The Collaboration Services Phone List, first call the cell number, then if no response, leave a voicemail and attempt other listed numbers where applicable.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                If no response within <strong>15 minutes</strong>:
+                                <ol>
+                                    <li>Repeat original call sequence</li>
+                                    <li>You <strong>must speak</strong> with the Engineer and receive positive confirmation that they are taking ownership for the call. They will be responsible for resolving the problem</li>
+                                </ol>
+                            </li>
+                            <li>
+                                If no response within <strong>15 minutes</strong> (30 minutes from time the report was received):
+                                <ol>
+                                    <li>Call the backup person listed on the Google Calendar. Using the Collaboration Services Phone List, first call the cell number, then if no response, leave voicemail, and attempt other listed numbers where applicable.</li>
+                                    <li>You <strong>must speak</strong> with the Engineer and receive positive confirmation that they are taking ownership for the call. They will be responsible for resolving the problem.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                If no response within 15 MINUTES (45 minutes from time the report was received):
+                                <ol>
+                                    <li>Call <strong>Scott Pitts</strong>, Collaboration Services Manager. Using the Collaboration Services Phone List, call his cell number, then if no response, leave voicemail, and attempt other listed numbers.</li>
+                                    <li>If you are unable to locate him, escalate to the Associate Director of ITMS, <strong>Harry Samuels</strong> via his cell number, located on the Collaboration Services Phone List.</li>
+                                </ol>
+                            </li>
+                            <li>
+                                After an Engineer / Manager has been reached:
+                                <ol>
+                                    <li>The SOC / SC should contact the person initiating the incident call and let them know that the Engineer has been reached and will be contacting them for problem details. If the caller has not heard from the Engineer within 45 Minutes they should contact the SOC for follow up.</li>
+                                    <li>The Engineer will contact the caller with status and set expectations for problem resolution or status update. The Engineer should also instruct the caller to contact the SOC / SC if additional information needs to be relayed.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="expander expander2" data-collapse="data-collapse">
+            <h3>DSS</h3>
+            <div>
+                The contact information for the DSS is as follows:
+                <div class="contact-table">
+                    <div class="contact-cell">
+                        <div><strong>Brian Suarez</strong></div>
+                        <div>Office: (847) 467-1834 </div>
+                        <div>Cell: (847) 754-1510</div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>Andrew Baldovsky</strong></div>
+                        <div>Office: (847) 467-5004</div>
+                        <div>Cell: (773) 680-6191</div>
+                    </div>
+                    <div class="contact-cell">
+                        <div><strong>TBD</strong></div>
+                        <div>Office: (xxx) xxx-xxxx</div>
+                        <div>Cell: (xxx) xxx-xxxx</div>
+                    </div>
+                </div>
+                <ol>
+                    <li>
+                        Start with the first person on the above list.
+                    </li>
+                    <li>
+                        Call the office number (during regular business hours) and then if no response, leave a voice message.
+                        <ol>
+                            <li>
+                                Repeat the same process for the cell / home numbers if you do not get a response.
+                            </li>
+                            <li>
+                                Make sure to speak clearly and leave the person’s name, NetID, phone number, and a brief description of the problem.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        If no response within <strong>15 minutes</strong> (30 minutes from time the report was received), repeat the original process using the next person on the list
+                    </li>
+                    <li>
+                        If no response within <strong>15 minutes</strong> (45 minutes from time the report was received), repeat the original process using the next person on the list
+                    </li>
+                    <li>After an Engineer/Manager has been reached the SOC may close/refer the ticket unless the engineer/manager needed assistance from other teams.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .contact-table{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        width: 100%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    
+    .contact-cell{
+        padding: 5px;
+        flex: 1;
+        margin: 10px;
+        border-right: 1px solid #cccccc;
+    }
+    
+    .contact-cell:last-of-type {
+        border-right: none;
+    }
+</style>

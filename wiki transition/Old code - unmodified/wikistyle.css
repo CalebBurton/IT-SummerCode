@@ -1,0 +1,172 @@
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px dotted gray;
+    background-color: #f5f5f5;
+    width: 60vw;
+    box-sizing: border-box;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #4e2a84;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #9380b6;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 4px 4px;
+    border: 1px solid #ccc;
+    border-top: none;
+    width:60vw;
+    box-sizing: border-box;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+#toc, .toc, .mw-warning {
+    border: 1px solid #aaa;
+    background-color: #f9f9f9;
+    padding: 5px;
+    font-size: 95%;
+}
+div.tright {
+    margin: .5em 0 1.3em 1.4em;
+    margin-top: 0.5em;
+    margin-right: 0px;
+    margin-bottom: 1.3em;
+    margin-left: 1.4em;
+}
+div.thumb {
+    margin-bottom: .5em;
+    width: auto;
+    background-color: transparent;
+}
+div.tright, div.floatright, table.floatright {
+    clear: right;
+    float: right;
+}
+div.thumbinner {
+    border: 1px solid #ccc;
+    padding: 3px;
+    background-color: #f9f9f9;
+    font-size: 94%;
+    text-align: center;
+    overflow: hidden;
+}
+html .thumbimage {
+    border: 1px solid #ccc;
+}
+html .thumbcaption {
+    border: none;
+    line-height: 1.4em;
+    padding: 3px;
+    font-size: 94%;
+    text-align: left;
+}
+
+sb {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+
+sb1 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+sb2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+sb3 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+sb4 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+ 
+.infobox {
+    width: 270px;
+    padding: 5px;
+    margin: 0;
+    display: inline-block;
+    border: 1px dotted #4e2a84;
+}
+
+.refer {
+    background-color: #e0e6ff
+}
+
+.topbox {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    font-size: 1.17em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+}
+
+.botbox {
+    margin-top: 0.3em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

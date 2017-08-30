@@ -1,0 +1,185 @@
+/* Used for internal KB articles, has no harm being here because Internal Service Pages don't use images */
+
+img {
+    display: inline;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+/* For articles with toggle buttons, each inputted img needs to be on its own line, or it'll mess up the text flow */
+
+/* Style the tab */
+
+div.tab {
+    overflow: hidden;
+    background-color: #f5f5f5;
+    /* max-width: 1250px; */
+    max-width: 1400px;
+    min-width: 700px;
+    box-sizing: border-box;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: solid 1px #b7b7b7;
+    border-collapse: collapse;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 25%;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #4e2a84;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #9380b6;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 4px 4px;
+    border: 1px solid #ccc;
+    border-top: none;
+    /* max-width: 1250px; */
+    max-width: 1400px;
+    min-width: 700px;
+    box-sizing: border-box;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; 
+    /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+ 
+/* Defining widths and heights for scrollbars */
+
+.infobox {
+    padding: 5px;
+    margin: auto;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    max-height: 320px;
+    /*height: 20em;*/
+    border: 2px dotted #4e2a84;
+    border-right: none;
+}
+
+.infobox:last-of-type{
+    border-right: 2px dotted #4e2a84;
+}
+
+.contact .topbox{
+    border-top: 2px dotted #4e2a84;
+}
+
+.auth {
+    display: table-cell;
+    background-color: #ffffff;
+    /* width: 120px; */
+    /* width: 20%; */
+    /* max-width: 150px; */
+    max-width: 120px;
+    min-width: 100px;
+}
+
+.itsm {
+    display: table-cell;
+    background-color: #ffffff;
+    /* width: 515px; */
+    /* width: 40%; */
+    min-width: 265px;
+}
+
+.refer-contact {
+    display: table-cell;
+    background-color: #ffffff;
+    /* width: 615px; */
+    /* width: 40%; */
+    min-width: 300px;
+    overflow-y: scroll;
+}
+
+.topbox {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    font-size: 1.17em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    text-align: center;
+    /* text-decoration: underline; */
+    /* margin-top: 0.3em; */
+}
+
+.botbox {
+    margin-top: 0.3em;
+    max-height: 300px;
+}
+
+.refer-contact .botbox {
+    overflow: scroll;
+    max-height: 120px;
+}
+
+
+.botbox table {
+    width: 100%;
+}
+
+#infobox-wrapper {
+    display: table;
+    /* max-width: 1250px; */
+    /*max-width: 1400px; */
+    width: 100%;
+}
+
+#infobox-table {
+    display: table;
+    /* max-width: 1250px; */
+    max-width: 1000px;
+    width: 90%;
+    min-width: 700px;
+    margin: auto;
+}
+
+/* Define coloration of Authorization boxes */
+
+.auth.yes {
+    text-align: center;
+    border: 1px dotted #000000;
+    background-color: #9380b6;
+}
+
+.auth.no {
+    text-align: center;
+    border: 1px dotted #000000;
+    background-color: #cccccc;
+}
+
+.checkboxSpace {
+    font-size: 20pt;
+}

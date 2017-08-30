@@ -1,0 +1,153 @@
+<div id="wrapper">
+
+<div class="infobox auth">
+<div class="topbox">Authentication</div> 
+<div class="botbox"> 
+<table>
+    <tbody>
+        <tr> 
+            <td class="checkboxSpace">☑</td>
+            <th class="auth yes">NetID</th>
+        </tr> 
+        <tr> 
+            <td class="checkboxSpace">☐</td>
+            <th class="auth no">MFA</th>
+        </tr> 
+        <tr> 
+            <td class="checkboxSpace">☐</td>
+            <th class="auth no">VPN</th>
+        </tr> 
+    </tbody>
+</table> 
+</div>  
+</div> 
+    
+<div class="infobox itsm">
+<div class="topbox">FootPrints</div> 
+<div class="botbox"> 
+    <table> 
+        <tbody>
+            <tr> 
+                <th>Service Family:</th> 
+                <td>Telecommunications and Networking</td> 
+            </tr> 
+            <tr> 
+                <th>Service:</th>
+                <td>VPN</td> 
+            </tr> 
+            <tr>
+                <th>Assignment Groups:</th>
+                <td>NUIT-CI-TNS-DataNetwork</td>
+            </tr>
+        </tbody>
+    </table> 
+</div> 
+<br>
+    <div class="topbox">Service Contact</div>
+    <div class="service">
+    <div class="botbox">
+      <p><strong><span><a href="http://www.it.northwestern.edu/oncampus/vpn/" target="_blank" title="Northwestern IT - VPN">NU VPN</a></span></strong> is internally-managed and has no external support contact</p>
+      <strong>NU-Qatar VPN:</strong>
+        <table style="contact">
+        <tbody>
+            <tr>
+                <th>Website:</th>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;"><a href="http://www.qatar.northwestern.edu/life/student-services/information-technology.html" target="_blank">NU-Qatar IT</a></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>helpdesk@qatar.northwestern.edu</td>
+            </tr>
+            <tr>
+                <th>Phone:</th>
+                <td>+974 4454 5150</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+    </div>
+</div>
+       
+<div class="infobox refer"> 
+<div class="topbox">Referral Options</div> 
+<div class="botbox"> 
+    <ul>
+        <li>If a user has difficulty configuring VPN on a departmental computer or device, refer them to <strong>local departmental support</strong>.</li>
+        <li>If a Feinberg user encounters any VPN issue, refer them to <strong>Feinberg IT</strong>.</li>
+        <li>If a NU-Qatar user has any issue with NU-Q VPN, refer them to <strong>NU-Qatar IT</strong>.</li>
+        <li>For all other issues, see&nbsp;<strong>Tier 1 - Referrals</strong>.</li>
+    </ul>
+</div> 
+</div>
+<br> 
+<br> 
+    
+<div class="tab"> 
+    <button class="tablinks" onclick="openTab(event, 'General')" id="defaultOpen">General</button> 
+    <button class="tablinks" onclick="openTab(event, 'Tier1')">Tier 1</button> 
+    <button class="tablinks" onclick="openTab(event, 'Tier2')">Tier 2</button> 
+    <button class="tablinks" onclick="openTab(event, 'SuppSvcs')">Data Network</button> 
+</div>
+    
+    <div id="General" class="tabcontent"> 
+        <span class="Cat1">
+            <h2>Gathering Information</h2> 
+            <p>TNS-DataNetwork needs all of the following information in order to troubleshoot VPN issues. Collect all of the following details before referring any VPN issues to them or another support group.</p>
+            <ul>
+                <li>How are you connecting to VPN? (Which OS are you using? Are you using your operating system's native VPN or Cisco AnyConnect?)</li>
+                <li>Have you successfully connected to VPN before? If so, were you on the same network as you are now, or were you somewhere else?</li>
+                <li>What kind of WiFi network are you on now – home? work? hotel? public? Are you connecting from another country, and if so which country?</li>
+                <li>Do you receive a specific error message when you try to connect? If so, could you send us a screenshot or provide the full text of the error?</li>
+                <li>Please provide the external and internal IP addresses of your device by following the instructions at&nbsp;<span><a href="https://kb.northwestern.edu/page.php?id=69163" target="_blank" title="Northwestern Knowledge Base 69163">https://kb.northwestern.edu/page.php?id=69163</a></span></li>
+                <li>Please provide the date and time you last tried to connect to the VPN.</li>
+            </ul>
+        </span> 
+    </div> 
+    
+    <div id="Tier1" class="tabcontent"> 
+        <span class="Cat2"> 
+            <h2>Troubleshooting</h2> 
+            <p>If a user contacts us with any issue connecting to the VPN, follow these steps:</p>  
+            <ol>
+                <li>If the user hasn't configured VPN yet, help them download and use the Cisco VPN client; see the <a href="https://kb.northwestern.edu/internal/search.php?q=vpn" target="_blank">appropriate configuration article</a> for instructions. If they already have Cisco AnyConnect on their device, make sure the program is running and that the user has tried connecting to the VPN in the program. If they are using Native VPN or another VPN client and aren't in Feinberg, help the user install and use Cisco AnyConnect instead.</li>
+                <li>If Cisco doesn't work or the user can't use Cisco (ex. if they are a Feinberg user), help the user configure  Native VPN/remove and reconfigure existing connections that don't work.</li>
+                <li>If the native VPN produces an error, see if there are any known solutions to the error by searching for it in the KB. If the error's not listed in the KB, see if there are any known solutions on the web.</li>
+                <li>If you cannot resolve the error, collect all the information under <strong>Gathering Information</strong> in <strong>General</strong>&nbsp; of this page and refer the user to departmental support (if connecting on a University-owned device) or TNS-DataNetwork (for personally-owned devices).</li>
+            </ol>       
+            <h2>Referrals</h2> 
+            <ul>
+                <li>All unresolvable issues with VPN <strong>configuration</strong> on university-owned machines should go to department support for further assistance. Tier 1 should always try to set up the connection (using Bomgar if needed) before routing elsewhere.</li> <li>Support <strong>escalations</strong> from IT staff should go to DataNetwork after collecting information under <strong>Gathering Information</strong> in <strong>General</strong>&nbsp;of this page.</li>
+                <li>If a student or staff/faculty member with personal devices needs configuration support and has trouble with our provided instructions, we can do the configration for them at <a href="http://www.it.northwestern.edu/supportcenter/hours.html#laptopER" target="_blank">Laptop ER</a>.</li>
+                <li>All other unresolvable isues should go to <strong>NUIT-CI-TNS-DataNetwork</strong> after collecting all the information under <strong>General</strong>.</li>
+            </ul> 
+        </span> 
+    </div> 
+    
+    <div id="Tier2" class="tabcontent"> 
+        <span class="Cat3"> 
+            <h2>First Support Category</h2> 
+            <p>Support Information</p>          
+            <h2>Second Support Category</h2> 
+            <p>Support Information</p> 
+        </span> 
+    </div> 
+    
+    <div id="SuppSvcs" class="tabcontent"> 
+        <span class="Cat4"> 
+            <h2>First Support Category</h2> 
+            <p>Support Information</p>          
+            <h2>Second Support Category</h2> 
+            <p>Support Information</p> 
+        </span> 
+    </div>
+
+<h2>Resources</h2> 
+    <ul> 
+        <li><span><a href="http://www.it.northwestern.edu/oncampus/vpn/" target="_blank" title="Northwestern IT - VPN">Northwestern IT website page on VPN</a></span></li><li><a href="https://blogs.technet.microsoft.com/rrasblog/2009/08/12/troubleshooting-common-vpn-related-errors/" target="_blank">List of troubleshooting for common Windows VPN errors</a></li>
+        <li><a href="http://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/tsd-products-support-series-home.html" target="_blank">Cisco AnyConnect client support</a></li>
+        <ul><a href="http://www.cisco.com/c/en/us/support/security/anyconnect-secure-mobility-client/products-user-guide-list.html" target="_blank">End-User Guides for Cisco AnyConnect</a></ul>
+    </ul>
+    
+</div>

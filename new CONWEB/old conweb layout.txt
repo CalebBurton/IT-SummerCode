@@ -1,0 +1,166 @@
+(Sidebar)
+
+Essential Links
+	FP
+	NU Validate
+	Wiki
+	KB
+	IT Website
+	NU Directory
+	NU Department Directory
+	Authorized Requesters
+
+Useful Links
+	Support Offered
+	Con Directory
+	Service Categories
+	Assignee Members
+	SmartClassroom Info
+	TSS Wiki
+	Daily Procedures
+	Call vs Email Tix
+	TSS Test Accounts
+
+Tips and Tricks
+	Shift trades
+	Adding groups on Lync
+	Exporting W2W Calendar
+	Personal Wiki Pages
+	Checking ticket history
+	Adding FP signature
+
+
+(Top Bar)
+
+Home
+	Announcements
+	Ongoing Issues
+Resources
+	All IT Contacts by Department
+	Assignee Members
+    Support Services Contacts by Service
+    Commonly Used Assignment Groups
+    Footprints Assignment Groups
+    Service Categories
+    Footprints Template Descriptions
+    Flowcharts
+    NetID Auth Requesters
+    NAC
+    NUSA
+    Configurations Quick Reference
+    Xfinity
+    DSS Sharepoint
+    NetID Expiration Date Tool
+    KB Admin
+Protocol
+    After Hours Escalation
+    Bomb Threat Procedure
+    On-Call Engineer Procedure
+    TSC Test Accounts
+    TSS Wiki
+Schedule
+    KRONOS
+    KRONOS (non-java)
+    Shift Trade Policy
+    WhenToWork
+Training
+    IT Canvas Page
+    NUValidate Basics
+    Supervisor Basics
+    Tier 2 NUFinancials Presentation
+    Tier 2 NUValidate Presentationn
+    Past Trainings
+    Training Excuses
+    Training Feedback
+Forms
+    Consultant Feedback
+    Gift Card Form
+    Suggestions
+    Shift Trade Form
+    Unassign Shift Request
+    Training Excuses
+    Onboarding Form
+    Laptop ER Support
+    Project Work
+Con Stuff
+    Consultant Handbook
+    Laptop ER Handbook
+    Supervisor Handbook
+    Badges
+    CTC Tracker
+    Shadowing Checklist - For SV
+    Shadowing Checklist - For Trainee
+LC Info
+    LC Roles 2016-2017
+Uploads
+
+
+(Center Content)
+Props
+Hours
+Announcements
+Search Bar
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+Essential Links
+	NU Directory
+	NU Department Directory
+	Authorized Requesters
+
+Useful External Links
+    SmartClassroom Info
+	TSS Wiki
+    NAC
+    NUSA
+    DSS Sharepoint
+
+Useful Internal Links
+	Support Offered
+	Con Directory
+	Service Categories
+	Assignee Members
+	All IT Contacts by Department
+	Daily Procedures
+    Support Services Contacts by Service
+    Commonly Used Assignment Groups
+    Footprints Assignment Groups
+    Footprints Template Descriptions
+    NetID Expiration Date Tool
+    
+Instructions --> to KB articles
+    Shift trades
+	Adding groups on Lync
+	Exporting W2W Calendar
+    Checking ticket history
+	Adding FP signature
+
+
+
+
+
+
+

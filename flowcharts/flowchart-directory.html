@@ -1,0 +1,135 @@
+<div class="merm-wrap" style="width: 100%; display:flex; flex-flow: row nowrap;">
+    
+    <div class="mermaid" style="width: 100%;">
+        graph LR
+
+        subgraph Faculty and Staff
+            FS-A("(full-time employee) Legal name,<br/>email display name, home address,<br/>home phone, office phone")
+            FS-B("(part time or temporary employee)<br/>^all of the above")
+            FS-C("Office address")
+            FS-D("Any other information that can’t<br/>be edited in NUValidate or myHR")
+            FS-E("@northwestern.edu email alias")
+
+            FS-A-A("myHR")
+            FS-BCD-A("Call HR")
+            FS-E-A("NU Validate")
+
+            FS-A --> FS-A-A
+            FS-B --> FS-BCD-A
+            FS-C --> FS-BCD-A
+            FS-D --> FS-BCD-A
+            FS-E --> FS-E-A
+        end
+
+        subgraph Student
+            S-A("Visibility of phone number,<br/> address, and curriculum")
+            S-B("Phone number, address,<br/>middle name, first name")
+            S-C("Email alias")
+            S-D("Email display name")
+            S-E("Legal name")
+            S-F("Any other information that can’t be <br/>edited in CAESAR or NUValidate")
+
+            S-A-A("NU Validate")
+            S-B-A("CAESAR Student Center")
+            S-C-A("Account management page:<br/>umail.northwestern.edu/manage")
+            S-D-A("itsm-fp.northwestern.edu/kb/295")
+            S-EF-A("Registrar")
+
+            S-A --> S-A-A
+            S-B --> S-B-A
+            S-C --> S-C-A
+            S-D --> S-D-A
+            S-E --> S-EF-A
+            S-F --> S-EF-A
+        end
+
+        subgraph Affiliate
+            A-A("Any information")
+            A-A-A("Tier 2")
+
+            A-A --> A-A-A
+        end
+
+        subgraph Departmental NetID
+            D-A("Email display name")
+            D-B("Any other fields")
+
+            D-A-A("Tier 2")
+            D-B-A("NU Validate")
+
+            D-A --> D-A-A
+            D-B --> D-B-A
+        end
+
+        subgraph Kellogg Student
+            KS-A("Address and phone number")
+            KS-A-A("Kellogg Student Services<br/>kellogg.northwestern.edu/serial/student-services.aspx")
+
+            KS-A --> KS-A-A
+        end
+
+    </div>
+    <div class="non-merm" style="background: pink;">
+        Test div<br>(to show how the flowchart would work alongside other page elements)
+    </div>
+</div>
+
+<style>
+    
+    .mermaid svg {
+        min-width: 600px;
+        width: 100%;
+        height: auto;
+    }
+    
+    .node rect {
+        fill: rgba(255,255,255,0.65);
+        stroke: #333;
+        stroke-width: 1px;
+    }
+    
+    .node:hover rect {
+        fill: rgba(255,255,255,0.95);
+    }
+    
+    .cluster text {
+        font-size: 1em;
+        font-weight: bold;
+    }
+    
+    .cluster:nth-of-type(1) rect {
+        fill: lightblue!important;
+        stroke: navy!important;
+        stroke-width: 2px!important;
+    }
+    .cluster:nth-of-type(2) rect {
+        fill: lightgreen!important;
+        stroke: darkgreen!important;
+        stroke-width: 2px!important;
+    }
+    .cluster:nth-of-type(3) rect {
+        fill: #ccc!important;
+        stroke: grey!important;
+        stroke-width: 2px!important;
+    }
+    .cluster:nth-of-type(4) rect {
+        fill: yellow!important;
+        stroke: #aa3!important;
+        stroke-width: 2px!important;
+    }
+    .cluster:nth-of-type(5) rect {
+        fill: orange!important;
+        stroke: sienna!important;
+        stroke-width: 2px!important;
+    }
+</style>
+
+<link rel="stylesheet" href="mermaid/mermaid.css">
+
+<script src="mermaid/mermaid.js"></script>
+
+<script>
+    mermaid.initialize({
+        startOnLoad:true
+    });
+</script>

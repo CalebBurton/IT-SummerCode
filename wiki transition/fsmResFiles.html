@@ -1,0 +1,93 @@
+<ul id="toggle1" class="toggle">
+    <li><a onclick="toggleLI('toggle1')"><strong> Connecting on Windows</strong></a>
+        <ol>
+            <br>
+            <br>
+            <li>
+                Locate the "Computer" icon on the Desktop, or go to the Start Menu and locate "Computer" within the menu.
+            </li>
+            <li>
+                Right-click on "Computer". A contextual menu will appear. Within the menu select, "Map Network Drive…" (see image below).
+                <br>
+                <img src="/images/group293/74468/windows-connectToServer-step1.png" title="" alt="A dialog menu next to the Computer icon on the desktop, with the third option highlighted. The highlighted option says: Map Network Drive" width="400">
+            </li>
+            <li>
+                A new dialog window will appear. Where it says ‘Drive’ in the window, select the letter <strong>'R'</strong>. This will mount the new FSMResFiles Server with the letter <strong>'R'</strong>. Under the 'Folder' portion of the window, type in the following server path: <strong>\\fsmresfiles.fsm.northwestern.edu\fsmresfiles</strong>
+                <br>
+            </li>
+            <li>
+                Place checkmarks in the left-hand boxes next to where is says 'Reconnect at logon' and 'Connect using different credentials'. Now select the 'Finish' button.
+                <ul>
+                    <li>
+                        The 'Reconnect at logon' button will make sure that the server is mounted automatically to your machine, when you log in using your NetID and password.
+                    </li>
+                    <li>
+                        The 'Connect using different credentials' box is selected just this once, to force the logon process to ask for your NetID and password.
+                    </li>
+                </ul>
+                <br>
+                <img src="/images/group293/74468/windows-connectToServer-step2.png" title="" alt="A configuration popup with four settings: Drive, Folder, Reconnect at Login, and Connect Using Different Credentials. The Drive option is a dropdown, set to the letter R. The Folder option is a folder path, set to \\fsmresfiles.fsm.northwestern.edu\fsmresfiles. The last two options are checkboxes, which are both checked." width="400">
+            </li>
+            <li>
+                A new dialog window will appear asking for your NetID and password. For the initial logon to the FSMResFiles server, you will need to put <strong>FSM\</strong> in front of your NetID. So the username for the logon will look something like <strong>FSM\abc1234</strong>. Enter in your NetID password. Now place a checkmark in the box next to where it says 'Remember my credentials'. This will guarantee that when you log into your machine, you will not be asked a second time for your NetID and password. Now select the OK button. This will mount the new server onto your computer. Once you have the server mounted to your computer, you can 'drill-down' through the folders to locate your data.
+                <br>
+                <img src="/images/group293/74468/windows-connectToServer-step3.png" title="" alt="A Windows Security popup with text fields for username and password, and a checkbox labeled remember my credentials." width="400">
+            </li>
+            <li>
+                You should only have to perform this process once, but if for any reason that you become disconnected from the server you can go through this process again to manually reconnect to the FSMResFiles server.
+            </li>
+            <li>
+                If you have any questions concerning logging onto the FSMResFiles server, please send them to <a href="mailto:fsmhelp@northwestern.edu">fsmhelp@northwestern.edu</a>
+            </li>
+            <li>
+                <strong>PLEASE NOTE:</strong> If you are using a wireless connection, you will need to launch a VPN client and log into NU&#39;s VPN network, in order to gain access to the FSMResFiles server.  This also applies if you are connecting from another school within NU, anywhere &#39;off-site&#39;, and/or from home.  An established VPN connection needs to be made, prior to connecting to the FSMResFiles server.
+                <br>
+                If you don&#39;t have a VPN client set up on your machine, you can go to the following URL for instructions on how to set it up.  It is a fairly straight forward setup process.  The URL is <a href="http://www.it.northwestern.edu/oncampus/vpn/">http://www.it.northwestern.edu/oncampus/vpn/</a>.
+                <br>
+                Also, if you will be connecting to the server from a machine that is not part of the FSM Domain (network), you will need to put FSM\ in front of your NetID, in the &#39;username&#39; portion of the logon window (ex - FSM\abc123). Examples of machines that are NOT part of the FSM Domain include personals machine or machines on campus where the user DOES NOT log in with their Northwestern NetID.  In these cases, FSM\ is required in front of the NetID.
+            </li>
+        </ol>
+    </li>
+</ul>
+<br>
+<!--
+
+
+
+
+-->
+
+<ul id="toggle2" class="toggle">
+  <li><a onclick="toggleLI('toggle2')"><strong> Connecting on macOS</strong></a>
+      <ol>
+          <br>
+          <br>
+          <li>
+              First, make sure you are at the Desktop of your Mac computer. Go to the 'Go Menu' within the main menus of the Desktop. Scroll down within the 'Go Menu' and select; 'Connect to Server…' (see image below)
+              <br>
+              <img src="/images/group293/74468/mac-connectToServer-step1.png" title="" alt="The dropdown menu in Finder that appears under the word GO. The last option in the menu is highlighted, which says Connect to Server" width="400">
+          </li>
+          <li>
+              Once you have selected 'Connect to Server…' a new window will appear. Within the 'Connect to Server' window, copy and paste the following address into the 'Server Address' portion of the window: <strong>smb://fsmresfiles.fsm.northwestern.edu/fsmresfiles</strong>
+              <br>
+              <img src="/images/group293/74468/mac-connectToServer-step2.png" title="" alt="A popup box with two sections. The first section is a text box labeled Server Address, and is filled in with smb://fsmresfiles.fsm.northwestern.edu/fsmresfiles. The second section is a list of items labeled Favorite Servers. None of those servers are selected." width="400">
+          </li>
+          <li>
+              Once you have the FSMResFiles server address entered into the window, select the 'Connect' button (see image below). A new dialog window will appear asking for your NetID and password. If you are using a Mac that is part of the FSM Domain (meaning you use your NetID and password to log into the machine) then you will enter in your NetID and password.
+              <br>
+              <img src="/images/group293/74468/mac-connectToServer-step3.png" title="" alt="A security popup with four options. The first option is labeled Connect As, and is set to Registred User. The second and third options are for the username and password, and are filled in appropriately. The final option is a checkbox that says Remember this password in my keychain, which is unchecked." width="400">
+          </li>
+          <li>
+              If you are using a Mac that is <em>not</em> part of the FSM Domain, or your own personal machine, then you need to put <strong>FSM\</strong> (backslash) in front of your NetID, when entering a logon name within the credentials window. It should look like the following: <strong>FSM\NetID</strong>
+          </li>
+          <li>
+              Once you have entered your NetID and password into the credentials window, select the 'Connect' button. This will mount the FSMResFiles server onto your Mac. Depending how your Mac is set up, the server will appear on the Desktop, within Finder, or both.
+          </li>
+          <li>
+              If you have any questions concerning logging onto the FSMResFiles server, please send them to <a href="mailto:fsmhelp@northwestern.edu">fsmhelp@northwestern.edu</a>
+          </li>
+      </ol>
+    </li>
+</ul>
+<br>
+<br>

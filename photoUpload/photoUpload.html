@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>Con Directory Photo Upload</title>
+    <link rel="stylesheet" type="text/css" href="photoStyles.css">
+    <!-- <?!= include('styles'); ?> -->
+    <style>
+      .disclaimer{width: 480px; color:#646464;margin:20px auto;padding:0 16px;text-align:center;font:400 12px Roboto,Helvetica,Arial,sans-serif}
+      .disclaimer a{color:#009688}#credit{display:none}
+      
+      .description{width: 480px; color:#646464; text-align:left; font:400 12px Roboto,Helvetica,Arial,sans-serif}
+      
+    </style>
+      
+      <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+      <script>
+          
+          // Initialize Firebase
+          var config = {
+              apiKey: "AIzaSyCBgGi6UO37ETezhX9mw5wwbrTppXC_Tyc",
+              authDomain: "condb-b5234.firebaseapp.com",
+              databaseURL: "https://condb-b5234.firebaseio.com/",
+              storageBucket: "condb-b5234.appspot.com"
+          };
+          
+          firebase.initializeApp(config);
+          var auth = firebase.auth();
+          
+          window.onload = function() {
+              auth.onAuthStateChanged(function(user) {
+                  if (user) {
+                      console.log('Anonymous user signed-in.');
+                  }
+                  else {
+                      console.log('There was no anonymous session. Creating a new anonymous user.');
+                      // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+                      auth.signInAnonymously();
+                  }
+              });
+          }
+
+          
+          // Create a root reference
+          var storageRef = firebase.storage().ref();
+                    
+      </script>
+      
+      
+  </head>
+  <body>
+
+    <form class="main" id="form" novalidate="novalidate" style="max-width: 480px;margin: 40px auto;">
+      <div id="forminner">
+        <div class="row">
+          <div class="col s12">
+            <h3 class="center-align" style="color:#5a3696;">Consultant Directory<br />Photo Upload</h3>
+            <!--<p class="disclaimer">This form is powered by Google Scripts</p>
+            teal is 26a69a
+            purple is 5a3696
+            -->
+          </div>
+        </div>
+        
+        
+        <div class="row">
+          <div class="input-field col s12">
+            <h5 class="left-align" style="color:#5a3696;">Please fill in your NetID</h5>
+            <p class="description">NetIDs are 3 letters, followed by either 3 or 4 numbers. Ex: abc1234</p>
+          </div>
+          <div class="input-field col s12">
+            <input id="netid" type="text" name="NetID" class="validate" required="" aria-required="true">
+            <label for="netid">NetID</label>
+          </div>
+        </div>
+        
+          
+          
+        <div class="row">
+           <div class="input-field col s12">
+            <h5 class="left-align" style="color:#5a3696;">Please upload a <em>square</em> .jpg photo of your face in front of a white background</h5>
+            <p class="description">Photos that are not square will be stretched into the correct shape and will appear warped</p>
+            <p class="description">We recommend that you use your WildCARD photo, which can be downloaded <a href="https://idmapp.itcs.northwestern.edu/wcphoto/myphoto.cgi">here</a></p>
+           </div>
+           <div class="file-field input-field col">
+            <div class="btn left-align" style="width: 190px; height: 50px;">
+              <span>Choose A File</span>
+              <input id="files" type="file" style="width: 190px; height: 50px;">
+            </div>
+            <div class="col" id="spacer" style="width: 50px; height: 50px;"> 
+            </div>
+           <button class="waves-effect waves-light btn submit-btn" id="submit" type="submit" onclick="submitForm(); return false;" style="width: 190px; height: 50px;" disabled>Submit</button>
+           <div class="file-path-wrapper" style="width: 1px; height: 1px;">
+              <input class="file-path validate" id="path" type="text" placeholder=" ">
+           </div>
+          </div>
+            
+        </div>
+  
+        <div class="row center-align">
+            <div class="input-field col s12" id = "progress"></div>
+            <div class="center-align" id="preview"></div>
+        </div>
+    </div>
+        
+        
+      <div id="success" style="display:none">
+      <div style="width: 400px; height: 50px;"></div>
+        <h4 class="left-align" style="color:#5a3696;">Success!</h4>
+        <p class="description" style="font:400 15px;">Your file has been successfully uploaded.<br>You can update your directory photo at any time by returning to this form.</p><br>
+        <div class="row">
+            <button class="waves-effect waves-light btn submit-btn" type="submit" onclick="startOver(); return false;">Start Over</button>  
+        </div>
+      </div>
+    </form>
+
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <!-- <script src="https://gumroad.com/js/gumroad.js"></script>
+    -->
+
+    <script>
+
+      var file, 
+          reader = new FileReader();
+        
+      reader.onloadend = function(e) {
+            
+        if (e.target.error != null) {
+          showError("File " + file.name + " could not be read.");
+          return;
+        }
+          
+        if (file.name.substring(file.name.length, file.name.length - 4) != '.jpg') {
+          showError('File must be a .jpg');
+          return;
+        }
+        
+        var netid = $('#netid').val();
+        if (!netid) {
+          showError('NetID field cannot be blank');
+          return;
+        }
+        
+        if ((netid.length > 7) || (netid.length < 6)){
+          showError('Incorrect NetID format.<br>NetIDs are 3 letters, followed by 3 or 4 numbers.');
+          return;
+        }
+        
+        
+        else {
+            
+            // Create a reference first
+            var imageRef = storageRef.child($('#netid').val() + '.jpg');
+            
+            imageRef.putString(e.target.result, 'data_url').then(function(snapshot) {
+                console.log('Uploaded!');
+                showSuccess('OK');
+            },function(error) {
+                console.log('Upload error');
+                console.log(error);
+                showError(error);
+            });            
+        }
+      };
+
+      function showSuccess(e) {
+        if (e === "OK") { 
+          $('#forminner').hide();
+          $('#success').show();
+        } else {
+          showError(e);
+        }
+      }
+      
+      function startOver() {
+      
+          showMessage('');
+          $('#netid').val('');
+          $('#uploadText').val('');
+          $('#files').val('');
+
+          $('#success').hide();
+          $('#forminner').show();
+      }
+
+      function submitForm() {
+        var files = $('#files')[0].files;
+
+        if (files.length === 0) {
+          showError('Please select a file to upload');
+          return;
+        }
+
+        file = files[0];
+
+        if (file.size > 1024 * 1024 * 5) {
+          showError('The file size should be < 5 MB');
+          return;
+        }
+
+        showMessage('Uploading file..');
+
+        reader.readAsDataURL(file);
+
+      }
+        
+        document.getElementById('path').addEventListener('change',filePicked, false);
+        window.addEventListener('change',filePicked,false);
+        
+        function filePicked(){
+            if($('#path').val())
+            {
+                var theFileObj = $('#files')[0].files[0];
+                
+                blobToDataURL(theFileObj, function(dataurl){
+                    var preview = document.getElementById('preview');
+                    preview.innerHTML = '\n<br>\n<p class="center-align" style="color:#646464;">Preview of how your image will be displayed in the directory:</p>\n<br>';
+                    preview.innerHTML += '\n<img src="' + dataurl + '" style="width:100px; height:100px;">';
+                });
+                
+                document.getElementById('submit').disabled = false;
+            }
+        }
+        
+      function blobToDataURL(blob, callback) {
+            var a = new FileReader();
+            a.onload = function(e) {callback(e.target.result);}
+            a.readAsDataURL(blob);
+        }
+        
+      function showError(e) {
+        $('#progress').addClass('red-text').html(e);
+      }
+
+      function showMessage(e) {
+        $('#progress').removeClass('red-text').html(e);
+      }
+
+
+    </script>
+
+  </body>
+
+</html>

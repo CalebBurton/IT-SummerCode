@@ -1,0 +1,1020 @@
+/****************************************************
+*    
+*  Default Northwestern Styles
+*
+*****************************************************/ 
+
+button[type='button'] {
+    white-space: nowrap;
+}
+
+
+.feature-three-col div a img {
+    /* width: 100%; */
+    height: 250px;
+    margin: auto;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-y: auto;
+}
+
+body {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    color: #342f2e;
+    background: #fff;
+    min-width: 98%;
+    height: 100%;
+    overflow-x: hidden;
+    line-height: 1;
+}
+
+#main-content {
+    font: 1.3em "Akkurat Pro Regular", Arial, sans-serif;
+    line-height: 1.7em;
+    outline: none; !important
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    font: 46px/1.2em "Campton Bold", Tahoma, sans-serif !important;
+    color: #4e2a84;
+    margin-bottom: 1rem;
+}
+
+.feature-three-col {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.feature-three-col .feature-box {
+    width: 25%;
+    float: left;
+    background: #CDCAE7;
+    margin-left: 5%;
+    position: relative;
+}
+
+.feature-three-col .feature-box:first-child {
+    margin-left: 0%;
+}
+
+.topThree .feature-three-col .feature-box:first-child {
+    margin-left: 7.5%;
+}
+
+a.button {
+    font: 16px "Akkurat Pro Bold", "Arial Black", sans-serif;
+    color: #fff;
+    background: #4e2a84;
+    text-align: center;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    font-weight: normal;
+    margin: 0 .5em .5em 0;
+    padding: .8em 1em .7em 1em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    min-width: 165px;
+    border: none;
+}
+
+
+/* Light purple overlay that slides across buttons when you hover over them */
+a.button:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #b6acd1;
+    transform: scaleX(0); /* overlay is initially hidden */
+    transform-origin: 0 50%;
+    transition-property: transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+/* Show the light purple overlay on a mouse hover */
+a.button:hover:before {
+    transform: scaleX(1);
+}
+
+/* Buttons in the main document body */
+.feature-box a.button {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+}
+
+@font-face {
+    font-family: "Akkurat Pro Regular";
+    src: url("https://kb.northwestern.edu/images/group293/71903/fonts/AkkuratProRegular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Akkurat Pro Bold";
+    src: url("https://kb.northwestern.edu/images/group293/71903/fonts/AkkuratProBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Campton Bold";
+    src: url("https://kb.northwestern.edu/images/group293/71903/fonts/CamptonBold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+/****************************************************
+*    
+*   Navigation bar at top of page
+*
+*****************************************************/  
+
+/*
+
+.nav-wrapper {
+    display: flex;
+    
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    background-color: #4e2a84;
+}
+
+.nav-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    
+    margin: auto;
+
+    width: 100%;
+    line-height: 0;
+    padding: 0;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+    text-align: left;
+
+    border: 1px solid #4e2a84;
+    border-right: none;
+
+    cursor: pointer;
+
+    background-color: #fff;
+    color: #4e2a84;
+    text-align: center;
+    font: 18px "Akkurat Pro Bold", "Campton Bold", sans-serif;
+    line-height: 100%;
+}
+
+.nav-dropdown:hover {
+    background: #f0f0f0;
+    transition: .3s;
+}
+
+.nav-dropdown-title {
+    padding: 1rem 1.5rem;
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f0f0f0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    text-align: left;
+    background: #f0f0f0;
+    min-width: 350px;
+    width: 150%;
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+*/
+
+
+
+@media (max-width: 625px) {
+    body {
+        /* background-color: pink; */
+    }
+    
+    .nav-dropdown {
+        display: flex !important;
+        flex-flow: column nowrap;
+    }
+    
+    .nav-dropdown-content {
+        top: 50px;
+        width: 100% !important;
+        right: 0;
+        left: 0;
+    }
+}
+
+
+
+.nav-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    background-color: #4e2a84;
+}
+
+.nav-row {
+    display: table;
+    margin: auto;
+
+    width: 100%;
+    line-height: 0;
+    padding: 0;
+    background-color: #fff;
+}
+
+.nav-dropdown {
+    position: relative;
+    display: table-cell;
+    text-align: left;
+
+    border: 1px solid #4e2a84;
+    border-right: none;
+
+    cursor: pointer;
+
+    background-color: #fff;
+    color: #4e2a84;
+    text-align: center;
+    font: 18px "Akkurat Pro Bold", "Campton Bold", sans-serif;
+    line-height: 100%;
+}
+
+.nav-dropdown:hover {
+    background: #f0f0f0;
+    transition: .3s;
+}
+
+.nav-dropdown-title {
+    padding: 1rem 1.5rem;
+}
+
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f0f0f0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+    text-align: left;
+    background: #f0f0f0;
+    min-width: 350px;
+    width: 150%;
+
+    /*
+    border-color: rgb(204, 204, 204);
+    border-style: solid;
+    border-width: 0px 2px 2px 2px;
+    */
+
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+}
+
+.dropdown-arrow {
+    background: url(https://kb.northwestern.edu/images/group293/71903/icons/arrow-down-ltpurple.svg) no-repeat 50%;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-left: .5em;
+}
+
+.nav-dropdown-content a {
+    padding: .75em 1em;
+    margin-left: 1rem;
+    display: block;
+}
+.nav-dropdown-content a:not(.button) {
+    color: #4e2a84;
+    text-decoration: none;
+}
+.nav-dropdown-content a.button {
+    margin-top: 1.25em;
+    color: white;
+    text-decoration: none;
+}
+.nav-dropdown-content a.button:hover {
+    text-decoration: none;
+}
+
+
+.nav-dropdown-content-two-col {
+    width: 500%;
+    max-width: 800px;
+}
+
+.nav-column-left,
+.nav-column-right {
+    display: inline-block;
+    margin: 1%;
+    width: 48%;
+}
+.nav-column-left{ float:left; }
+.nav-column-right{ float:right; }    
+
+.nav-dropdown-content p {
+    font: 1.25em "Campton Bold", Helvetica, sans-serif;
+    color: #000;
+    margin: 0.75rem 0 0.25rem 0.5rem;
+}
+
+p.intro {
+    font: 1.75em "Campton Bold", Helvetica, sans-serif;
+    color: #4e2a84;
+    margin: 0 0 1rem 0;
+    padding-right: 2rem;
+    font-size: 30px;
+}
+
+
+.nav-dropdown-content a:not(.button):hover {
+    text-decoration: underline;
+}
+
+
+/*  Affects the dropdown options on the right half of the nav bar. Works for up to 10 dropdowns.
+
+    There's probably a better way to do this, where the dropdowns flip from left-aligned to right-
+    aligned when they bump up against the right edge of the screen, but this will work for now.
+*/
+.nav-dropdown:first-child:last-child .nav-dropdown-content,
+.nav-dropdown:nth-child(n+2):nth-last-child(-n+1) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+3):nth-last-child(-n+2) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+4):nth-last-child(-n+3) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+5):nth-last-child(-n+4) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+6):nth-last-child(-n+5) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+7):nth-last-child(-n+6) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+8):nth-last-child(-n+7) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+9):nth-last-child(-n+8) .nav-dropdown-content,
+.nav-dropdown:nth-child(n+10):nth-last-child(-n+9) .nav-dropdown-content {
+  right: 0;
+}
+
+
+
+/****************************************************
+*    
+*   Pseudo-footer for displaying our hours
+*
+*****************************************************/
+.hours-footer {
+    /*
+    width: 120%;
+    position: absolute;
+    left: -10%;
+    */
+    padding: 50px 0px;
+    background: #4e2a84;
+    font: 1.3em "Akkurat Pro Regular", Arial, sans-serif;
+    color: white !important;
+}
+
+p.hours-title {
+    font: 1.75em "Campton Bold", Helvetica, sans-serif;
+    color: white;
+    margin: 0 0 1rem 0;
+    /* padding-right: 2rem; */
+    font-size: 30px;
+}
+
+.hours-two-col {
+    max-width: 1000px;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.hours-column-left,
+.hours-column-right {
+    display: inline-block;
+    margin: 0.25%;
+    width: 45%;
+    min-width: 410px;
+}
+
+.hours-column-left{
+    margin-bottom: 35px;
+}
+
+.hoursBox-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.hoursBox-left {
+    margin-left: 5%;
+}
+.hoursBox-right {
+    text-align: right;
+}
+
+.hoursBox-normalHours {
+    min-height: 145px;
+    margin: 10px 0px;
+}
+.hoursBox-summerHours {
+}
+
+@media (max-width: 625px) {
+    .hours-two-col {
+        width: 400px;
+    }
+    
+    .hours-column-left, .hours-column-right {
+        min-width: 340px;
+    }
+    
+    .hoursBox-normalHours {
+        min-height: 0px;
+    }
+    
+    .hoursBox-wrapper {
+        border-top: 1px solid grey;
+        width: 90%;
+    }
+}
+
+
+/****************************************************
+*    
+*   Tooltip popup that appears over the "open core tools" button when you hover
+*
+*****************************************************/
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -40%;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+
+/****************************************************
+*    
+*   Button overlay that  appears over image links in the main body of the page
+*
+*****************************************************/
+
+.feature-box img {
+    opacity: 1;
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.feature-box .imageLinkButton {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+
+    transition: width 0.3s ease 0.05s, margin-left 0.3s ease 0.05s, transform 0.2s ease;
+}
+
+.feature-box .imageLinkText {
+    font: 16px "Akkurat Pro Bold", "Arial Black", sans-serif;
+    background-color: #4e2a84;
+    color: #fff;
+    padding: 16px;
+
+    transition: 0.5s ease;
+}
+
+.feature-box:hover img {
+    opacity: 0.3;
+}
+
+.feature-box:hover .imageLinkButton {
+    opacity: 1;
+    width: 70%;
+    transform: translate(0%, -175%);
+    margin-left: 15%;
+}
+
+
+/****************************************************
+*    
+*   Slideshow of props/kudos
+*
+*****************************************************/
+
+.mySlides {
+    display: none;
+    height: 250px;
+    color: black;
+}
+
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/*****************************************************/
+
+.kudos-info {
+    height: 300px;
+    color: black;
+    overflow: hidden;
+}
+
+.kudos-wrapper {
+    background: lavender;
+    border-radius: 15px;
+    max-width: 1200px;
+    width: 95%;
+    position: relative;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+.kudos-header {
+    width: 70%;
+    text-align: center;
+    font-size: 2em;
+    margin: 15px;
+    margin: auto;
+    border-bottom: 1px solid white;
+    line-height: 1.4em;
+}
+
+/* Next & previous buttons */
+.prev-slide, .next-slide {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: black;
+    font-weight: bold;
+    font-size: 2em;
+    transition: 0.6s ease;
+    text-decoration: none;
+}
+
+.next-slide {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev-slide {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev-slide:hover, .next-slide:hover {
+    background-color: rgba(255,255,255,0.8);
+    text-decoration: none !important;
+}
+
+.kudos-text {
+    color: black;
+    padding: 8px 12px;
+    bottom: 120px;
+    width: 100%;
+
+    width: 90%;
+    margin: auto;  
+}
+
+#include_doc_64441 {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.kudos-person {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    display: inline-block;
+    min-height: 200px;
+    width: 30%;
+    margin-left: 3%;
+    padding: 0px 5px;
+    font-weight: bold;
+    font-size: 1.05em;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+.kudos-person ul {
+    margin: 0;
+    margin-top: 0.65em;
+    padding-left: 0px;
+    font-weight: normal;
+    font-size: 0.75em;
+    line-height: 1.25em;
+}
+
+.slide-number-text {
+    display: none;
+
+    color: black;
+    font-size: 1em;
+    padding: 10px 10px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+}
+
+.dot-container {
+    text-align: center;
+}
+
+.dot {
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+
+/*
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*/
+
+
+
+
+/****************************************************
+*    
+*   Pop-up overlay for tips of the day.
+*
+*   See also:
+*      https://codepen.io/adrienlochon/pen/Jgjrx
+*      https://codepen.io/anon/pen/xZBovY?editors=0110
+*      http://luxiyalu.com/scrolling-on-overlay/
+*
+*****************************************************/
+
+#tipbox {
+    position: fixed;
+    padding: 10px;
+    left: 50%;
+    top: 50%;
+    
+    min-width: 500px;
+    width: 50%;
+    max-width: 800px;
+    margin-left: -25%;
+    min-height: 400px;
+    /* No height settings. Defined below in #tipbox-body */
+    margin-top: -225px;
+    
+    background: #eeeeee;
+    z-index: 20;
+    border-radius: 20px;
+
+}
+
+#tipbox-wrapper { 
+    position: fixed; 
+    /* overflow-y: scroll; */
+    overflow: hidden;
+    z-index: 19;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background:  rgba(40,40,40, .75);
+}
+
+#tipbox a.boxclose {
+    font-size: 20px;
+    text-align: center;
+    color: #aaaaaa;
+    position: absolute;
+    right: 23px;
+    top: 20px;
+}
+
+#tipbox-header{
+    font-size: 2.5em;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 18px;
+
+}
+
+#tipbox-body {
+    width: 85%;
+    margin: auto;
+    height: 300px; /* Fixed box size, so it doesn't scale with content */
+    overflow: auto; /* Lets you scroll when the content doesn't fit in the box */
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+#tipbox-body li {
+    margin-left: 7.5%; /* Indents list items. Looks weird otherwise. */
+}
+
+.tip {
+    display: none;
+}
+
+.tip.active-tip {
+    display: block;
+}
+
+/* Gradient overlay to show content overflow. Implemented differently now using jQuery and .arrow-down *
+.tip:before {
+        content: '';
+        position: absolute;
+        top: 51%;
+        right: 8%; * needs to be more than the left 5%, so that scrollbar isn't covered by overlay *
+        left: 5%;
+        height: 30%;
+        background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1) 80%);
+}
+*/
+
+/* Next & previous buttons. See .prev-slide and .next-slide for full implementation */
+.tip-arrow {
+    margin-top: 0px;
+}
+
+.tipbox-footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.overflowing.overflow-arrow-shown:after {
+    content: "";
+    background-image: url(https://kb.northwestern.edu/images/group293/71903/icons/arrow-down-ltpurple.svg);
+    background-position: 50%;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    background-color: rgba(255,255,255,0.95);
+    
+    border: 2px solid #cccccc;
+    border-radius: 999px;
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    
+    height: 25px;
+    width: 40px;
+    margin-left:-20px;
+    
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    z-index: 200;
+}
+
+@keyframes bounce {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+
+/****************************************************
+*    
+*   Header boxes for timesheets, payday, warnings.
+*
+*****************************************************/
+
+.headerInfoBox{
+    min-height:80px;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 200;
+    line-height: 2.25em;
+    border-radius: 15px;
+    border: 1px solid #AEAEAE;
+    display: none;
+}
+
+a.boxclose{
+    float:right;
+    margin-top:-15px;
+    margin-right:-15px;
+    cursor:pointer;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 11px 3px; 
+    color: black;
+    text-decoration: none;
+}
+
+div#page-content a.boxclose:hover {
+    text-decoration: none !important;
+}
+
+.boxclose:before {
+    content: "×";
+}
+
+#notificationDiv{
+    background: rgb(232, 141, 141);
+    text-align: center;
+}
+
+#payDayDiv{
+    background: rgb(141, 232, 159);
+    text-align: center;
+}
+
+#timeSheetDiv{
+    text-align: center;
+    background: rgb(255, 255, 140);
+}
+
+
+
+
+/****************************************************
+*    
+*   Tweaking the KB frame
+*
+*****************************************************/
+
+
+div#page-content h2.title + div { /* gets rid of the box that holds the "show changes" and "edit this page" buttons because they're unnecessary and ugly */
+    display: none;
+}
+
+/*
+div#page-content .boxlink {
+    display: none; /* Gets rid of the "show changes" and "edit this page" buttons because they're unnecessary and ugly *
+}
+*/
+
+/* Gets rid of the "unhelpful" feedback button because people are trolls and don't need that power */
+span#vote-no {
+    display: none;
+}
+span#count-no {
+    display: none;
+}
+
+a.boxlink.recursive {
+    display: none; /* hides the little "edit this section" button on externally-linked Include Docs */
+}
+
+div#top-links-int{
+    display: none; /* hides the "sign out" button at the very top of the page, which takes up too much space */
+}
+
+h2.title {
+    display: none; /* hides the big title that says CONWEB. Integrating that into the logo instead. */
+}
+
+
+/* For some reason these tags aren't working like they're supposed to. Working around that with CSS */
+em {
+    font-style: italic;
+}
+strong {
+    font-weight: bold; 
+}
+
+
+
+/* Countering all the super specific global CSS */
+
+div#page-content a.button {
+    color: white !important;  
+}
+div#page-content a.button:hover {
+   text-decoration: none !important;  
+}
+div#page-content a.next-slide:hover {
+   text-decoration: none !important;  
+}
+div#page-content a.prev-slide:hover {
+   text-decoration: none !important;  
+}

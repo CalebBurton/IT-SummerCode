@@ -1,0 +1,1144 @@
+<!--
+<link rel="shortcut icon" type="image/x-icon" href="https://kb.northwestern.edu/images/group293/71903/icons/favicon.ico">
+-->
+
+<style>
+
+/****************************************************
+ *    
+ *  Default Northwestern Styles
+ *
+*****************************************************/ 
+    
+    button[type='button'] {
+        white-space: nowrap;
+    }
+
+    
+    .feature-three-col div a img {
+        /* width: 100%; */
+        height: 250px;
+        margin: auto;
+    }
+
+    /* hide a 3rd feature box that has no content entered */
+    div.feature-box:empty {
+        visibility: hidden;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        overflow-y: scroll;
+    }
+
+    body {
+        /* font: 62.5%/1.7em "Akkurat Pro Regular", Arial, sans-serif; */
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        color: #342f2e;
+        background: #fff;
+        min-width: 98%;
+        height: 100%;
+        overflow-x: hidden;
+        line-height: 1;
+    }
+
+    #main-content {
+        font: 1.3em "Akkurat Pro Regular", Arial, sans-serif;
+        line-height: 1.7em;
+        outline: none; !important
+    }
+
+    img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+
+    h2 {
+        font: 46px/1.2em "Campton Bold", Tahoma, sans-serif !important;
+        color: #4e2a84;
+        margin-bottom: 1rem;
+    }
+
+    .feature-three-col {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .feature-three-col .feature-box {
+        width: 25%;
+        float: left;
+        background: #CDCAE7;
+        margin-left: 5%;
+        position: relative;
+    }
+
+    .feature-three-col .feature-box:first-child {
+        margin-left: 0%;
+    }
+
+    .topThree .feature-three-col .feature-box:first-child {
+        margin-left: 7.5%;
+    }
+
+    a.button {
+        font: 16px "Akkurat Pro Bold", "Arial Black", sans-serif;
+        color: #fff;
+        background: #4e2a84;
+        text-align: center;
+        text-decoration: none;
+        /* text-transform: uppercase; */
+        font-weight: normal;
+        margin: 0 .5em .5em 0;
+        padding: .8em 1em .7em 1em;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        -moz-osx-font-smoothing: grayscale;
+        position: relative;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        min-width: 165px;
+        border: none;
+    }
+
+
+    /* Light purple overlay that slides across buttons when you hover over them */
+    a.button:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #b6acd1;
+        transform: scaleX(0); /* overlay is initially hidden */
+        transform-origin: 0 50%;
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+    }
+
+    /* Show the light purple overlay on a mouse hover */
+    a.button:hover:before {
+        transform: scaleX(1);
+    }
+
+    /* Buttons in the main document body */
+    .feature-box a.button {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 0;
+    }
+
+    @font-face {
+        font-family: "Akkurat Pro Regular";
+        src: url("https://kb.northwestern.edu/images/group293/71903/fonts/AkkuratProRegular.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Akkurat Pro Bold";
+        src: url("https://kb.northwestern.edu/images/group293/71903/fonts/AkkuratProBold.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: "Campton Bold";
+        src: url("https://kb.northwestern.edu/images/group293/71903/fonts/CamptonBold.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+     
+    
+    
+/****************************************************
+ *    
+ *   Navigation bar at top of page
+ *
+*****************************************************/  
+
+    .nav-test{
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        background-color: #4e2a84;
+    }
+    
+    .nav-test-container{
+        display: table;
+        margin: auto;
+        
+        width: 100%;
+        line-height: 0;
+        padding: 0;
+        background-color: #fff;
+    }
+
+    .dropdown-arrow {
+        background: url(https://kb.northwestern.edu/images/group293/71903/icons/arrow-down-ltpurple.svg) no-repeat 50%;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        margin-left: .5em;
+    }
+    
+    .nav-test-dropdown {
+        position: relative;
+        display: table-cell;
+        text-align: left;
+        
+        border: 1px solid #4e2a84;
+        border-right: none;
+        
+        cursor: pointer;
+        
+        background-color: #fff;
+        color: #4e2a84;
+        text-align: center;
+        font: 18px "Akkurat Pro Bold", "Campton Bold", sans-serif;
+        line-height: 100%;
+    }
+    
+    .nav-test-dropdown:hover {
+        background: #f0f0f0;
+        transition: .3s;
+    }
+    
+    .nav-test-dropdown-title {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-test-dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f0f0f0;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        
+        text-align: left;
+        background: #f0f0f0;
+        min-width: 350px;
+        width: 150%;
+        
+        /*
+        border-color: rgb(204, 204, 204);
+        border-style: solid;
+        border-width: 0px 2px 2px 2px;
+        */
+        
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    }
+    
+    .nav-test-dropdown-content a {
+        padding: .75em 1em;
+        margin-left: 1rem;
+        display: block;
+    }
+    .nav-test-dropdown-content a:not(.button) {
+        color: #4e2a84;
+        text-decoration: none;
+    }
+    .nav-test-dropdown-content a.button {
+        margin-top: 1.25em;
+        color: white;
+        text-decoration: none;
+    }
+    .nav-test-dropdown-content a.button:hover {
+        text-decoration: none;
+    }
+    
+    
+    .nav-test-dropdown-content-two-col {
+        width: 500%;
+        max-width: 800px;
+    }
+    
+    .nav-test-column-left,
+    .nav-test-column-right {
+        display: inline-block;
+        margin: 1%;
+        width: 48%;
+    }
+    .nav-test-column-left{ float:left; }
+    .nav-test-column-right{ float:right; }    
+    
+    .nav-test-dropdown-content p {
+        font: 1.25em "Campton Bold", Helvetica, sans-serif;
+        color: #000;
+        margin: 0.75rem 0 0.25rem 0.5rem;
+    }
+    
+    p.intro {
+        font: 1.75em "Campton Bold", Helvetica, sans-serif;
+        color: #4e2a84;
+        margin: 0 0 1rem 0;
+        padding-right: 2rem;
+        font-size: 30px;
+    }
+    
+
+    .nav-test-dropdown-content a:not(.button):hover {
+        text-decoration: underline;
+    }
+    
+    
+    /*  Affects the dropdown options on the right half of the nav bar. Works for up to 10 dropdowns.
+    
+        There's probably a better way to do this, where the dropdowns flip from left-aligned to right-
+        aligned when they bump up against the right edge of the screen, but this will work for now.
+    */
+    .nav-test-dropdown:first-child:last-child .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+2):nth-last-child(-n+1) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+3):nth-last-child(-n+2) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+4):nth-last-child(-n+3) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+5):nth-last-child(-n+4) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+6):nth-last-child(-n+5) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+7):nth-last-child(-n+6) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+8):nth-last-child(-n+7) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+9):nth-last-child(-n+8) .nav-test-dropdown-content,
+    .nav-test-dropdown:nth-child(n+10):nth-last-child(-n+9) .nav-test-dropdown-content {
+      right: 0;
+    }
+ 
+    
+
+/****************************************************
+ *    
+ *   Pseudo-footer for displaying our hours
+ *
+*****************************************************/
+    .hours-footer {
+        /*
+        width: 120%;
+        position: absolute;
+        left: -10%;
+        */
+        padding: 50px 0px;
+        background: #4e2a84;
+        font: 1.3em "Akkurat Pro Regular", Arial, sans-serif;
+        color: white !important;
+    }
+    
+    p.hours-title {
+        font: 1.75em "Campton Bold", Helvetica, sans-serif;
+        color: white;
+        margin: 0 0 1rem 0;
+        padding-right: 2rem;
+        font-size: 30px;
+    }
+    
+    .hours-two-col {
+        width: 90%;
+        max-width: 1000px;
+        margin: auto;
+    }
+    
+    .hours-column-left,
+    .hours-column-right {
+        display: inline-block;
+        margin: 0.25%;
+        width: 45%;
+        min-width: 410px;
+        float:left;
+    }
+    
+    .hours-column-left{
+        margin-bottom: 5%;
+    }
+    
+    .hours-column-right{
+        margin-left: 2%;
+    }
+    
+    
+    .hoursBox-left {
+        float:left;
+        margin-left: 5%;
+    }
+    .hoursBox-right {
+        float:right;
+        margin-right: 5%;
+    }
+
+    
+/****************************************************
+ *    
+ *   Tooltip popup that appears over the "open core tools" button when you hover
+ *
+*****************************************************/
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 20px;
+        position: absolute;
+        z-index: 1;
+        bottom: 130%;
+        left: 50%;
+        margin-left: -30%;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+    
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+    
+    
+    
+/****************************************************
+ *    
+ *   Button overlay that  appears over image links in the main body of the page
+ *
+*****************************************************/
+    
+    .feature-box img {
+        opacity: 1;
+        display: block;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+    
+    .feature-box .imageLinkButton {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 0;
+        position: absolute;
+        bottom: 0;
+        
+        transition: width 0.3s ease 0.05s, margin-left 0.3s ease 0.05s, transform 0.2s ease;
+    }
+    
+    .feature-box .imageLinkText {
+        font: 16px "Akkurat Pro Bold", "Arial Black", sans-serif;
+        background-color: #4e2a84;
+        color: #fff;
+        padding: 16px;
+        
+        transition: 0.5s ease;
+    }
+
+    .feature-box:hover img {
+        opacity: 0.3;
+    }
+
+    .feature-box:hover .imageLinkButton {
+        opacity: 1;
+        width: 70%;
+        transform: translate(0%, -175%);
+        margin-left: 15%;
+    }
+    
+    
+/****************************************************
+ *    
+ *   Slideshow of props/kudos
+ *
+*****************************************************/
+    
+    .mySlides {
+        display: none;
+        height: 250px;
+        color: black;
+    }
+    
+    .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+    }
+    
+    /*****************************************************/
+    
+    .kudos-info {
+        height: 300px;
+        color: black;
+        border-radius: 15px;
+    }
+
+    .kudos-wrapper {
+        max-width: 1200px;
+        width: 95%;
+        position: relative;
+        margin: auto;
+    }
+    
+    .kudos-header {
+        width: 100%;
+        top: 0;
+        text-align: center;
+        font-size: 2em;
+        margin: 15px;
+        margin-top: 2rem;
+    }
+    
+    /* Next & previous buttons. Defaults to left side. */
+    .prev-slide, .next-slide {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        text-decoration: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next-slide {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev-slide:hover, .next-slide:hover {
+        background-color: rgba(255,255,255,0.8);
+        text-decoration: none !important;
+    }
+
+    .slide-text, .kudos-text {
+        color: black;
+        padding: 8px 12px;
+        bottom: 120px;
+        width: 100%;
+        
+        width: 90%;
+        margin: auto;
+    }
+    
+    .kudos-person {
+        margin-top: 10px;
+        display: inline-block;
+        min-height: 200px;
+        width: 33%;
+        padding: 0px 5px;
+        font-weight: bold;
+        font-size: 1.05em;
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+    
+    .kudos-person ul {
+        margin: 0;
+        margin-top: 0.65em;
+        padding-left: 0px;
+        font-weight: normal;
+        font-size: 0.75em;
+        line-height: 1.25em;
+    }
+    
+    .slide-number-text {
+        display: none;
+        
+        color: black;
+        font-size: 1em;
+        padding: 10px 10px;
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        background: rgba(255,255,255,0.8);
+        border-radius: 10px;
+    }
+    
+    .dot-container {
+        text-align: center;
+    }
+
+    .dot {
+        height: 13px;
+        width: 13px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+
+    .active {
+        background-color: #717171;
+    }
+
+    
+/*
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*********************************************************
+*/
+    
+    
+
+    
+/****************************************************
+ *    
+ *   Pop-up overlay for tips of the day
+ *
+*****************************************************/
+    
+    #tipBox {
+        display: none;
+        position: fixed;
+        
+        padding: 10px;
+        min-width: 300px;
+        width: 50%;
+        max-width: 800px;
+        left: 50%;
+        margin-left: -25%;
+        
+        min-height: 400px;
+        /* No height settings. Defined below in #tipInfo */
+        top: 25%;
+        margin-top: -4%;
+        
+        line-height: 1.35;
+        
+        background: #FFF;
+        z-index: 20;
+        -webkit-box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+        box-shadow:  0px 0px 0px 9999px rgba(0, 0, 0, 0.5);
+        
+    }
+    
+    #tipHeader{
+        font-size: 2.5em;
+        text-align: center;
+        
+    }
+    
+    #tipInfo {
+        width: 90%;
+        margin: auto;
+        height: 300px; /* Fixed box size, so it doesn't scale with content */
+        overflow: scroll; /* Lets you scroll when the content doesn't fit in the box */
+        padding-right: 15px; /* Keeps the text from bumping into the scrollbar */
+        padding-bottom: 80px; /* Gives extra scrolling space */
+    }
+    
+    #tipInfo li {
+        margin-left: 7.5%; /* Indents list items. Looks weird otherwise. */
+    }
+    
+    #tipNavWrapper {
+    	text-align: center;
+        position: relative;
+    }
+    
+    .tipNavLinks {
+    	background: rgba(0, 10, 10, 0.15);
+        cursor: pointer; /* makes it more obvious that the button is clickable */
+        width: 20%;
+        overflow: hidden;
+    }
+    
+    .tip {
+        display: none;
+        
+    }
+    
+    .tip:before {
+            content: '';
+            position: absolute;
+            top: 51%;
+            right: 8%; /* needs to be more than the left 5%, so that scrollbar isn't covered by overlay */
+            left: 5%;
+            height: 30%;
+            background-image: linear-gradient(to bottom,rgba(0,0,0,0),rgba(255,255,255,1) 80%);
+    }
+    
+    #tipBack{
+		float: left;
+    }
+    
+    #tipNext{
+        float: right;
+    }
+    
+    #tipOkay{
+        background: rgba(0, 10, 10, 0.4);
+        /* line-height: 3em; /* Same as "height", to center text */
+        width: 50%;
+        margin: auto;
+    }
+    
+    
+    /* For some reason these tags aren't working like they're supposed to. Working around that with CSS */
+    em {
+        font-style: italic;
+    }
+    strong {
+        font-weight: bold; 
+    }
+
+    
+/****************************************************
+ *    
+ *   Header boxes for timesheets, payday, warnings.
+ *
+*****************************************************/
+    
+    .headerInfoBox{
+        min-height:80px;
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+        margin-bottom: 20px;
+        font-size: 1.2em;
+        font-weight: 200;
+        line-height: 2.25em;
+        border-radius: 15px;
+        border: 1px solid #AEAEAE;
+        display: none;
+    }
+    
+    a.boxclose{
+        float:right;
+        margin-top:-15px;
+        margin-right:-15px;
+        cursor:pointer;
+        color: #fff;
+        font-size: 1em;
+        font-weight: bold;
+        display: inline-block;
+        line-height: 0px;
+        padding: 11px 3px; 
+        color: black;
+        text-decoration: none;
+    }
+
+    .boxclose:before {
+        content: "×";
+    }
+    
+    #notificationDiv{
+        background: rgb(232, 141, 141);
+        text-align: center;
+    }
+    
+    #payDayDiv{
+        background: rgb(141, 232, 159);
+        text-align: center;
+    }
+    
+    #timeSheetDiv{
+        text-align: center;
+        background: rgb(255, 255, 140);
+    }
+    
+
+    
+    
+/****************************************************
+ *    
+ *   Tweaking the KB frame
+ *
+*****************************************************/
+    
+    div#page-content .boxlink {
+        display: none; /* Gets rid of the "show changes" and "edit this page" buttons because they're unnecessary and ugly */
+    }
+    
+    /* Gets rid of the "unhelpful" feedback button because people are trolls and don't need that power */
+    span#vote-no {
+        display: none;
+    }
+    span#count-no {
+        display: none;
+    }
+    
+    a.boxlink.recursive {
+        display: none; /* hides the little "edit this section" button on externally-linked Include Docs */
+    }
+    
+    div#top-links-int{
+        display: none; /* hides the "sign out" button at the very top of the page, which takes up too much space */
+    }
+    
+    h2.title {
+        display: none; /* hides the big title that says CONWEB. Integrating that into the logo instead. */
+    }
+    
+    /*
+    
+    CON - school of com
+    W - weinberg, kinda
+    EB - libararies
+    
+    */
+    
+/* Countering all the super specific global CSS that Phil added*/
+    
+    div#page-content a.button {
+        color: white !important;  
+    }
+    div#page-content a.button:hover {
+       text-decoration: none !important;  
+    }
+    div#page-content a.next-slide:hover {
+       text-decoration: none !important;  
+    }
+    div#page-content a.prev-slide:hover {
+       text-decoration: none !important;  
+    }
+
+
+</style>
+
+
+<script>
+
+    // Opens all core services as tabs
+    function openCore() {
+        var wiki = window.open("http://wiki.it.northwestern.edu/wiki/index.php/Service_Wiki");
+        var kb = window.open("https://kb.northwestern.edu/internal");
+        var fp = window.open("https://itsm.northwestern.edu/footprints");
+        var nuval = window.open("http://nuvalidate.northwestern.edu/admin");
+        var directory = window.open("http://directory.northwestern.edu/?verbose=1");
+        
+        if(wiki && kb && fp && nuval && directory){
+            // successfully opened all tabs
+        }
+        else {
+            alert('Opening core tools failed. This is probably because you have not allowed popups on CONWEB.');
+        }
+    }
+    
+    
+    function toggleDropdown(thisLink){
+        
+        if(thisLink.nextElementSibling.style.display == ''){
+            closeAllDropdowns();
+            thisLink.nextElementSibling.style.display = 'block';
+        }
+        else{
+            thisLink.nextElementSibling.style.display = '';
+        }
+    }
+    
+    function closeAllDropdowns(){
+        var allDropdownArr = document.getElementsByClassName('nav-test-dropdown-content');
+        
+        for(var i = 0; i < allDropdownArr.length; i++){
+            allDropdownArr[i].style.display = '';
+        }
+    }
+    
+    // Close all the dropdown menus if the user clicks elsewhere on the page
+    window.onclick = function(event) {
+      if (!event.target.matches('.nav-test-dropdown-content') &&
+          !event.target.matches('.nav-test-dropdown') &&
+          !event.target.matches('.dropdown-arrow') &&
+          !event.target.matches('.nav-test-dropdown-title')) {
+          
+          closeAllDropdowns();
+          
+      }
+    }
+
+    // Shorthand function for hiding and displaying items
+    function disp(id,type) {
+        document.getElementById(id).style.display = type;
+    }
+    
+    // Sets a cookie with a specific name, value, and expiration length (in days)
+    function setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires="+d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    
+    // Retrieves a cookie that matches the given name. If no cookie is found, returns null string.
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+        
+    
+    var today = new Date();
+    var todayDate = today;
+    var today = today.toDateString();
+    var lastTip = getCookie('tipDisp');
+    if(lastTip != today){
+        setCookie('tipDisp',today,1);
+        disp('tipBox','block');
+    }
+    else{
+    }
+    
+    // Replace the KB logo with the conweb logo
+    var topLogo = document.getElementById('group-logo');
+    topLogo.lastChild.firstChild.src = 'https://kb.northwestern.edu/images/group293/71903/icons/NorthwesternConweb.png';
+    
+    // Replace the favicon with a custom one. Makes it look like the old CONWEB icon. Have to do it in javascript or it'll be overwritten
+    var heady = document.getElementsByTagName('head')[0];    
+    
+    window.onload = function() {
+        
+        //disp('tipBox','block');
+        heady.innerHTML += '<link rel="shortcut icon" href="https://kb.northwestern.edu/images/group293/71903/icons/favicon.ico">';
+        getWeekType();
+        
+        
+        // Displays header boxes, for testing
+        /*
+        disp('tipBox','block');
+        disp('payDayDiv','block');
+        disp('timeSheetDiv','block');
+        disp('notificationDiv','block');
+        */
+        
+        
+        /* Uncomment the line below this in order to display the red warning notification box */
+        // disp('notificationDiv','block');
+
+        
+        justTheTips[0].style.display = 'block'; // Display the first tip immediately
+        
+    }
+    
+    function closeBox(closeButton){
+        closeButton.parentElement.style.display = "none";
+        
+        console.log('Close button clicked on:')
+        console.log(closeButton.parentElement.id);
+        switch(closeButton.parentElement.id) {
+            case 'payDayDiv':
+                setCookie('closedPayday','yes',1);
+                break;
+            case 'timeSheetDiv':
+                setCookie('closedTimesheet','yes',1);
+                break;
+            case 'notificationDiv':
+                setCookie('closedWarning','yes',1); // We never actually check this cookie. We could if we wanted to though.
+                break;
+            default:
+                console.log('Unexpected notification box ID');
+                break;
+        }
+    }
+    
+    
+    function getWeekType() {
+        var d = new Date();
+        
+        // Clear out the time info, focus on the date only
+        d.setHours(0);
+        d.setMinutes(0);
+        d.setSeconds(0);
+        d.setMilliseconds(0);
+        
+        var fri = (d.getDay() == 5); // Javascript "Day": Sunday = 0, Monday =1, ..., Friday = 5
+        
+        if(fri){
+            
+            var yearStart = new Date(d.getFullYear(),0,1); // Get first day of year
+            
+            var weekNo = Math.ceil(( ( (d - yearStart) / 86400000) + 1)/7);
+                // Find # days since beginning of year
+                //     Subtract current date (in milliseconds) from Jan 1 (in milliseconds)
+                //     Divide by # of milliseconds in a day (86,400,000)
+                //     Add 1, since otherwise it would be zero-indexed
+                // Divide by 7 to get # of weeks since beginning of year
+                // Round up
+            
+            if(weekNo % 2){
+                if(getCookie('closedPayday') != 'yes'){
+                    document.getElementById('payDayDiv').style.display = 'block';
+                    console.log('payday week');                    
+                }
+            }
+            else{
+                if(getCookie('closedTimesheet') != 'yes'){
+                    document.getElementById('timeSheetDiv').style.display = 'block';
+                    console.log('timecard week');
+                }
+            }   
+        }
+        else{
+            document.getElementById('timeSheetDiv').style.display = '';
+            document.getElementById('payDayDiv').style.display = '';
+        }  
+    }    
+    
+    
+    var justTheTips = document.getElementsByClassName('tip');
+    var numTips = justTheTips.length;
+    
+    var oldTip = 0;
+    var newTip = 0;
+    
+    function changeTip(direction) {
+        
+        if(direction){
+            newTip = (oldTip + 1) % numTips; // Next tip
+        }
+        else{
+            newTip = (oldTip - 1) % numTips; // Previous tip
+        }
+        
+        if(newTip < 0){ // Handles the case where you go backwards from position 0
+            newTip = numTips + newTip;
+        }
+
+        justTheTips[oldTip].style.display = '';
+        justTheTips[newTip].style.display = 'block';
+        
+        oldTip = newTip;
+    }
+    
+    
+    
+    var allKudos = document.getElementsByClassName('kudos-person');
+    var dotContainer = document.getElementsByClassName("dot-container")[0];
+    var kudosIndex = 0;
+    var kudosPages = [];
+    var autoChangeKudos;
+    
+    for (var i = 0; i < allKudos.length; i++) {
+        
+        var j = i % 3;
+        
+        if(kudosPages[kudosIndex]){
+        }
+        else{
+            kudosPages[kudosIndex] = [];
+            dotContainer.innerHTML += '\n<span class="dot" onclick="showKudos(' + kudosIndex + ')"></span>\n';
+        }
+        
+        kudosPages[kudosIndex].push(allKudos[i]);
+        
+        if(j == 0){
+            allKudos[i].style.float = "left";
+        }
+        else if (j == 1){
+        }
+        else if (j == 2){
+            allKudos[i].style.float = "right";
+            kudosIndex++;
+        }
+
+        allKudos[i].style.display = "none";
+    }
+    
+   
+    
+    function showKudos(n){
+        
+        var dots = document.getElementsByClassName("dot");
+        
+        for (var i = 0; i < kudosPages.length; i++) {
+            if(i == n){
+                for (var j = 0; j < kudosPages[i].length; j++) {
+                    kudosPages[i][j].style.display = ""; 
+                }
+                dots[i].className += " active";
+            }
+            else{
+               for (var j = 0; j < kudosPages[i].length; j++) {
+                   kudosPages[i][j].style.display = "none";
+                }
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+        }
+        kudosIndex = n;
+        autoChangeKudos = false; // turn off the auto-change if someone manually changes slides
+    }
+
+    showKudos(0);
+    autoChangeKudos = true; // turn on auto-cycling when page first loads
+    
+    function changeKudos(direction) {
+        
+        if(direction){
+            kudosIndex = (kudosIndex + 1) % kudosPages.length; // Next slide
+        }
+        else{
+            kudosIndex = (kudosIndex - 1) % kudosPages.length; // Previous slide
+        }
+        
+        if(kudosIndex < 0){ // Handles the case where you go backwards from position 0
+            kudosIndex = kudosPages.length + kudosIndex;
+        }
+        showKudos(kudosIndex);
+    }
+       
+    var kudosInterval = setInterval(function(){
+        if(autoChangeKudos){
+            changeKudos(1);
+            autoChangeKudos = true; // keep cycling automatically unless someone manually changes slides
+        }
+    }, 4000);
+    
+    
+</script>

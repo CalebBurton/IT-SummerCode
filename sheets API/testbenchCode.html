@@ -1,0 +1,282 @@
+<style>
+    
+    .supportTable {
+        /* text-align: inherit; */
+        width: 95%;
+        margin: auto;
+    }
+    
+    .boxWrapper {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .fullContactWrapper {
+        width: 31%;
+        max-width: 300px;
+        min-width: 225px;
+        min-height: 180px;
+        background: #E4E0EE;
+        overflow: auto;
+        text-align: center;
+        display: inline-block;
+        padding: 1%;
+    }
+    
+    .locWrapper {
+        display: inline;
+    }
+    
+    .roomWrapper {
+        display: inline;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+</style>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyAu_H2yFsge7P38Jkx0vRSXCasBP92t5Dw",
+        authDomain: "fp-front-end.firebaseapp.com",
+        databaseURL: "https://fp-front-end.firebaseio.com/",
+        storageBucket: "fp-front-end.appspot.com"
+    };
+    firebase.initializeApp(config);
+</script>
+
+
+<script>
+// Variables
+var auth = firebase.auth();
+var dbRef = firebase.database().ref();
+
+var allDataArr = [];
+var HTMLarr = [];
+
+var type1Arr = [];
+var type2Arr = [];
+
+
+var tableArr = [];
+
+var table_fake;
+/*
+var table_LC;
+var table_SrCon;
+var table_Con;
+var table_Assoc;
+*/
+
+dbRef.orderByKey().on("value", function(snapshot) {
+    allDataArr = snapshot.val();
+    setHTML();
+});                
+                
+//HTMLarr = document.getElementsByClassName('conInfoCell');
+tableArr = document.getElementsByClassName('supportTable');
+            
+// Finding the tables.
+table_fake = tableArr[0]
+
+//table_LC = tableArr[1];
+//table_SrCon = tableArr[2];
+//table_Con = tableArr[3];
+//table_Assoc = tableArr[4];
+
+
+window.onload = function() {
+    auth.onAuthStateChanged(function(user) {
+        if (user) {
+            console.log('Anonymous user signed-in.');
+        }
+        else {
+            console.log('There was no anonymous session. Creating a new anonymous user.');
+            // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+            auth.signInAnonymously();
+        }
+    });
+}
+
+
+var HTML_preHeader = '' +
+    '<div class="headerWrapper">' +
+        '<div align="center">' +
+            '<h2>';
+
+var HTML_postHeader = '' +
+            '</h2>' +
+        '</div>' +
+    '</div>';
+    
+var HTML_preDept = '' +
+    '<div class="fullContactWrapper">' +
+        '<div class="groupWapper">' +
+            '<b>';
+
+var HTML_preLocLink = '' +
+            '</b>' +
+        '</div>' +
+        '<hr>' +
+        '<div>' +
+            '<span class="locWrapper">' +
+                '<b>Location:</b> <a href="';
+
+var HTML_preLocName = '' +
+                '">';
+
+var HTML_preRoom = '' +
+                '</a>' +
+            '</span>' +
+            '<span class="roomWrapper"> ';
+
+var HTML_prePrimary = '' +
+            '</span>' +
+        '</div>' +
+        '<div class="supportWrapper">' +
+            '<div class="primaryWrapper"><b>Primary Support: </b>';
+    
+var HTML_preSecondary = '' +
+            '</div>' +
+        '<div class="secondaryWrapper"><b>Secondary Support: </b>';
+    
+var HTML_preUnit = '' +
+        '</div>' +
+    '</div>' +
+    '<div class="contactWrapper">' +
+        '<div class="unitWrapper">' +
+            '<b>Unit Contact: </b>';
+
+var HTML_prePhone = '' +
+        '</div>' +
+        '<br>' +
+        '<div class="phoneWrapper">';
+    
+var HTML_preMoreLink = '' +
+        '</div>' +
+    '</div>' +
+    '<br>' +
+    '<div class="moreWrapper">' +
+        '<a href="';
+
+var HTML_preMoreName = '' +
+        '">' +
+            '<b>';
+
+var HTML_postAll = '' +
+            '</b>' +
+        '</a>' +
+    '</div>' +
+'</div>';
+
+    
+var HTML_preBoxes = '' +
+'<div class="boxWrapper">';
+    
+
+function setHTML() {
+    /*
+    
+    var lcNum = 0;
+    var srNum = 0;
+    var conNum = 0;
+    var assocNum = 0;
+    
+    for (var i = 0; i < allDataArr.length; i++){
+        switch  (peopleArr[i].Position) {
+            case 'Lead Consultant':
+                lcArr[lcNum] = peopleArr[i];
+                lcNum++;
+                break;
+            case 'Senior Consultant':
+                srArr[srNum] = peopleArr[i];
+                srNum++;
+                break;
+            case 'Consultant':
+                conArr[conNum] = peopleArr[i];
+                conNum++;
+                break;
+            case 'Associate Consultant':
+                assocArr[assocNum] = peopleArr[i];
+                assocNum++;
+                break;
+            case 'Emeritus LC':
+                srArr[srNum] = peopleArr[i];
+                srNum++;
+                break;
+        }
+    }
+    
+    */
+
+    /*
+    var fakeArr = [];
+    
+    for (var k = 0; k < 5; k++){
+        fakeArr.push({
+            group: 'fakeGroup' + k, 
+            dept: 'fakeDept' + k,
+            locLink: 'fakeLink' + k,
+            locName: 'fakeLoc' + k,
+            room: 'fakeRoom' + k,
+            primary: 'fakePrimary' + k,
+            secondary: 'fakeSecondary' + k,
+            unit: 'fakeUnit' + k,
+            phone: 'fakePhone' + k,
+            moreLink: 'otherFakeLink' + k,
+            moreName: 'fakeMore' + k,
+        });
+    }
+    */
+    
+    makeTable(allDataArr, table_fake);
+    
+    
+    //makeTable(lcArr, table_LC);
+    //makeTable(srArr, table_SrCon);
+    //makeTable(conArr, table_Con);
+    //makeTable(assocArr, table_Assoc);
+    
+}
+
+
+function makeTable(tableArr, tableRef) {
+    var tableHTML = '';
+    
+    
+    for (var i = 0; i < tableArr.length; i++){
+        
+        if(!i){
+            //tableHTML += '\n\n</div>\n\n\n\n<div class="fullPersonWapper">'; 
+            tableHTML += HTML_preHeader + '[Zone Name Will Go Here]' /* tableArr[i].group */ + HTML_postHeader;
+            tableHTML += HTML_preBoxes;
+        }
+        
+        if(tableArr[i].secondaryContact == ''){ tableArr[i].secondaryContact = 'N/A'; }
+        if(tableArr[i].unitContact == ''){ tableArr[i].unitContact = 'N/A'; }
+        if(tableArr[i].phone == ''){ tableArr[i].phone = '[unknown phone #]'; }
+        
+        tableHTML += '\n\n' +
+            HTML_preDept + tableArr[i].deptName +
+            HTML_preLocLink + tableArr[i].locLink +
+            HTML_preLocName + tableArr[i].loc +
+            HTML_preRoom + tableArr[i].room +
+            HTML_prePrimary + tableArr[i].primaryContact +
+            HTML_preSecondary + tableArr[i].secondaryContact +
+            HTML_preUnit + tableArr[i].unitContact +
+            HTML_prePhone + tableArr[i].phone +
+            HTML_preMoreLink + tableArr[i].moreLink +
+            HTML_preMoreName + 'More Information' + //tableArr[i].moreName +
+            HTML_postAll;
+    }
+    
+    tableRef.innerHTML = tableHTML + '</div> <!-- end boxwrapper --> </div> <!-- end supporttable -->';     
+}
+
+</script>

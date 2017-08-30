@@ -1,0 +1,435 @@
+/* Used for internal KB articles, has no harm being here because Internal Service Pages don't use images */
+
+img {
+    display: inline;
+    padding-top:0px;
+    padding-bottom:0px;
+}
+
+
+/*
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+}
+
+/*
+/* Overwrite the default to keep the scrollbar always visible *
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+*/
+
+/*
+************************************************
+***
+***     AT-A-GLANCE INFO BOX
+***
+************************************************
+*/
+
+
+
+/* === OVERALL WRAPPERS AND COLUMNS === */
+
+*{
+    box-sizing: border-box;
+}
+
+#infobox-wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    /*
+    justify-content: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    */
+    margin: auto;
+    
+    /* background: green; */
+}
+
+.infowrap-vertical {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: stretch;
+    max-height: 220px;
+}
+
+.infowrap-horizontal {    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid #4e2a84;
+    border-top: none;
+    line-height: 2em;
+    height: 3em;
+}
+
+.infobox {
+    background-color: #ffffff;
+    padding: 5px;
+    position: relative;
+    vertical-align: top;
+    border: 2px solid #4e2a84;
+    border-right: none;
+    overflow-y: auto;
+}
+
+.infobox:last-of-type{
+    border-right: 2px solid #4e2a84;
+}
+
+
+.itsm {
+    min-width: 275px;
+    flex: 1 1 100px; /* grow, shrink, basis */
+}
+
+.refer {
+    min-width: 300px;
+    flex: 1.75 1 100px; /* grow, shrink, basis */
+}
+
+.auth {
+    width: 100%;
+}
+
+
+/* === HEADER / BODY SUB-BOXES === */
+
+.topbox {
+    font-weight: bold;
+    font-size: 1.17em;
+    text-align: center;
+}
+
+.botbox {
+    max-height: 300px;
+}
+
+
+
+/* === FOOTPRINTS BOX === */
+
+.categorization-table{
+    width: 100%;
+    margin-right: -26px;
+}
+
+.categorization-row{
+    display: flex;
+    line-height: 1.5em;
+    padding: 3px 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.categorization-row:last-of-type{
+    border-bottom: none;
+}
+
+.categorization-title {
+    min-width: 130px;
+    text-align: right;
+    padding: 0;
+    padding-right: 2%;
+    font-weight: bold;
+}
+
+.categorization-option {
+    min-width: 130px;
+    padding: 0 2%;
+    padding-right: 1%;
+}
+
+
+
+/* === REFERRAL BOX === */
+
+/*
+.contact{
+    display: flex;
+    flex-flow: column nowrap;
+}
+*/
+
+.refer{
+    display: flex;
+    flex-flow: column nowrap;
+    /* margin-top: 0em; */
+    /* margin-bottom: 0.25em; */
+}
+
+/*
+.contact-table{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+}
+
+.contact-row{
+    display: flex;
+    line-height: 1.5em;
+    padding: 3px 0;
+    margin: 0 5px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.contact-row:last-of-type{
+    border-bottom: none;
+}
+
+.contact-title {
+    font-weight: bold;
+    min-width: 95px;
+    text-align: right;
+    padding: 0 2%;
+}
+
+.contact-option {
+    min-width: 110px;
+    padding-right: 2px;
+}
+
+
+.refer ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+*/
+
+/* === AUTHENTICATION BOX === */
+
+.leftbox {
+    font-weight: bold;
+    font-size: 1.17em;
+    text-align: center;
+    margin: 0px 5px;
+}
+
+.rightbox {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+
+.auth-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    border: 1px solid #555555;
+    padding: 0px 4px;
+    margin: 2px;
+}
+
+
+.yes{
+    background-color: #9380b6;
+}
+
+.no{
+    background-color: #cccccc;
+}
+
+.checkboxSpace{
+    margin-right: 4px;
+    margin-top: -1px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.no .checkbox::before{
+    content: "\2610"; /* unicode for unchecked box */
+}
+
+.yes .checkbox::before{
+    content: "\2611"; /* unicode for checked box */
+}
+
+.authOption{
+    /*padding: 0 1% 0 4%;*/
+}
+
+.auth-other{
+    position: relative;
+}
+
+.auth-other .tooltiptext { /* should apply whether the option is checked or not */
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    line-height: 1.15em;
+    padding: 20px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%;
+    left: 50%;
+    margin-left: -50%;
+}
+
+.auth-other.yes .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+
+.auth-other.yes:hover .tooltiptext {
+    visibility: visible;
+}
+
+.auth-other.yes:hover {
+    background: #746491;
+}
+    
+
+
+/* === OVERFLOW ARROW === */
+
+.mac-user .overflowing.overflow-arrow-shown:after {
+    content: "\2003\2000 scroll\2000";
+    /* \2003 is an em space to leave room for the arrow image*/
+    
+    background-image: url(https://kb.northwestern.edu/images/group293/shared/TSSTier1/arrow-down-ltpurple.svg);
+    background-position: 4px 9px;
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: padding-box;
+    background-color: rgba(255,255,255,0.9);
+    
+    border: 2px solid #cccccc;
+    border-radius: 999px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    
+    /* height: 25px; */
+    /* width: 65px; */
+    margin-left:-20px;
+    
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+    z-index: 200;
+}
+
+
+
+@keyframes bounce {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+/*
+************************************************
+***
+***     TAB GROUPS
+***
+************************************************
+*/
+
+
+
+
+
+
+/* For articles with toggle buttons, each inputted img needs to be on its own line, or it'll mess up the text flow */
+
+/* Style the tab */
+
+div.tab {
+    overflow: hidden;
+    background-color: #f5f5f5;
+    max-width: 1400px;
+    min-width: 700px;
+    box-sizing: border-box;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: solid 1px #b7b7b7;
+    border-collapse: collapse;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    width: 25%;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #4e2a84;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #9380b6;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 4px 4px;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-width: 1400px;
+    min-width: 700px;
+    box-sizing: border-box;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

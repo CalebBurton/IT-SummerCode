@@ -1,0 +1,289 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+<div id="tipbox-wrapper" style="display: none;">
+    <div id="tipbox">
+        <div class="tipnum"><span id="this-tip"></span>/<span id="total-tips"></span></div>
+        <a class="boxclose" onclick="closeBox(this.parentElement)"></a>
+        <div id="tipbox-header">
+            Tip of the Day!
+        </div>
+        <div id="tipbox-body">
+            <a class="includedoc">74663</a>
+        </div>
+        <a class="prev-slide tip-arrow" onclick="changeTip(0)">&#10094;</a>
+        <a class="next-slide tip-arrow" onclick="changeTip(1)">&#10095;</a>
+        <div class="tipbox-footer">Do you have a tip that should be displayed here? Submit it on the suggestions form!</div>
+    </div>
+</div>
+
+
+<div class="nav-wrapper">
+    <div class="nav-row">
+        <div class="nav-dropdown">
+            <div class="nav-dropdown-title" onclick="toggleDropdown(this)">Tools<span class="dropdown-arrow"></span></div>
+            <div class="nav-dropdown-content">  
+                <a href="http://wiki.it.northwestern.edu/wiki/index.php/Service_Wiki" target="_blank">Service Wiki</a>
+                <a href="https://tss.northwestern.edu/wiki/index.php/Main_Page" target="_blank">TSS Wiki</a>
+                <a href="https://www.ittns.northwestern.edu/" target="_blank">NUSA</a>
+                <a href="https://itsm-fp.northwestern.edu/footprints" target="_blank">Footprints</a>
+                <a href="http://nuvalidate.northwestern.edu/admin" target="_blank">NU Validate</a>
+                <a href="http://directory.northwestern.edu/?verbose=1" target="_blank">Northwestern People Directory</a>
+                <a href="https://offices.northwestern.edu/" target="_blank">Northwestern Office Directory</a>
+                <a class="button tooltip" onclick="openCore()">Open Core Tools
+                    <span class="tooltiptext">
+                        Service Wiki<br />
+                        Internal KB<br />
+                        Footprints<br />
+                        NU Validate<br />
+                        Northwestern People Directory<br />
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="nav-dropdown">
+            <div class="nav-dropdown-title" onclick="toggleDropdown(this)">Helpful Pages<span class="dropdown-arrow"></span></div>
+            <div class="nav-dropdown-content">
+                <a href="https://kb.northwestern.edu/internal/74042" target="_blank">Consultant Directory</a>
+                <a href="http://www.it.northwestern.edu/supportcenter/sla.html" target="_blank">Support Offered</a>
+                <a href="https://app.smartsheet.com/b/publish?EQBCT=4d526b58541d490f9823daa0eea4124c" target="_blank">Rooms Supported by Smart Classrooms</a>
+                <a href="http://tss.northwestern.edu/wiki/index.php/Support_Services_Contacts_by_Service" target="_blank">SupportServices Contacts by Service</a>
+                <a href="https://kb.northwestern.edu/internal/74952" target="_blank">All FP Service Categories</a>
+                <a href="https://kb.northwestern.edu/internal/62356" target="_blank">All Referral Groups</a>
+                <a href="https://kb.northwestern.edu/internal/74951" target="_blank">All FP Users by Group</a>
+                <a href="https://tss.northwestern.edu/wiki/index.php/Test_Accounts" target="_blank">TSS Test Accounts</a>
+            </div>
+        </div>
+        
+        <div class="nav-dropdown">
+            <div class="nav-dropdown-title" onclick="toggleDropdown(this)">Training<span class="dropdown-arrow"></span></div>
+            <div class="nav-dropdown-content">
+                <a href="https://canvas.northwestern.edu/courses/45306" target="_blank">IT Canvas Course</a>
+                <a href="https://docs.google.com/forms/viewform?hl=en&id=1ZRK3_KcEPuhyrJyX3pfWtPXdr-SrpTgUtWrtqCQIUFE" target="_blank">Training Feedback Form</a>
+                <a href="https://docs.google.com/forms/viewform?id=1Fz6i7zQPq4JFxWprIYh8k674BF2z8jvufsPDRX3bNdk" target="_blank">Training Excuse Form</a>
+                <a href="https://sites.google.com/a/u.northwestern.edu/nuit-consultants/training/past-trainings" target="_blank">Archive of Past Trainings</a>
+            </div>
+        </div>
+        
+        
+        
+        <div class="nav-dropdown">
+            <div class="nav-dropdown-title" onclick="toggleDropdown(this)">Scheduling<span class="dropdown-arrow"></span></div>
+            <div class="nav-dropdown-content">
+                <a href="https://whentowork.com/logins.htm" target="_blank">WhenToWork</a>
+                <a href="https://kb.northwestern.edu/internal/62251" target="_blank">Shift Trade Policy</a>
+                <a href="https://kb.northwestern.edu/internal/74946" target="_blank">Checking W2W Availability</a>
+                <a href="https://docs.google.com/forms/viewform?id=1XsskFxwkoeK17OOyXvEgtXE1PG195z3AJoBCEnDB41c" target="_blank">Shift Trade Form</a>
+                <a href="https://docs.google.com/forms/viewform?id=1PWbWv-SZVrfNog9MbQOEOGPF6r9EozQYkcKrHi0Auz8" target="_blank">Unsassign Shift Request Form</a>
+            </div>
+        </div>
+        
+        
+        
+        <div class="nav-dropdown">
+            <div class="nav-dropdown-title" onclick="toggleDropdown(this)">Forms, etc.<span class="dropdown-arrow"></span></div>
+            <div class="nav-dropdown-content nav-dropdown-content-two-col">
+                <div class="nav-column-left">
+                    <p>Handbooks</p>
+                        <a href="https://docs.google.com/document/d/1N1HfiBDwFOA2jn0r61QI_oZXPLN0uTqANkDpMvJwNZo/" target="_blank">New Hire Handbook</a>
+                        <a href="https://docs.google.com/document/d/12LbaAMSMkZNMnMxogZxYLzLWRyKDP96g45cFFaG-gyY/" target="_blank">Laptop ER Handbook</a>
+                        <a href="https://docs.google.com/document/d/1yhPspeCLzr_WwZar9E7LAvBKbUN1n1T7FvbukMz0-UU/" target="_blank">Supervisor Handbook</a>
+                        <a href="https://drive.google.com/drive/u/1/folders/0B62ISWigvAx6b2dPNlZXclAzUzg" target="_blank">LC Handbook (LCs Only)</a>
+                    <p>Onboarding</p>
+                        <a href="https://docs.google.com/forms/viewform?hl=en&id=1hzJCBFGwdfhvhQUjeUeWCcRFyahzYd2SqQuEbZKyNZM" target="_blank">Onboarding Form</a>
+                        <a href="https://docs.google.com/document/d/1WuweQ53KkpUly5_r8X531DkGouyBZ0lDzgb2qFHgSps" target="_blank">Shadowing Checklist (Supervisor)</a>
+                        <a href="https://docs.google.com/document/d/1Kl-7sheXmLPtrBzqQBKwEca43EdHhHMMSMm5FOaCAic" target="_blank">Shadowing Checklist (Trainee)</a>
+                        <a href="https://kb.northwestern.edu/internal/page.php?id=74934" target="_blank">Adding Groups on Lync</a>
+                </div>
+                <div class="nav-column-right">
+                    <p>General Links</p>
+                        <a href="http://www.it.northwestern.edu/supportcenter/laptoper-form.html" target="_blank">LaptopER Waiver Form</a>
+                        <a href="https://share.northwestern.edu/dept/tss/dss/SitePages/Home.aspx" target="_blank">DSS Sharepoint</a>
+                        <a href="https://kb.northwestern.edu/internal/62250" target="_blank">NetID Expiration Tool</a>
+                        <a href="http://bit.ly/kronosnojava" target="_blank">Kronos Login Page</a>
+                    <p>General Forms</p>
+                        <a href="https://docs.google.com/forms/viewform?hl=en&id=1YGmmm3YTMcADImd4we84InywwYl_UBddNhJ0Vb-nNiY" target="_blank">Feedback Form</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3dvEs9R6ReI9EB3uM9jMh_mqQ9DjsymP5mpu6FIltCxtnJg/viewform" target="_blank">Gift Card Form</a>
+                        <a href="https://docs.google.com/forms/viewform?hl=en&id=1KXgy7hHAuL2avspinsGeVN9m4vR3CmlkVg1_-Nlzxog" target="_blank">Suggestions Form</a>
+                </div>
+                
+                <!--
+                    Old Conweb Layout
+                        Forms
+                            Consultant Feedback
+                            Gift Card Form
+                            Suggestions
+                            Shift Trade Form
+                            Unassign Shift Request
+                            Training Excuses
+                            Onboarding Form
+                            Laptop ER Support - NO
+                            Project Work - NO
+                        Training
+                            IT Canvas Page
+                            NUValidate Basics - NO
+                            Supervisor Basics - NO
+                            Tier 2 NUFinancials Presentation - NO
+                            Tier 2 NUValidate Presentation - NO
+                            Past Trainings
+                            Training Excuses
+                            Training Feedback
+                -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="headerInfoWrapper">
+    <div class= "headerInfoBox" id="notificationDiv"><a class="boxclose" onclick="closeBox(this)"></a>
+        Per Ryan Kappes: Any phone/chat tickets we send to Feinberg IT should have the title formatted as<br><strong>Issue - User's Name - Department - Location</strong>
+        <!--
+            To make this warning box visible, uncomment the following line from the
+            "window.onload" function in this KB article's javascript box:
+
+                    disp('notificationDiv','block');
+
+            The code is already there, it's just commented out. Use control-F to find it
+        -->
+    </div>
+    <div class= "headerInfoBox" id="timeSheetDiv"><a class="boxclose" onclick="closeBox(this)"></a>
+        Time sheets are due today by 5pm
+        <br />
+        <b><a href="http://bit.ly/kronosnojava" target="_blank">Kronos Login Page</a></b>
+    </div>
+    <div class= "headerInfoBox" id="payDayDiv"><a class="boxclose" onclick="closeBox(this)"></a>
+        Today is payday!
+    </div>
+</div>
+
+<div id="page">
+
+    <div class="content" id="main-content">
+        
+        <div class="kudos-wrapper">
+            <div class="kudos-header">
+                Good Feedback
+            </div>
+            <div class="kudos-info">
+                <div class="slide-number-text">
+                    <span class="current-slide">1</span>&nbsp;/&nbsp;<span class="total-slides">3</span>
+                </div>
+                <a class="prev-slide kudos-arrow" onclick="changeKudos(0)">&#10094;</a>
+                <a class="next-slide kudos-arrow" onclick="changeKudos(1)">&#10095;</a>
+                
+                <div class="kudos-text">
+                    <a class="includedoc">64441</a>
+                </div>
+                
+            </div>
+            <div class="dot-container"> 
+            </div> 
+        </div>
+  
+        <div class="topThree" style="margin-bottom: 3rem;">
+            <br />
+            <div class="feature-three-col">
+                <div class="feature-box">
+                    <a href="https://docs.google.com/forms/viewform?hl=en&id=1YGmmm3YTMcADImd4we84InywwYl_UBddNhJ0Vb-nNiY" target="_blank">
+                        <img alt=" " src="/images/group293/71903/images/feedback.jpg" />
+                        <div class="imageLinkButton">
+                            <div class="imageLinkText">
+                                Feedback Form
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="feature-box">
+                    <a href="https://docs.google.com/forms/viewform?hl=en&id=1KXgy7hHAuL2avspinsGeVN9m4vR3CmlkVg1_-Nlzxog" target="_blank">
+                        <img alt=" " src="/images/group293/71903/images/suggestionBox.png" />
+                        <div class="imageLinkButton">
+                            <div class="imageLinkText">
+                                Suggestions Form
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="feature-box">
+                    <a href="https://tss.northwestern.edu/wiki/index.php/The_Whiteboard" target="_blank">
+                        <img alt=" " src="/images/group293/71903/images/whiteboard.png" />
+                        <div class="imageLinkButton">
+                            <div class="imageLinkText">
+                                The Whiteboard
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>       
+    </div>
+    
+    <div class="hours-footer">
+        <div class="hours-two-col">
+            <div class="hours-column-left">
+                <p class="hours-title">Support Center Hours</p>
+                <div class="hoursBox-normalHours">
+                    <div><strong>School Year Hours</strong></div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Monday - Thursday</div>
+                        <div class="hoursBox-right">8:00am - 8:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Friday</div>
+                        <div class="hoursBox-right">8:00am - 6:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Saturday</div>
+                        <div class="hoursBox-right">12:00pm - 5:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Sunday</div>
+                        <div class="hoursBox-right">12:00pm - 8:00pm</div>
+                    </div>
+                </div>
+                <div class="hoursBox-summerHours">
+                    <div><strong>Summer Hours</strong></div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Monday - Friday</div>
+                        <div class="hoursBox-right">8:00am - 5:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Saturday - Sunday</div>
+                        <div class="hoursBox-right">Closed</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hours-column-right">
+                <p class="hours-title">Laptop ER Hours</p>
+                <div class="hoursBox-normalHours">
+                    <div><strong>School Year Hours</strong></div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Monday - Thursday</div>
+                        <div class="hoursBox-right">11:00am - 5:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Friday</div>
+                        <div class="hoursBox-right">11:00am - 4:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Saturday - Sunday</div>
+                        <div class="hoursBox-right">Closed</div>
+                    </div>
+                </div>
+                <div class="hoursBox-summerHours">
+                    <div><strong>Summer Hours</strong></div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Monday - Friday</div>
+                        <div class="hoursBox-right">11:00am - 5:00pm</div>
+                    </div>
+                    <div class="hoursBox-wrapper">
+                        <div class="hoursBox-left">Saturday - Sunday</div>
+                        <div class="hoursBox-right">Closed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="conwebStyles.css">

@@ -1,0 +1,297 @@
+<title>Title of Page</title>
+<script type="text/javascript" src="wikicode.js"></script> 
+<link rel="stylesheet" type="text/css" href="wikistyledefault.css">
+
+<style>
+    
+    div.table{
+        display: table;
+        /* border: 2px solid red; */
+        width: 95%;
+        margin: auto;
+    }
+    
+    #auth-title {
+        overflow-x: hidden;
+        text-overflow: ellipsis;
+        text-overflow: "Auth.";
+        min-width: 50px;
+    }
+    
+    .auth-row{
+        display: block;
+        height: 2em;
+        max-width: 80px;
+        margin: auto;
+        line-height: 2em;
+        /* border: 2px solid blue; */
+        border: 1px dotted #555555;
+        border-bottom: none; /* prevents overlapping borders */
+    }
+    
+    .auth-row:last-of-type{
+        border-bottom: 1px dotted #555555;
+    }
+
+    .checkboxSpace{
+        float: left;
+        width: 35%;
+        text-align: center;
+    }
+    
+    .auth .botbox {
+        hyphens: auto;
+        /* break long words that would otherwise overflow */
+    }
+    
+    .no .checkbox::before{
+        content: "☐";
+    }
+    
+    .yes .checkbox::before{
+        content: "☑";
+    }
+    
+    .yes{
+        background-color: #9380b6;
+    }
+    
+    .no{
+        background-color: #cccccc;;
+    }
+    
+    .authOption{
+        width: 60%;
+        padding: 0 1% 0 4%;
+        float: right;
+        overflow-x: scroll;
+    }
+
+</style>
+
+<div id="infobox-wrapper">
+<div id="infobox-table">
+
+<div class="infobox auth">
+<div class="topbox" id="auth-title">Authentication</div> 
+<div class="botbox">
+    <div class="table">
+        <div class="auth-row yes">
+            <div class="checkboxSpace"><span class="checkbox"></span></div>
+            <div class="authOption">NetID</div>
+        </div>
+        <div class="auth-row no">
+            <div class="checkboxSpace"><span class="checkbox"></span></div>
+            <div class="authOption">MFA</div>
+        </div>
+        <div class="auth-row no">
+            <div class="checkboxSpace"><span class="checkbox"></span></div>
+            <div class="authOption">VPN</div>
+        </div>
+    </div>
+    <p>Other Authentication Method or Access Privilege</p>
+</div>  
+</div>
+    
+<style>
+    
+    .categorization-table{
+        display: table;
+        width: 100%;
+    }
+    
+    .categorization-row{
+        display: block;
+        max-height: 8em;
+        line-height: 1.5em;
+        border-bottom: 1px dotted #555555;
+        overflow: scroll;
+    }
+    
+    .categorization-row:last-of-type{
+        border-bottom: none;
+    }
+
+    .categorization-title {
+        float: left;
+        min-width: 110px;
+        text-align: right;
+        padding: 0;
+        padding-right: 2%;
+        font-weight: bold;
+    }
+    
+    .categorization-option {
+        min-width: 130px;
+        max-width: 100px;
+        padding: 0 2%;
+        padding-right: 1%;
+        /* float: right; */
+        overflow: scroll;
+    }
+
+</style>
+    
+<div class="infobox itsm">
+<div class="topbox">FootPrints</div> 
+<div class="botbox">
+    <div class="categorization-table">
+        <div class="categorization-row">
+            <div class="categorization-title">Service Family:</div>
+            <div class="categorization-option">Email, Calendaring, Messaging, and Collaboration</div>
+        </div>
+        <div class="categorization-row">
+            <div class="categorization-title">Service:</div>
+            <div class="categorization-option">Service</div>
+        </div>
+        <div class="categorization-row">
+            <div class="categorization-title">Category:</div>
+            <div class="categorization-option">Category</div>
+        </div>
+        <div class="categorization-row">
+            <div class="categorization-title">Sub-Category:</div>
+            <div class="categorization-option">Sub-Category</div>
+        </div>
+        <div class="categorization-row">
+            <div class="categorization-title">Assignees:</div>
+            <div class="categorization-option">USSTier2
+                <br>HRITS-LearnNU
+                <br>TNS-DataNetwork
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    
+<style>
+    
+    .contact-table{
+        display: table;
+        width: 100%;
+    }
+    
+    .contact-row{
+        display: block;
+        height: 1.5em;
+        line-height: 1.5em;
+        border-bottom: 1px dotted #555555;
+    }
+    
+    .contact-row:last-of-type{
+        border-bottom: none;
+    }
+
+    .contact-title {
+        float: left;
+        /* border: 1px solid green; */
+        /* width: 15%; */
+        min-width: 55px;
+        text-align: right;
+        padding: 0 2%;
+        /* background: green; */
+        /* padding-right: 1%; */
+    }
+    
+    .contact-option {
+        /* border: 1px solid red; */
+        /* width: 80%; */
+        /* max-width: 200px; */
+        min-width: 110px;
+        padding: 0;
+        padding-right: 1%;
+        /* float: right; */
+        /* text-align: left; */
+        overflow-x: scroll;
+    }
+    
+</style>
+       
+<div class="infobox refer-contact"> 
+    <div class="refer">
+    <div class="topbox">Referral Options</div> 
+    <div class="botbox"> 
+        <ul>
+            <li>If a user is </li>
+            <li>IF</li>
+            <li>If</li>
+
+        </ul>
+    </div>
+    </div>
+    <div class="contact">
+    <div class="topbox">Service Contact</div>
+    <div class="botbox">
+        <div class="contact-table">
+            <div class="contact-row">
+                <div class="contact-title">Website:</div>
+                <div class="contact-option"><a href="#">Contact Website</a></div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-title">Email:</div>
+                <div class="contact-option"><a href="mailto:emailaddress@domain.edu">superverylongemailaddress@northwestern.edu</a></div>
+            </div>
+            <div class="contact-row">
+                <div class="contact-title">Phone:</div>
+                <div class="contact-option">(xxx) xxx-xxxx</div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>  
+</div>
+</div>
+<br> 
+<br> 
+    
+<div class="tab"> 
+    <button class="tablinks" onclick="openTab(event, 'General')" id="defaultOpen">General</button> 
+    <button class="tablinks" onclick="openTab(event, 'Tier1')">Tier 1</button> 
+    <button class="tablinks" onclick="openTab(event, 'Tier2')">Tier 2</button> 
+    <button class="tablinks" onclick="openTab(event, 'SuppSvcs')">Support Services</button> 
+</div>
+    
+    <div id="General" class="tabcontent"> 
+        <span class="Cat1"> 
+            <h2>Overview</h2> 
+            <p>Support Information</p>  
+            
+            <h2>Basic Troubleshooting</h2> 
+            <p>Support Information</p> 
+        </span> 
+    </div> 
+    
+    <div id="Tier1" class="tabcontent"> 
+        <span class="Cat2"> 
+            <h2>Troubleshooting</h2> 
+            <p>Support Information</p>         
+            <h2>Referrals</h2> 
+            <p>Support Information</p> 
+        </span> 
+    </div> 
+    
+    <div id="Tier2" class="tabcontent"> 
+        <span class="Cat3"> 
+            <h2>First Support Category</h2> 
+            <p>Support Information</p>          
+            <h2>Second Support Category</h2> 
+            <p>Support Information</p> 
+        </span> 
+    </div> 
+    
+    <div id="SuppSvcs" class="tabcontent"> 
+        <span class="Cat4"> 
+            <h2>First Support Category</h2> 
+            <p>Support Information</p>          
+            <h2>Second Support Category</h2> 
+            <p>Support Information</p> 
+        </span> 
+    </div>
+
+<h2>Resources</h2> 
+    <ul> 
+      <li>Resources</li></ul>
+    
+<h2>See Also</h2>
+    <ul>
+        <li>KB article</li>
+    </ul>

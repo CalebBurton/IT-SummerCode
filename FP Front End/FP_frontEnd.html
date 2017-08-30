@@ -1,0 +1,823 @@
+
+<html>
+    <head>
+        <meta http-equiv="x-ua-compatible" content="IE=EmulateIE9">
+        <meta HTTP-EQUIV="Content-type" CONTENT="text/html; charset=utf-8">
+            <title>Submit Issue to IT Service Desk</title>
+            <link type="text/css" rel="stylesheet" href="FP_frontEnd.css">
+        <script>
+            var person;
+            var issue;
+            var loc; // can't use "location" as a variable name, it's a reserved JS variable
+            
+            var currentPage = 1;
+            var endTime;
+            var elapsedTime;
+            var elapsedHour;
+            var elapsedMin;
+            var elapsedSec;
+            
+            var timerID = 'timerWrapper';
+
+            window.onload = function() {               
+                return;
+            };
+            
+            function prevPage() {
+                if(currentPage = 2){
+                    stopTimer()
+                }
+                goToPage(currentPage - 1);
+            }
+            
+            function goToPage(pageNum) {
+                currentPage = pageNum;
+                pageNum = pageNum.toFixed(0);
+                
+                document.getElementById('submitButton').style.display = 'none';
+                document.getElementById('prevButton').style.display = '';
+                document.getElementById('page1').hidden = true;
+                document.getElementById('page2').hidden = true;
+                document.getElementById('page3').hidden = true;
+                document.getElementById('page4').hidden = true;
+                
+                switch(pageNum){
+                    case '1':
+                        document.getElementById('prevButton').style.display = 'none';
+                        break;
+                    case '4':
+                        document.getElementById('submitButton').style.display = '';
+                        break;
+                    case '5':
+                        document.getElementById('submitButton').style.display = 'none';
+                        document.getElementById('prevButton').style.display = 'none';
+                        break;
+                }
+                
+                document.getElementById('page' + pageNum).hidden = false;
+            }
+            
+            function submitT() {
+                //stopTimer();
+                var timestamp = new Date();
+                checkTime();
+                timestamp = timestamp.toTimeString() + ' ' + timestamp.toDateString();
+                alert('Ticket submitted' +
+                      '\n\tPerson: ' + person +
+                      '\n\tLocation: ' + loc +
+                      '\n\tCategory: ' + issue +
+                      '\n\tElapsed Time: ' + elapsedMin + ' min, ' + elapsedSec + ' sec' +
+                      '\n\tTimestamp: ' + timestamp);
+                goToPage(4);
+            }
+            
+            function startTimer() {
+                document.getElementById(timerID).hidden = false;
+                initializeClock(timerID, Date.now()); 
+            }
+            
+            function checkTime(){
+                var clock = document.getElementById(timerID);
+                elapsedHour = clock.querySelector('#hours').innerHTML;
+                elapsedMin = clock.querySelector('#minutes').innerHTML;
+                elapsedSec = clock.querySelector('#seconds').innerHTML; 
+            }
+            
+            function stopTimer() {
+                document.getElementById(timerID).hidden = true;
+                clearInterval(timerInterval);
+            }
+            
+            
+            function setPerson(s){
+                person = s;
+                document.getElementById('personMarker').innerHTML = '\t' + s;
+                goToPage(currentPage + 1);
+            }
+            
+            function setLoc(s){
+                loc = s;
+                document.getElementById('locationMarker').innerHTML = '\t' + s;
+                goToPage(currentPage + 1);
+            }
+            
+            function beginWalkthrough(){
+                startTimer();
+                goToPage(currentPage + 1);
+            }
+            
+            function setIssue(s){
+                issue = s;
+                submitT();
+            }
+            
+            function endWalkthrough(){
+                stopTimer();
+                goToPage(5);
+            }
+            
+        </script>
+        
+    </head>
+    
+    <body bgcolor = "#FFFFFF">
+            <form class="main" id="form" novalidate="novalidate" style="max-width: 800px; margin: 10px auto;" METHOD=POST action="" onsubmit="return false" target="_self" _lpchecked="1">
+                <div id="forminner">
+                    <div class="row">
+                        <div>
+                            <h1>FP Quick Issue</h1>
+                            <h3 style="color:red;">
+                                <div id="timerWrapper" hidden>
+                                    <span id="hours"></span>:<span id="minutes"></span>:<span id="seconds"></span>
+                                </div>
+                            </h3>
+                            
+                            <div class="spacer" id="spacer"></div>
+                            <!--
+                                teal is 26a69a
+                                purple is 5a3696
+                            -->
+                        </div>
+                    </div>
+                    <div>
+                        <div id="page1" class="optionWrapper" >
+                            <button class="optionButton" onclick="setPerson('Andy');">Andy</button>
+                            <button class="optionButton" onclick="setPerson('Mohammad');">Mohammad</button>
+                            <button class="optionButton" onclick="setPerson('Nick');">Nick</button>
+                            <button class="optionButton" onclick="setPerson('Marshal');">Marshal</button>
+                            <button class="optionButton" onclick="setPerson('Michael');">Michael</button>
+                            <button class="optionButton" onclick="setPerson('Corzail');">Corzail</button>
+                            <button class="optionButton" onclick="setPerson('Stephen');">Stephen</button>
+                            <button class="optionButton" onclick="setPerson('Brian');">Brian</button> 
+                        </div>
+                        
+                        <div id="page2" class="optionWrapper" hidden>
+                            <button class="optionButton" onclick="setLoc('Crown');">Crown</button>
+                            <button class="optionButton" onclick="setLoc('1800 Sherman');">1800 Sherman</button>
+                            <button class="optionButton" onclick="setLoc('Provost');">Provost</button>
+                            <button class="optionButton" onclick="setLoc('Athletics');">Athletics</button>
+                            <button class="optionButton" onclick="setLoc('TGS');">TGS</button>
+                            <button class="optionButton" onclick="setLoc('Enrollment');">Enrollment</button>
+                        </div>
+                        
+                        <div id="page3" class="optionWrapper" hidden>
+                            <h4>Person:<span id="personMarker"></span></h4>
+                            <h4>Location:<span id="locationMarker"></span></h4>
+                            <button class="optionButton" onclick="beginWalkthrough();">Begin Walkthrough</button>
+                        </div>
+                        
+                        <div id="page4" class="optionWrapper" hidden>
+                            <button class="optionButton" onclick="setIssue('Computer Software');">Computer: Software</button>
+                            <button class="optionButton" onclick="setIssue('Computer Hardware');">Computer: Hardware</button>
+                            <button class="optionButton" onclick="setIssue('Cell Phone');">Cell Phone</button>
+                            <button class="optionButton" onclick="setIssue('Office Phone');">Office Phone</button>
+                            <button class="optionButton" onclick="setIssue('Printer');">Printer</button>
+                            <button class="optionButton" onclick="setIssue('Other');">Other</button>
+                        </div>
+                        
+                        <div id="page5" class="optionWrapper" hidden>
+                            <h4>Walkthrough complete</h4>
+                            <p>Refresh this page to begin a new walkthrough.</p>
+                        </div>
+                        
+                        <div class="spacer" id="spacer"></div>
+                        
+                        <div id="actionOuterWrapper">                            
+                            <div id="prevButton" class="actionInnerWrapper" style="right:25%; display:none;">
+                                <button class="actionButton" onclick="prevPage()">&lt; Back</button>
+                            </div>
+                            <div id="submitButton" class="actionInnerWrapper" style="left:25%; display:none;">
+                                <button class="actionButton" onclick="endWalkthrough()">End</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    <div class="row center-align">
+                        <div class="input-field col s12" id = "progress"></div>
+                        <div class="center-align" id="preview"></div>
+                    </div>
+                </div>
+                <div id="success" hidden>
+                    <div style="width: 400px; height: 50px;"></div>
+                    <h4 class="left-align" style="color:#5a3696;">Success!</h4>
+                    <p class="description" style="font:400 15px;">Ticket submitted successfully</p><br>
+                    <div class="row">
+                        <button class="waves-effect waves-light btn submit-btn" type="submit" onclick="startOver()">Start Over</button>  
+                    </div>
+                </div>
+        </form>
+                
+        
+<div>
+        <!--
+        <form name = "HTML_FORM" METHOD=POST action="https://itsm-fp.northwestern.edu/MRcgi/MRregister_command.pl" onsubmit="return false" target="_self" _lpchecked="1">
+   <!-- <form name = "HTML_FORM" METHOD=POST ACTION="https://itsm-fp.northwestern.edu/MRcgi/MRProcessIncomingForms.pl"> --
+            <br>
+            <table BORDER=0 CELLPADDING=0 CELLSPACING=0  class = "dialog" width="100%">
+                <tr class = "dialogHeading">
+                    <td>
+                        <table border = "0" class = "dialogHeading">
+                            <tr>
+                                <td class = "dialogTitle">
+                                    Submit Issue to IT Service Desk
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <font face=""Verdana, Arial, Helvetica, sans-serif"" size="-1" color = "#990000">** Mandatory fields are highlighted and preceded by an asterisk</font>
+                        <br>
+                        <br>
+                        <b><font color = "#990000">*Title:</font></b>
+                        <input TYPE=TEXT name=SHORTD size=70 value="" MAXLENGTH="250">
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <table BORDER=0 CELLPADDING=0 CELLSPACING=0 class = "dialog" width="100%">
+                <tr class = "dialogHeading">
+                    <td>
+                        <table border = "0" class = "dialogHeading">
+                            <tr>
+                                <td class = "dialogTitle">Issue Information</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "dialog">
+                        <br>
+                        <table border=0>
+                            <tr>
+                                <td>
+                                    <div>
+                                    <!----------------------------------
+                                        Direct commands
+                                    ------------------------------------
+                                                                        
+                                    <input type="HIDDEN" name="SUBTASKORDER" value="">
+                                    <input type="hidden" name="SOLUTION_ID" value="" id="solution_id">
+                                    <input type="hidden" name="USER" value="ccb551">
+                                    <input type="hidden" name="PROJECTID" value="1">
+                                    
+                                    <!-- Some sort of unique session IDs --
+                                    <input type="hidden" name="MRP"  value="1ae9f022d9539960278595ca1564e172d">
+                                    <input type="hidden" name="SESS_ID" value="978eb683b70ad36f2ee808190d396d18">
+                                    
+                                    <input type="hidden" name="AUTO_CLOSE_STATUS" id="AUTO_CLOSE_STATUS">
+                                    <input type="hidden" name="RUNNING_IN_POPUP" value="1">
+                                    <input type="hidden" name="MAJOR_MODE" value="CREATE">
+                                    
+                                    <input type="hidden" name="UNCLOSEDSUBS" value="">
+                                    <input type="hidden" name="LEDIT_KEY_PRESSED" value="">
+                                    <input type="hidden" name="CONTACT_CIS" value="[]">
+                                    <input type="hidden" name="BIGNUM" value="ccb551">
+                                    <input type="hidden" name="QUICKCREATECONVERSION" value=1>
+                                    <input type="hidden" name="TAKE" value=0>
+                                    <input type="hidden" name="QUICKCREATE" value="">
+                                    <input type="hidden" name="HOURS_AUTO" value=0>
+                                    <input type="hidden" name="MINUTES_AUTO" value=0>
+                                    <input type="hidden" name="SECONDS_AUTO" value=0>
+                                    <input type="hidden" name="time" value="00:00:01">
+                                    <input type="hidden" name="Request__bType" value="Service__bRequest">
+                                    
+                                    <!-- Title --
+                                    <input type="hidden" name="shortDMode" value="char">
+                                    <input type="hidden" name="SHORTD" value="6/27 - Test 3">
+                                    
+                                    <!-- Status --
+                                    <input type="hidden" name="NEWSTATUS" value="In__bProgress">
+                                    
+                                    <input type="hidden" name="Submission__bTracking" value="Email">
+                                    <input type="hidden" name="Impact" value="Single__bUser">
+                                    <input type="hidden" name="Urgency" value="Routine">
+                                    <input type="hidden" name="PRIORITY" value="4">
+                                    <input type="hidden" name="Walk__uin__bLocation" value="">
+                        <!-- <input type="hidden" name="Completion__bCode" value="Resolved__bSuccessfully"> --
+                                    <input type="hidden" name="Root__bCause" value="">
+                                    <input type="hidden" name="External__bTicket__bNumber" value="">
+                                    
+                                    <!-- Contact Info --
+                                    <input type="hidden" name="NetID" value="ccb551">
+                                    <input type="hidden" name="First__bName" value="Caleb">
+                                    <input type="hidden" name="Last__bName" value="Burton">
+                                    <input type="hidden" name="Office__bPhone" value="">
+                                    <input type="hidden" name="Preferred__bPhone__bNumber" value="">
+                                    <input type="hidden" name="Job__bTitle" value="">
+                                    <input type="hidden" name="Email__bAddress" value="calebburton2017@u.northwestern.edu">
+                                    <input type="hidden" name="Department" value="IT Technology Support Svcs">
+                                    <input type="hidden" name="Departmental__bSupport" value="NUIT-DSS">
+                                    <input type="hidden" name="NU__bRole" value="student">
+                                    <input type="hidden" name="VIP__bStatus" value="">
+                                    
+                                    <!-- Request on behalf of someone else --
+                                    <input type="hidden" name="Select__Q" value="No">
+                                    <input type="hidden" name="Recipient__bEmail" value="">
+                                    <input type="hidden" name="Recipient__bNetID" value="">
+                                    <input type="hidden" name="Recipient__bDept__bSupport" value="">
+                                    <input type="hidden" name="Recipient__bFirst__bName" value="">
+                                    <input type="hidden" name="Recipient__bLast__bName" value="">
+                                    <input type="hidden" name="Recipient__bOffice__bPhone" value="">
+                                    <input type="hidden" name="Recipient__bTitle" value="">
+                                    <input type="hidden" name="Recipient__bDept" value="">
+                                    <input type="hidden" name="Recipient__bPreferred__bPhone" value="">
+                                    <input type="hidden" name="Recipient__bNU__bRole" value="">
+                                    <input type="hidden" name="Recipient__bVIP__bStatus" value="">
+                                    
+                                    <!-- Categorization --
+                                    <input type="hidden" name="Service__bFamily" value="Help__band__bSupport">
+                                    <input type="hidden" name="Service" value="General__bQuestion">
+                                    <input type="hidden" name="Category" value="">
+                                    <input type="hidden" name="Sub__uCategory" value="">
+                                    <input type="hidden" name="Other__uService" value="">
+                                    <input type="hidden" name="Other__uCategory" value="">
+                                    <input type="hidden" name="Other__b__u__bSub__bCategory" value="">
+                                    <input type="hidden" name="Campus" value="">
+                                    <input type="hidden" name="Building" value="">
+                                    <input type="hidden" name="Room" value="">
+                                    <input type="hidden" name="Other__uBuilding" value="">
+                                    <input type="hidden" name="Other__uRoom" value="">
+                                    <input type="hidden" name="Operating__bSystem" value="">
+                                    <input type="hidden" name="Equipment__bType" value="">
+                                    <input type="hidden" name="Browser" value="">
+                                    
+                                    <!-- --
+                                    <input type="hidden" name="QUICK_DESC_FOR_LADD" value="-1">
+                                    <input type="hidden" name="LADD" value="<p>LADD Description</p>">
+                                    <input type="hidden" name="Internal__bNotes_originalData" value="">
+                                    <input type="hidden" name="Internal__bNotes" value="">
+                                    <input type="hidden" name="AUTO_CHECK_AVAIL" value="1">
+                                    <input type="hidden" name="flatfieldArea0" value="0">
+                                    
+                                    
+                                    <!-- Assignees --
+                                    <input type="hidden" name="ASSIGNTO" value="AAA_IT__bSUPPORT__bCENTER">
+                                    <input type="hidden" name="ASSIGNTO" value="ccb551">
+                                    
+                                    <!-- Emails --
+                                    <input type="hidden" name="CC_CHECKBOX_DISPLAYED" value="1">
+                                    <input type="hidden" name="DISPLAY_CC" value="">
+                                    <input type="hidden" name="ALWAYS_CCFIELD" value="">
+                                    <input type="hidden" name="ONE_TIME_CCFIELD" value="">
+                                    
+                                    <!-- Misc. Support Tools--
+                                    <input type="hidden" name="attfn" value="[No files currently attached]">
+                                    <input type="hidden" name="newAttachments" value="">
+                                    <input type="hidden" name="QIT__bUsed" value="">
+                                    <input type="hidden" name="CIC__uACD__bCalling__bNumber" value="">
+                                    <input type="hidden" name="CIC__uACD__bCall__bID" value="">
+                                    <input type="hidden" name="Bomgar__bUsed__Q" value="">
+                                    <input type="hidden" name="KACE__bUsed__Q" value="">
+                                    <input type="hidden" name="HOURS" value="">
+                                    <input type="hidden" name="MINUTES" value="">
+                                    <input type="hidden" name="WHICH_TT_METHOD" value="1">
+                                    <input type="hidden" name="HOURS_XTRA1" value="">
+                                    <input type="hidden" name="MINUTES_XTRA1" value="">
+                                    <input type="hidden" name="WHICH_TT_METHOD_XTRA1" value="1">
+                                    <input type="hidden" name="HOURS_XTRA2" value="">
+                                    <input type="hidden" name="MINUTES_XTRA2" value="">
+                                    <input type="hidden" name="WHICH_TT_METHOD_XTRA2" value="1">
+                                    <input type="hidden" name="HOURS_XTRA3" value="">
+                                    <input type="hidden" name="MINUTES_XTRA3" value="">
+                                    <input type="hidden" name="WHICH_TT_METHOD_XTRA3" value="1">
+                                    <input type="hidden" name="HOURS_XTRA4" value="">
+                                    <input type="hidden" name="MINUTES_XTRA4" value="">
+                                    <input type="hidden" name="WHICH_TT_METHOD_XTRA4" value="1">
+                                    <input type="hidden" name="CIS_SERIALIZED" value="">
+                                    <input type="hidden" name="PROPOSED_CI_CHGS" value="">
+                                    <input type="hidden" name="ALL_CIS_SERIALIZED" value="">
+                                    <input type="hidden" name="EMPTY_UNWRITEABLE_CHECKBOX_Copy__bOn__bNotifications__Q" value="1">
+                                    --
+                                    </div>
+                                    
+                                    <!----------------------------------
+                                        Mandatory fields
+                                    ------------------------------------                                    
+                                    <input name = "TO"                          type = "hidden" value = "it.service@northwestern.edu">
+                                    <input name = "FROM"                        type = "hidden" value = "calebburton2017@u.northwestern.edu">
+                                    <input name = "PROJECTNUM"                  type = "hidden" value = "1">
+                                    <input name = "PROJECTNAME"                 type = "hidden" value = "IT Service Desk">
+                                    <input name = "DATE_TYPE"                   type = "hidden" value = "0">
+                                    
+                                    <!----------------------------------
+                                        Useful fields
+                                    ------------------------------------
+                                    <input name = "Status"                      type = "hidden" value = "In Progress">
+                                    <input name = "Assignees"                   type = "hidden" value = "AAA_IT__bSUPPORT__bCENTER">
+                                    
+                                    <!----------------------------------------------
+                                        Might be useful in the future
+                                    ------------------------------------------------
+                                    <input name = "Campus"                              type = "hidden" value="No Choice">
+                                    <input name = "Building"                            type = "hidden" value="No Choice">
+                                    <input name = "Room"                                type = "hidden" value="No Choice">
+                                    --
+                                    
+                                    <div>
+                                    <!----------------------------------
+                                        Working fields that aren't useful or mandatory
+                                    ------------------------------------
+                                    <input name = "Request__bType"                      type = "hidden" value = "No Choice">
+                                    <input name = "Submission__bTracking"               type = "hidden" value = "Email">
+                                    <input name = "Impact"                              type = "hidden" value = "Single User">
+                                    <input name = "Urgency"                             type = "hidden" value = "Routine">
+                                    
+                                    <input name = "Month_SLA__bResponse__bTime"         type = "hidden" value = "">
+                                    <input name = "Day_SLA__bResponse__bTime"           type = "hidden" value = "">
+                                    <input name = "Year_SLA__bResponse__bTime"          type = "hidden" value = "">
+                                    <input name = "Hour_SLA__bResponse__bTime"          type = "hidden" value = "">
+                                    <input name = "Minute_SLA__bResponse__bTime"        type = "hidden" value = "">
+                                    
+                                    <input name = "Month_SLA__bDue__bDate"              type = "hidden" value = "">
+                                    <input name = "Day_SLA__bDue__bDate"                type = "hidden" value = "">
+                                    <input name = "Year_SLA__bDue__bDate"               type = "hidden" value = "">
+                                    <input name = "Hour_SLA__bDue__bDate"               type = "hidden" value = "">
+                                    <input name = "Minute_SLA__bDue__bDate"             type = "hidden" value = "">
+                                    
+                                    <input name = "Walk__uin__bLocation"                type = "hidden" value = "No Choice">
+                                    <input name = "Completion__bCode"                   type = "hidden" value = "No Choice">
+                                    
+                                    <input name = "Recipient__bEmail"                   type = "hidden" value = "">
+                                    <input name = "Recipient__bNetID"                   type = "hidden" value = "">
+                                    <input name = "Recipient__bDept__bSupport"          type = "hidden" value = "">
+                                    <input name = "Recipient__bFirst__bName"            type = "hidden" value = "">
+                                    <input name = "Recipient__bLast__bName"             type = "hidden" value = "">
+                                    <input name = "Recipient__bOffice__bPhone"          type = "hidden" value = "">
+                                    <input name = "Recipient__bTitle"                   type = "hidden" value = "">
+                                    <input name = "Recipient__bDept"                    type = "hidden" value = "">
+                                    <input name = "Recipient__bPreferred__bPhone"       type = "hidden" value = "">
+                                    <input name = "Recipient__bNU__bRole"               type = "hidden" value = "">
+                                    <input name = "Copy__bOn__bNotifications__Q"        type = "hidden" value = "Off">
+                                    <input name = "Recipient__bVIP__bStatus"            type = "hidden" value = "">
+                                    
+                                    <input name="External__bTicket__bNumber"            type = "hidden" value="">
+                                    <input name="Preferred__bPhone__bNumber"            type = "hidden" value="">
+                                    
+                                    <input name="Select__Q"                             type = "hidden" value="No Choice">
+                                    
+                                    <input name="Service__bAssignment"                  type = "hidden" value="No Choice">
+                                    <input name="Operating__bSystem"                    type = "hidden" value="No Choice">
+                                    <input name="Equipment__bType"                      type = "hidden" value="No Choice">
+                                    <input name="Browser"                               type = "hidden" value="No Choice">
+                                    
+                                    <input name = "Sub__uCategory"                      type = "hidden" value="Other">
+                                    
+                                    <input name="Developer__bNotes"                     type = "hidden" value="">
+                                    <input name="TNS__bPrivate__bNotes"                 type = "hidden" value="">
+                                    
+                                    <input name="Public__bKB__bSolution__bType"         type = "hidden" value="No Choice">
+                                    <input name="Public__bKB__bService"                 type = "hidden" value="No Choice">
+                                    <input name="Public__bKB__bRanking"                 type = "hidden" value="No Choice">
+                                    
+                                    <input name = "Month_Public__bKB__bApproval__bDate" type = "hidden" value="">
+                                    <input name = "Day_Public__bKB__bApproval__bDate"   type = "hidden" value="">
+                                    <input name = "Year_Public__bKB__bApproval__bDate"  type = "hidden" value="">
+                                    
+                                    <input name = "QIT__bUsed"                          type = "hidden" value="">
+                                    <input name = "Bomgar__bUsed__Q"                    type = "hidden" value="">
+                                    <input name = "Kace__bUsed__Q"                      type = "hidden" value="">
+                                    
+                                    <input name = "CIC__uACD__bCalling__bNumber"        type = "hidden" value="">
+                                    <input name = "CIC__uACD__bCall__bID"               type = "hidden" value="">
+                                    
+                                    <input name = "Approved__bStatus"                   type = "hidden" value="No Choice">
+                                    
+                                    
+                                    
+                                    <!----------------------------------------------
+                                        Fields that don't work
+                                    ------------------------------------------------
+                                    <input name = "Priority"                            type = "hidden" value = "4">
+                                    <input name = "Other__bService"                     type = "hidden" value=" ">
+                                    <input name = "Other__bCategory"                    type = "hidden" value=" ">
+                                    <input name = "Other__b__u__bSub__bCategory"        type = "hidden" value=" ">
+                                    <input name = "Other__uBuilding"                    type = "hidden" value=" ">
+                                    <input name = "Other__uRoom"                        type = "hidden" value=" ">
+                                    --
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                
+    
+                <tr>
+                    <th align = "left">Service Family</th>
+                    <td>
+                        <select name="Service__bFamily" >
+                            <option value ="No Choice" >No Choice</option>
+                            <option value ="Academic Resources" >Academic Resources</option>
+                            <option value ="Business Applications and Services" >Business Applications and Services</option>
+                            <option value ="Clinical and Medical Services" >Clinical and Medical Services</option>
+                            <option value ="Critical Facility Site Management" >Critical Facility Site Management</option>
+                            <option value ="Email, Calendaring, Messaging and Collaboration" >Email, Calendaring, Messaging and Collaboration</option>
+                            <option value ="Hardware & Software">Hardware & Software</option>
+                            <option value ="Help and Support" selected>Help and Support</option>
+                            <option value ="Identity Management and Authentication" >Identity Management and Authentication</option>
+                            <option value ="Infrastructure" >Infrastructure</option>
+                            <option value ="Operation and Control" >Operation and Control</option>
+                            <option value ="Research Resources" >Research Resources</option>
+                            <option value ="Security and Compliance" >Security and Compliance</option>
+                            <option value ="Technology Spaces" >Technology Spaces</option>
+                            <option value ="Telecommunications and Networking" >Telecommunications and Networking</option>
+                        </select>
+                        <br>
+                    </td>
+                    <th align = "left"><font color = "#990000">*Service</font></th>
+                    <td>
+                        <select name="Service" >
+                            <option value ="Select Choice" >Select Choice</option>
+                            <option value ="Accessories, Adapters, and Peripherals" >Accessories, Adapters, and Peripherals</option>
+                            <option value ="ACT!" >ACT!</option>
+                            <option value ="Active Directory/Radiant Logic" >Active Directory/Radiant Logic</option>
+                            <option value ="Adobe Creative Suite" >Adobe Creative Suite</option>
+                            <option value ="Adobe Reader" >Adobe Reader</option>
+                            <option value ="AutoDesk" >AutoDesk</option>
+                            <option value ="Axis Camera" >Axis Camera</option>
+                            <option value ="Bluebeam Revu" >Bluebeam Revu</option>
+                            <option value ="Client Backup (CrashPlan)" >Client Backup (CrashPlan)</option>
+                            <option value ="Client Management (BigFix)" >Client Management (BigFix)</option>
+                            <option value ="Client Management (Casper)" >Client Management (Casper)</option>
+                            <option value ="Client Management (KACE K1000)" >Client Management (KACE K1000)</option>
+                            <option value ="Client Management (KACE K2000)" >Client Management (KACE K2000)</option>
+                            <option value ="Desktop/Laptop/Smartphone/Tablet" >Desktop/Laptop/Smartphone/Tablet</option>
+                            <option value ="Dragon" >Dragon</option>
+                            <option value ="EndNote" >EndNote</option>
+                            <option value ="FAMIS Mobile" >FAMIS Mobile</option>
+                            <option value ="Flash" >Flash</option>
+                            <option value ="General Question" selected>General Question</option>
+                            <option value ="Hard Drive Encryption" >Hard Drive Encryption</option>
+                            <option value ="Java" >Java</option>
+                            <option value ="macOS" >macOS</option>
+                            <option value ="Microscope" >Microscope</option>
+                            <option value ="Microsoft Office" >Microsoft Office</option>
+                            <option value ="Microsoft Project" >Microsoft Project</option>
+                            <option value ="Microsoft Visio" >Microsoft Visio</option>
+                            <option value ="Mobile Device Management (MDM)" >Mobile Device Management (MDM)</option>
+                            <option value ="Monitor" >Monitor</option>
+                            <option value ="Northwestern Mobile" >Northwestern Mobile</option>
+                            <option value ="Oracle Client" >Oracle Client</option>
+                            <option value ="Other" >Other</option>
+                            <option value ="Parallels/VMware" >Parallels/VMware</option>
+                            <option value ="Platereader" >Platereader</option>
+                            <option value ="Printer (including Access and Software Configuration)" >Printer (including Access and Software Configuration)</option>
+                            <option value ="Projecto" >Projecto</option>
+                            <option value ="Redhat Linux (RHEL)" >Redhat Linux (RHEL)</option>
+                            <option value ="Remote Desktop" >Remote Desktop</option>
+                            <option value ="Remote Support (Bomgar)" >Remote Support (Bomgar)</option>
+                            <option value ="Scanner" >Scanner</option>
+                            <option value ="Shared Network Drive/Departmental Server" >Shared Network Drive/Departmental Server</option>
+                            <option value ="Silverlight" >Silverlight</option>
+                            <option value ="Symantec/Norton Antivirus/EndPoint Protection" >Symantec/Norton Antivirus/EndPoint Protection</option>
+                            <option value ="Web Browsers" >Web Browsers</option>
+                            <option value ="Windows" >Windows</option>
+                        </select>
+                        <br>
+                    </td>
+                    <th align = "left">Category</th>
+                    <td>
+                        <select name="Category" >
+                            <option value ="No Choice" selected>No Choice</option>
+                            <option value ="Access (Admin or Login)" >Access (Admin or Login)</option>
+                            <option value ="Deployment/Setup" >Deployment/Setup</option>
+                            <option value ="Loaner" >Loaner</option>
+                            <option value ="Lost/Stolen/Missing" >Lost/Stolen/Missing</option>
+                            <option value ="Other" >Other</option>
+                            <option value ="Purchase" >Purchase</option>
+                            <option value ="Recycle/Repurpose" >Recycle/Repurpose</option>
+                            <option value ="Repair" >Repair</option>
+                            <option value ="Upgrade" >Upgrade</option>
+                        </select>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <th align = "left">Campus</th>
+                    <td>
+                        <select name="Campus" >
+                            <option value ="No Choice" selected>No Choice</option>
+                            <option value ="Evanston" >Evanston</option>
+                        </select>
+                        <br>
+                    </td>
+                    <th align = "left">Building</th>
+                    <td>
+                        <select name="Building" >
+                            <option value ="No Choice" >No Choice</option>
+                            <option value ="1800 Sherman Av" >1800 Sherman Av</option>
+                            <option value ="Abbott Hall - 710 N Lake Shore Dr" >Abbott Hall - 710 N Lake Shore Dr</option>
+                            <option value ="Rebecca Crown Center - 633 Clark St">Rebecca Crown Center - 633 Clark St</option>
+                        </select>
+                        <br>
+                    </td>
+                    <th align = "left">Room</th>
+                    <td>
+                        <select name="Room" >
+                            <option value ="No Choice" >No Choice</option>
+                            <option value ="018" >018</option>
+                        </select>
+                        <br>
+                    </td>
+                </tr>
+                <tr>
+                    <th align = "left">Internal Notes</th>
+                    <td colspan=3>
+                        <b><textarea name = "Internal__bNotes" ROWS = "10" COLS = "85" WRAP = "HARD"></textarea></b>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                
+                
+            </table>
+            <br>            
+            <br>
+            <br>
+            <table BORDER=0 CELLPADDING=0 CELLSPACING=0 class = "dialog" width="100%">
+                <tr class = "dialogHeading">
+                    <td>
+                        <table border = "0" class = "dialogHeading">
+                            <tr>
+                                <td class = "dialogTitle">Contact Information</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class = "dialog">
+                        <br>
+                        <table border=0>
+                            <tr>
+                                <th align = "left"><font color = "#990000">*NetID</font></th>
+                                <td>
+                                    <input name="NetID" size="20" value="">
+                                    <br>
+                                </td>
+                                <th align = "left">First Name</th>
+                                <td>
+                                    <input name="First__bName" size="20" value="">
+                                    <br>
+                                </td>
+                                <th align = "left">Last Name</th>
+                                <td>
+                                    <input name="Last__bName" size="20" value="">
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align = "left"><font color = "#990000">*Email Address</font></th>
+                                <td>
+                                    <input name="Email__bAddress" size="20" value="">
+                                    <br>
+                                </td>
+                                <th align = "left">Office Phone</th>
+                                <td>
+                                    <input name="Office__bPhone" size="20" value="">
+                                    <br>
+                                </td>
+                                <th align = "left">Job Title</th>
+                                <td>
+                                    <input name="Job__bTitle" size="20" value="">
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align = "left">NU Role</th>
+                                <td>
+                                    <input name="NU__bRole" size="20" value="">
+                                    <br>
+                                </td>
+                                <th align = "left">Department</th>
+                                <td>
+                                    <input name="Department" size="20" value="">
+                                    <br>
+                                </td>
+                                <th align = "left">Departmental Support</th>
+                                <td>
+                                    <input name="Departmental__bSupport" size="20" value="">
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th align = "left">VIP Status</th>
+                                <td>
+                                    <input name="VIP__bStatus" size="20" value="">
+                                    <br>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+            <script language = "javascript">
+                var emailField = 'Email__bAddress';
+                var userPriv = 2;
+                var abFields = new Array();
+                
+                function SubmitIt(){
+                    var errorMsg = "";
+                    
+                    /* Error Checking */
+                    
+                    if (!(document.HTML_FORM.TITLE.value)) errorMsg += "The field TITLE is mandatory and has been left blank\n";
+                    if (!(document.HTML_FORM.NetID.value)) errorMsg += "The field NetID is mandatory and has been left blank\n";
+                    if (!(document.HTML_FORM.Email__bAddress.value)) errorMsg += "The field Email Address is mandatory and has been left blank\n";
+                    
+                    
+                    
+                    if (errorMsg){
+                        alert(errorMsg);
+                    }
+                    else{                       
+                        document.HTML_FORM.submit();
+                    }
+                }
+                
+            </script>
+            
+             
+            <table BORDER=0 CELLPADDING=0 CELLSPACING=0 class = "dialog" width="100%">
+                <tr class = "dialogHeading">
+                    <td>
+                        <table border = "0" class = "dialogHeading">
+                            <tr>
+                                <td class = "dialogTitle">Description</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        &nbsp;&nbsp;<textarea name=LONGDESCRIPTION ROWS=10 COLS=85 WRAP=HARD></textarea>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            <input TYPE = "button" value="Submit Issue" onClick = "javascript:SubmitIt()">
+            <font color = "#990000" face = "Verdana, Arial, Helvetica, sans-serif"></font>
+            <br>
+            <tr>
+                <td>&nbsp;</td>
+            </tr>
+            <br>
+            <font color = "#4E2A84">Click the SUBMIT button to send your Request.  There is no need to reply to this email.  You will receive an email confirmation if your Request is successfully registered.  Please contact it.service@northwestern.edu if you experience problems using this form.</font>
+            <br>
+            <font color = "#990000" face = "Verdana, Arial, Helvetica, sans-serif"> Be sure to click the submit button only once. A separate Issue will be entered each time the button is clicked.</font>
+        </form>
+    -->
+        </div>
+    </body>
+    
+    <script>
+        var timerInterval;
+        
+        function getTimeElapsed(startTime) {
+            var t = Date.now() - startTime;
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            return {
+                'total': t,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+        
+        function initializeClock(id, startTime) {
+            var clock = document.getElementById(id);
+            var hoursSpan = clock.querySelector('#hours');
+            var minutesSpan = clock.querySelector('#minutes');
+            var secondsSpan = clock.querySelector('#seconds');
+            
+            function updateClock() {
+                var t = getTimeElapsed(startTime);
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+            }
+            
+            updateClock();
+            timerInterval = setInterval(updateClock, 1000);
+        }
+    
+    </script>
+</html>

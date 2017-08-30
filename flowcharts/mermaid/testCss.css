@@ -1,0 +1,52 @@
+
+.non-merm {
+    /* width: 10%; */
+}
+
+
+.mermaid svg {
+    min-width: 700px;
+    width: 100%;
+    height: auto;
+}
+
+.node rect {
+    fill: rgba(255,255,255,0.65);
+    stroke: #333;
+    stroke-width: 1px;
+}
+
+.node:hover rect {
+    fill: rgba(255,255,255,0.95);
+}
+
+.cluster text {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.cluster:nth-of-type(1) rect {
+    fill: lightblue!important;
+    stroke: navy!important;
+    stroke-width: 2px!important;
+}
+.cluster:nth-of-type(2) rect {
+    fill: lightgreen!important;
+    stroke: darkgreen!important;
+    stroke-width: 2px!important;
+}
+.cluster:nth-of-type(3) rect {
+    fill: #ccc!important;
+    stroke: grey!important;
+    stroke-width: 2px!important;
+}
+.cluster:nth-of-type(4) rect {
+    fill: yellow!important;
+    stroke: #aa3!important;
+    stroke-width: 2px!important;
+}
+.cluster:nth-of-type(5) rect {
+    fill: orange!important;
+    stroke: sienna!important;
+    stroke-width: 2px!important;
+}

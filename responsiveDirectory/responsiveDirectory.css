@@ -1,0 +1,57 @@
+*{
+    text-shadow: none;
+    font-family: sans-serif;
+}
+
+/*
+@media (max-width: 800px) {
+    h1 {
+        color: fuchsia;
+    }
+}
+*/
+
+body {
+    margin: 1em;
+}
+
+.fullPersonWapper{
+    width: 160px;
+    display: inline-block;
+    margin: 0.2em 0px 0.2em;
+}
+
+
+.thumbWapper{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5em;
+    width: auto;
+    background-color: transparent;
+}
+
+.infoWrapper.p{
+    margin: 0.4em 0px 0.5em;
+    line-height: 1.5em;
+}
+
+.conPic {
+    height: 100px;
+    width: 100px;
+}
+
+.importantNumWrapper {
+    width: 120px;
+    margin: 0.5em 0px 0.5em;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.conTable {
+    font-size: 12.7px;
+    color: rgb(0, 0, 0);
+    
+    width: 100%;
+    max-width: 800px;
+}
