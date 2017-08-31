@@ -25,47 +25,51 @@
                 </ol>
             </li>
         </ul>
-        <table border="1" cellpadding="5" cellspacing="1">
-            <tr>
-                <td><strong>On-call Engineer Role</strong></td>
-                <td><strong>Area of responsibility</strong></td>
-            </tr>
-            <tr>
-                <td>CI - PIPS - Infrastructure (was PIM-DAPS-APPS, PIM-DAPS-DB, PIM-PIPS-OS, and PIM-PIPS-STORAGE)
-                </td>
-                <td>
-                    <ul>
-                        <li>Enterprise Application Support</li>
-                        <li>Infrastructure Database (Not MS-DBA role)</li>
-                        <li>Operating System and Hardware Team</li>
-                        <li>Storage and backup services</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>CI - PIPS - HPC (The HPC stands for "High Performance Computing")</td>
-                <td>
-                    <ul>
-                        <li>Anything involving HPC</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>TNS - Data Network</td>
-                <td>
-                    <ul>
-                        <li>Data network, firewall issues or emergency change requests</li>
-                    </ul>
-                </td>
-            </tr>
-            <tr>
-                <td>ISSC - Security</td>
-                <td>
-                    <ul>
-                        <li>Security related issues (such as security holds requiring immediate attention)</li>
-                    </ul>
-                </td>
-            </tr>
+        <table>
+            <thead>
+                <tr>
+                    <th>On-call Engineer Role</th>
+                    <th>Area of responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>CI - PIPS - Infrastructure<br />(formerly PIM-DAPS-APPS, PIM-DAPS-DB, PIM-PIPS-OS, and PIM-PIPS-STORAGE)
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Enterprise Application Support</li>
+                            <li>Infrastructure Database (Not MS-DBA role)</li>
+                            <li>Operating System and Hardware Team</li>
+                            <li>Storage and backup services</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>CI - PIPS - HPC (The HPC stands for "High Performance Computing")</td>
+                    <td>
+                        <ul>
+                            <li>Anything involving HPC</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>TNS - Data Network</td>
+                    <td>
+                        <ul>
+                            <li>Data network, firewall issues or emergency change requests</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>ISSC - Security</td>
+                    <td>
+                        <ul>
+                            <li>Security related issues (such as security holds requiring immediate attention)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>
@@ -479,6 +483,8 @@
         flex: 1;
         margin: 10px;
         border-right: 1px solid #cccccc;
+        min-width: 200px;
+        max-width: 300px;
     }
     
     .contact-cell:last-of-type {

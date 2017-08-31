@@ -8,6 +8,14 @@
     /* border: 1px solid grey; */
 }
 
+div#page-content table ul {
+    margin-left: 0;
+    padding-top: 0rem;
+    -webkit-margin-before: 0;
+    -webkit-padding-start: 0px;
+    -webkit-margin-after: 0em;
+}
+
 table {
     border-collapse: collapse;
     vertical-align: middle;
