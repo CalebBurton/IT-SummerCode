@@ -42,7 +42,7 @@ body {
 #main-content {
     font: 1.3em "Akkurat Pro Regular", Arial, sans-serif;
     line-height: 1.7em;
-    outline: none; !important
+    outline: none;
 }
 
 img {
@@ -140,6 +140,7 @@ a.button:hover:before {
     bottom: 0;
 }
 
+/* Probably not necessary anymore since these are now in the global KB stylesheet */
 @font-face {
     font-family: "Akkurat Pro Regular";
     src: url("https://kb.northwestern.edu/images/group293/71903/fonts/AkkuratProRegular.woff") format("woff");
@@ -388,7 +389,7 @@ p.intro {
 
 /*  Affects the dropdown options on the right half of the nav bar. Works for up to 10 dropdowns.
 
-    There's probably a better way to do this, where the dropdowns flip from left-aligned to right-
+    There's probably a better way to do this where the dropdowns flip from left-aligned to right-
     aligned when they bump up against the right edge of the screen, but this will work for now.
 */
 .nav-dropdown:first-child:last-child .nav-dropdown-content,

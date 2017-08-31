@@ -5,7 +5,7 @@
     min-width: 800px;
     margin: auto;
     margin-bottom: 20px;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
 }
 
 table {
@@ -18,25 +18,23 @@ table {
     background-color: #eeeeee;
 }
 
-tr.header-row {
+thead tr {
     background-color: #4e2a84;
     color: white;
-    text-align: left;
+    /*text-align: left;*/
     padding: 2rem;
 }
 
 th {
-    padding-left: 25px;
+    text-align: left;
     font-weight: bold;
     height: 2em;
 }
-th:first-of-type {
-    padding: 0px;
+
+th#descriptionCol {
+    padding-left: 25px;
 }
-th:last-of-type {
-    white-space: nowrap;
-    padding: 0px;
-}
+
 
 tr {
     border-bottom: 1px solid grey;
@@ -47,22 +45,33 @@ tr:last-of-type {
     border-bottom: none;
 }
 
-td:first-of-type {
+#itsm td:first-of-type {
+    white-space: nowrap;
+}
+
+#workspaces td:last-of-type {
     white-space: nowrap;
 }
 
 
+/*
 .do-not-assign {
     background: #cccccc;
     color: #666666;
 }
+*/
+
+.col-1-of-4 {width: 40%;}
+.col-2-of-4 {width: 30%;}
+.col-3-of-4 {width: 20%;}
+.col-4-of-4 {width: 30%;}
 
 
 tr:hover {
     background-color: lavender;
 }
 
-tr.header-row:hover {
+thead tr:hover {
     background-color: #4e2a84;
 }
 

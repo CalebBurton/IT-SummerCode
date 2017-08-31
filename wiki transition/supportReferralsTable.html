@@ -2,10 +2,10 @@
 <div class="table-wrapper">
     <table class="sticky-header" id="itsm">
         <thead>
-            <tr class="row-wrapper header-row">
-                <th class="content-wrapper content-left title">ITSM Assignment Group</th>
-                <th class="content-wrapper content-mid title">Description</th>
-                <th class="content-wrapper content-right title">Additional Contact Methods</th>
+            <tr>
+                <th>ITSM Assignment Group</th>
+                <th id="descriptionCol">Description</th>
+                <th>Additional Contact Methods</th>
             </tr>
         </thead>
         <tbody class="body-wrapper">
@@ -556,7 +556,7 @@
             </tr>
             <tr class="do-not-assign">
                 <td>NUIT-HRITS-Approval</td>
-                <td><strong>DO NOT USE</strong></td>
+                <td><ul><li><strong>DO NOT USE</strong></li></ul></td>
                 <td></td>
             </tr>
             <tr class="do-not-assign">
@@ -733,9 +733,9 @@
                 <td>SCS-RO-Caesar</td>
                 <td>
                     <ul>
-                        <li></li>
+                        <li>School of Professional Studies (SPS) registration issues</li>
                     </ul>
-                    School of Professional Studies (SPS) registration issues</td>
+                </td>
                 <td></td>
             </tr>
             <tr>
@@ -821,12 +821,18 @@
 <h2>ITSM Workspaces</h2>
 <div class="table-wrapper">
     <table class="sticky-header" id="workspaces">
+        <colgroup>
+            <col class="col-1-of-4">
+            <col class="col-2-of-4">
+            <col class="col-3-of-4">
+            <col class="col-4-of-4">
+        </colgroup>
          <thead>
-            <tr class="row-wrapper header-row">
-                <th class="content-wrapper content-left title">ITSM Workspace</th>
-                <th class="content-wrapper content-mid-1 title">Phone</th>
-                <th class="content-wrapper content-mid-2 title">Email</th>
-                <th class="content-wrapper content-right title">Website</th>
+            <tr>
+                <th>ITSM Workspace</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Website</th>
             </tr>
         </thead>
         <tbody>
@@ -846,206 +852,162 @@
                 <td>Weinberg IT</td>
                 <td>1-5660 (Urgent Internal Use Only)</td>
                 <td></td>
-                <td><a href="http://www.weinberg.northwestern.edu/weinbergit/">Weinberg IT Homepage</a><a href="https://itsm-fp.northwestern.edu/footprints/weinberg-it.html">Web Form</a></td>
+                <td><a href="http://www.weinberg.northwestern.edu/weinbergit/">Weinberg IT Homepage</a><br />
+                    <a href="https://itsm-fp.northwestern.edu/footprints/weinberg-it.html">Web Form</a></td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<!--
 <h2>Other Offices</h2>
-<div class="table-wrapper" id="other">
-    <div class="body-wrapper">
-        <div class="row-wrapper header-row">
-            <div class="content-wrapper content-left title">Office</div>
-            <div class="content-wrapper content-mid title">
-                <div class="content-wrapper content-mid-1 title">Phone</div>
-                <div class="content-wrapper content-mid-2 title">Email</div>
-            </div>
-            <div class="content-wrapper content-right title">Website</div>
-        </div>
-        <tr>
-            <td>Alumni Association</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-7200</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:alumni-admin@northwestern.edu">alumni-admin@northwestern.edu</a></div>
-            </div>
-            <td><a href="http://www.alumni.northwestern.edu/">alumni.northwestern.edu</a></div>
-        </div>
-        <tr>
-            <td>Alumni Relations and Development (ARD) Help Desk</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-4742</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:oard-help@northwestern.edu">oard-help@northwestern.edu</a></div>
-            </div>
-            <td><a href="http://www.wewill.northwestern.edu">wewill.northwestern.edu</a></div>
-        </div>
-        <tr>
-            <td>CAESAR Help Desk</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-0260</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:nu-registrar@northwestern.edu">nu-registrar@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>Bienen IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-7541</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:music-it@northwestern.edu">music-it@northwestern.edu</a></div>
-            </div>
-            <td><a href="http://music.northwestern.edu/contact/directory/index.html">Bienen IT Contacts</a></div>
-        </div>
-        <tr>
-            <td>Center for Public Safety (CPS) IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-5283 (Canvas Support Only)</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:ubfhosea@northwestern.edu">ubfhosea@northwestern.edu</a><br>(Canvas Support Only)</div>
-            </div>
-            <td><a href="http://sps.northwestern.edu/program-areas/public-safety/">CPS Website</a></div>
-        </div>
-        <tr>
-            <td>Center for Talent Development (CTD)</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-3782</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:ctd@northwestern.edu">ctd@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>eIRB Office</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-1723 (Evanston)<br>(312) 503-9338 (Chicago)</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:irb@northwestern.edu">irb@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>Galter Library</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(312) 503-8126</div>
-                <div class="content-wrapper content-mid-2"></div>
-            </div>
-            <td><a href="http://www.galter.northwestern.edu/">galter.northwestern.edu</a><a href="https://galter.northwestern.edu/contact/Galter/Reference">Web Form</a></div>
-        </div>
-        <tr>
-            <td>Garrett IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 866-3928</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:computer.services@garrett.edu">computer.services@garrett.edu</a></div>
-            </div>
-            <td><a href="https://mygets.garrett.edu/ICS/Help/">Garrett IT Website</a></div>
-        </div>
-        <tr>
-            <td>Kellogg Information Systems (KIS)</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-3030 (Faculty)<br>(847) 467-2100 (Students)</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:kis@kellogg.northwestern.edu">kis@kellogg.northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>Kronos Help Desk</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-7606</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:mytime@northwestern.edu">mytime@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>Lurie Cancer Center Support</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(312) 695-4357</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:luriecancercentersupport@northwestern.edu">luriecancercentersupport@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>McCormick IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-3713</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:action@mccormick.northwestern.edu">action@mccormick.northwestern.edu</a></div>
-            </div>
-            <td><a href="http://www.mccormick.northwestern.edu/it-resources/">McCormick IT Website</a></div>
-        </div>
-        <tr>
-            <td>myHR</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-4800</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:myhrhelp@northwestern.edu">myhrhelp@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>Northwestern Medicine (NM) IT / Northwestern Memorial Hospital (NMH) IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">312-926-4357 (6-HELP)</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:nmithelp@nm.org">nmithelp@nm.org</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>NU Clinical and Translational Sciences (NU CATS) Support</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(312) 695-4357</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:nucatssupport@northwestern.edu">nucatssupport@northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div> 
-        <tr>
-            <td>Qatar IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">+974 4454-5150</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:helpdesk@qatar.northwestern.edu">helpdesk@qatar.northwestern.edu</a></div>
-            </div>
-            <td></td>
-        </div>
-        <tr>
-            <td>School of Communication (SoC) IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 467-4651</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:soc-it@northwestern.edu">soc-it@northwestern.edu</a></div>
-            </div>
-            <td><a href="http://communication.northwestern.edu/socit/">SOC IT Website</a><a href="https://helpdesk.soc.northwestern.edu/">Web Form</a></div>
-        </div>
-        <tr>
-            <td>School of Professional Studies (SPS) IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(312) 503‐3333</div>
-                <div class="content-wrapper content-mid-2"><a href="mailto:sps-it@northwestern.edu">sps-it@northwestern.edu</a></div>
-            </div>
-            <td><a href="http://www.helpdesk.sps.northwestern.edu/">SPS Helpdesk</a></div>
-        </div>
-        <tr>
-            <td>SESP IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-8193</div>
-                <div class="content-wrapper content-mid-2"></div>
-            </div>
-            <td><a href="http://www.sesp.northwestern.edu/faculty-staff-resources/technology-resources/index.html">SESP Helpdesk</a></div>
-        </div>
-        <tr>
-            <td>The Graduate School (TGS) IT</div>
-            <td>
-                <div class="content-wrapper content-mid-1">(847) 491-5279</div>
-                <div class="content-wrapper content-mid-2"></div>
-            </div>
-            <td><a href="http://www.tgs.northwestern.edu/about/contact/index.html">IT Contacts</a></div>
-        </div>
-    </div>
+<div class="table-wrapper">
+    <table class="sticky-header" id="other">
+        <colgroup>
+            <col class="col-1-of-4">
+            <col class="col-2-of-4">
+            <col class="col-3-of-4">
+            <col class="col-4-of-4">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>Office</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Website</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alumni Association</td>
+                <td>(847) 491-7200</td>
+                <td><a href="mailto:alumni-admin@northwestern.edu">alumni-admin@northwestern.edu</a></td>
+                <td><a href="http://www.alumni.northwestern.edu/">alumni.northwestern.edu</a></td>
+            </tr>
+            <tr>
+                <td>Alumni Relations and Development (ARD) Help Desk</td>
+                <td>(847) 491-4742</td>
+                <td><a href="mailto:oard-help@northwestern.edu">oard-help@northwestern.edu</a></td>
+                <td><a href="http://www.wewill.northwestern.edu">wewill.northwestern.edu</a></td>
+            </tr>
+            <tr>
+                <td>CAESAR Help Desk</td>
+                <td>(847) 467-0260</td>
+                <td><a href="mailto:nu-registrar@northwestern.edu">nu-registrar@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Bienen IT</td>
+                <td>(847) 491-7541</td>
+                <td><a href="mailto:music-it@northwestern.edu">music-it@northwestern.edu</a></td>
+                <td><a href="http://music.northwestern.edu/contact/directory/index.html">Bienen IT Contacts</a></td>
+            </tr>
+            <tr>
+                <td>Center for Public Safety (CPS) IT<br />(Canvas Support Only)</td>
+                <td>(847) 491-5283</td>
+                <td><a href="mailto:ubfhosea@northwestern.edu">ubfhosea@northwestern.edu</a></td>
+                <td><a href="http://sps.northwestern.edu/program-areas/public-safety/">CPS Website</a></td>
+            </tr>
+            <tr>
+                <td>Center for Talent Development (CTD)</td>
+                <td>(847) 491-3782</td>
+                <td><a href="mailto:ctd@northwestern.edu">ctd@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>eIRB Office</td>
+                <td>(847) 467-1723 (Evanston)<br>(312) 503-9338 (Chicago)</td>
+                <td><a href="mailto:irb@northwestern.edu">irb@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Galter Library</td>
+                <td>(312) 503-8126</td>
+                <td></td>
+                <td><a href="http://www.galter.northwestern.edu/">galter.northwestern.edu</a><br />
+                    <a href="https://galter.northwestern.edu/contact/Galter/Reference">Web Form</a></td>
+            </tr>
+            <tr>
+                <td>Garrett IT</td>
+                <td>(847) 866-3928</td>
+                <td><a href="mailto:computer.services@garrett.edu">computer.services@garrett.edu</a></td>
+                <td><a href="https://mygets.garrett.edu/ICS/Help/">Garrett IT Website</a></td>
+            </tr>
+            <tr>
+                <td>Kellogg Information Systems (KIS)</td>
+                <td>(847) 467-3030 (Faculty)<br>(847) 467-2100 (Students)</td>
+                <td><a href="mailto:kis@kellogg.northwestern.edu">kis@kellogg.northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Kronos Help Desk</td>
+                    <td>(847) 467-7606</td>
+                    <td><a href="mailto:mytime@northwestern.edu">mytime@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Lurie Cancer Center Support</td>
+                    <td>(312) 695-4357</td>
+                    <td><a href="mailto:luriecancercentersupport@northwestern.edu">luriecancercentersupport@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>McCormick IT</td>
+                    <td>(847) 467-3713</td>
+                    <td><a href="mailto:action@mccormick.northwestern.edu">action@mccormick.northwestern.edu</a></td>
+                <td><a href="http://www.mccormick.northwestern.edu/it-resources/">McCormick IT Website</a></td>
+            </tr>
+            <tr>
+                <td>myHR</td>
+                    <td>(847) 467-4800</td>
+                    <td><a href="mailto:myhrhelp@northwestern.edu">myhrhelp@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Northwestern Medicine (NM) IT /<br />Northwestern Memorial Hospital (NMH) IT</td>
+                    <td>(312) 926-4357 (6-HELP)</td>
+                    <td><a href="mailto:nmithelp@nm.org">nmithelp@nm.org</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>NU Clinical and Translational Sciences (NU CATS) Support</td>
+                    <td>(312) 695-4357</td>
+                    <td><a href="mailto:nucatssupport@northwestern.edu">nucatssupport@northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Qatar IT</td>
+                    <td>+974 4454-5150</td>
+                    <td><a href="mailto:helpdesk@qatar.northwestern.edu">helpdesk@qatar.northwestern.edu</a></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>School of Communication (SoC) IT</td>
+                    <td>(847) 467-4651</td>
+                    <td><a href="mailto:soc-it@northwestern.edu">soc-it@northwestern.edu</a></td>
+                <td><a href="http://communication.northwestern.edu/socit/">SOC IT Website</a><br />
+                    <a href="https://helpdesk.soc.northwestern.edu/">Web Form</a></td>
+            </tr>
+            <tr>
+                <td>School of Professional Studies (SPS) IT</td>
+                    <td>(312) 503‐3333</td>
+                    <td><a href="mailto:sps-it@northwestern.edu">sps-it@northwestern.edu</a></td>
+                <td><a href="http://www.helpdesk.sps.northwestern.edu/">SPS Helpdesk</a></td>
+            </tr>
+            <tr>
+                <td>SESP IT</td>
+                    <td>(847) 491-8193</td>
+                    <td></td>
+                <td><a href="http://www.sesp.northwestern.edu/faculty-staff-resources/technology-resources/index.html">SESP Helpdesk</a></td>
+            </tr>
+            <tr>
+                <td>The Graduate School (TGS) IT</td>
+                    <td>(847) 491-5279</td>
+                    <td></td>
+                <td><a href="http://www.tgs.northwestern.edu/about/contact/index.html">IT Contacts</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
--->
+
 <link rel="stylesheet" type="text/css" href="referralsStyles.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/floatthead/2.0.3/jquery.floatThead.min.js"></script>
-
-<script>
-    var $tableRef = $('table');
-    $tableRef.floatThead({
-        scrollContainer: function($table){
-            return $table.closest('.wrapper');
-        }
-    });
-</script>
