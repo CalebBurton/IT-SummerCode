@@ -15,6 +15,10 @@ body {
     margin: 1em;
 }
 
+p {
+    line-height: 1.4em;
+}
+
 .fullPersonWapper{
     width: 160px;
     display: inline-block;
