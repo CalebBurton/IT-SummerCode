@@ -136,7 +136,7 @@ window.onload = function() {
 function openCore() {
     var wiki = window.open("http://wiki.it.northwestern.edu/wiki/index.php/Service_Wiki");
     var kb = window.open("https://kb.northwestern.edu/internal");
-    var fp = window.open("https://itsm.northwestern.edu/footprints");
+    var fp = window.open("https://itsm-fp.northwestern.edu/footprints");
     var nuval = window.open("http://nuvalidate.northwestern.edu/admin");
     var directory = window.open("http://directory.northwestern.edu/?verbose=1");
 

@@ -86,7 +86,7 @@ var HTML_preName = '' +
 var HTML_preNetID = '</strong><br>\n\t\t';
 var HTML_prePhone = '<br>\n\t\t';
 var HTML_preEmail = '<br>\n\t\t<a href="mailto:';
-var HTML_prePosition = '">email</a><br>\n\t\t';
+var HTML_prePosition = '">email</a>';
 var HTML_preStatus = '<br>\n\t\t';
 var HTML_postAll = '<br>\n\n\t</p>\n</div>';
 
@@ -143,6 +143,16 @@ function makeTable(tableArr, tableRef) {
             }
         
         getPic(tableArr[i].NetID + '.jpg');
+        
+        if (tableArr[i].Position == 'Lead Consultant') {
+            tableArr[i].LC = '';
+        }
+        else if (tableArr[i].LC.split(' ')[0] == 'Not') {
+            tableArr[i].LC = "<br>LC: Not Assigned";
+        }
+        else {
+            tableArr[i].LC = "<br>LC: " + tableArr[i].LC.split(' ')[0]; // Take LCs first name only
+        }
             
         tableHTML += '\n\n' +
             HTML_prePic + tableArr[i].NetID + HTML_postPic +
@@ -150,7 +160,7 @@ function makeTable(tableArr, tableRef) {
             HTML_preNetID + tableArr[i].NetID +
             HTML_prePhone + tableArr[i].Phone +
             HTML_preEmail + tableArr[i].Email +
-            HTML_prePosition + tableArr[i].Position +
+            HTML_prePosition + tableArr[i].LC +
             HTML_preStatus + tableArr[i].Status +
             HTML_postAll;
 
