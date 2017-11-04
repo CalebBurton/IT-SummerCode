@@ -31,16 +31,19 @@ window.onload = function() {
      Display the tip of the day and any warnings/notifications that are active
     **************************************************************************************/
     
+    /*
     allTheTips = document.getElementsByClassName('tip');
     tipCounter = document.querySelector('.tipnum');
     numTips = allTheTips.length;
     triggerTipbox();
     toggleScrollArrow();
+    */
     
     getWeekType();
     
+    
     /* Uncomment the line below this in order to display the red warning notification box */
-    disp('notificationDiv','block');
+    //disp('notificationDiv','block');
     
 
     
